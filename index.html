@@ -1,0 +1,2178 @@
+from pathlib import Path
+
+code1 = r'''<!DOCTYPE html>
+
+<html lang="kk">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Магистратураға дайындық</title>
+
+  <style>
+
+    :root {
+
+      --bg: #f7f3ec;
+
+      --card: #ffffff;
+
+      --text: #1f2937;
+
+      --muted: #6b7280;
+
+      --line: #e5e7eb;
+
+      --purple: #6d28d9;
+
+      --blue: #2563eb;
+
+      --purple-soft: #ede9fe;
+
+      --blue-soft: #dbeafe;
+
+      --green: #16a34a;
+
+      --green-soft: #dcfce7;
+
+      --red: #dc2626;
+
+      --red-soft: #fee2e2;
+
+      --orange-soft: #fff7ed;
+
+      --orange-line: #fed7aa;
+
+      --shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+
+      --radius: 24px;
+
+    }
+
+    * {
+
+      box-sizing: border-box;
+
+    }
+
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
+    body {
+
+      margin: 0;
+
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      background:
+
+        radial-gradient(circle at top left, rgba(109, 40, 217, 0.13), transparent 32rem),
+
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.10), transparent 30rem),
+
+        var(--bg);
+
+      color: var(--text);
+
+      line-height: 1.65;
+
+    }
+
+    a {
+
+      color: inherit;
+
+      text-decoration: none;
+
+    }
+
+    .page {
+
+      width: min(1180px, calc(100% - 32px));
+
+      margin: 0 auto;
+
+    }
+
+    .lang {
+
+      display: none;
+
+    }
+
+    .lang.active {
+
+      display: block;
+
+    }
+
+    .topbar {
+
+      padding: 22px 0 8px;
+
+    }
+
+    .topbar-inner {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 14px;
+
+      padding: 10px 12px 10px 18px;
+
+      border: 1px solid rgba(229, 231, 235, 0.95);
+
+      border-radius: 999px;
+
+      background: rgba(255, 255, 255, 0.86);
+
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+
+      backdrop-filter: blur(14px);
+
+    }
+
+    .brand {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      font-weight: 900;
+
+      color: #111827;
+
+      letter-spacing: -0.03em;
+
+    }
+
+    .brand-mark {
+
+      width: 38px;
+
+      height: 38px;
+
+      border-radius: 14px;
+
+      display: grid;
+
+      place-items: center;
+
+      color: #ffffff;
+
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+
+      box-shadow: 0 12px 24px rgba(109, 40, 217, 0.28);
+
+      font-weight: 900;
+
+    }
+
+    .lang-switch {
+
+      display: flex;
+
+      gap: 6px;
+
+      padding: 5px;
+
+      border-radius: 999px;
+
+      background: #f1f5f9;
+
+    }
+
+    .lang-btn {
+
+      border: 0;
+
+      background: transparent;
+
+      cursor: pointer;
+
+      padding: 9px 14px;
+
+      border-radius: 999px;
+
+      font-weight: 900;
+
+      color: #475569;
+
+      transition: 0.18s ease;
+
+    }
+
+    .lang-btn.active {
+
+      background: #ffffff;
+
+      color: var(--purple);
+
+      box-shadow: 0 8px 16px rgba(15, 23, 42, 0.08);
+
+    }
+
+    .hero {
+
+      padding: 70px 0 38px;
+
+    }
+
+    .hero-card {
+
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 46px;
+
+      border-radius: 34px;
+
+      background: rgba(255, 255, 255, 0.88);
+
+      border: 1px solid rgba(229, 231, 235, 0.92);
+
+      box-shadow: var(--shadow);
+
+    }
+
+    .hero-card::after {
+
+      content: "";
+
+      position: absolute;
+
+      right: -90px;
+
+      bottom: -120px;
+
+      width: 320px;
+
+      height: 320px;
+
+      border-radius: 50%;
+
+      background: rgba(109, 40, 217, 0.09);
+
+    }
+
+    .hero-kicker {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      padding: 8px 14px;
+
+      border-radius: 999px;
+
+      background: var(--purple-soft);
+
+      color: #5b21b6;
+
+      font-size: 14px;
+
+      font-weight: 900;
+
+      margin-bottom: 20px;
+
+    }
+
+    h1 {
+
+      margin: 0;
+
+      max-width: 820px;
+
+      font-size: clamp(38px, 6vw, 72px);
+
+      line-height: 0.96;
+
+      letter-spacing: -0.065em;
+
+      color: #111827;
+
+    }
+
+    .hero-subtitle {
+
+      margin: 18px 0 0;
+
+      max-width: 760px;
+
+      font-size: clamp(24px, 3vw, 38px);
+
+      font-weight: 900;
+
+      line-height: 1.08;
+
+      letter-spacing: -0.045em;
+
+      color: #312e81;
+
+    }
+
+    .hero-actions {
+
+      position: relative;
+
+      z-index: 2;
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 30px;
+
+    }
+
+    .btn {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 8px;
+
+      padding: 13px 18px;
+
+      border-radius: 999px;
+
+      border: 0;
+
+      cursor: pointer;
+
+      font-weight: 900;
+
+      font-size: 15px;
+
+      transition: 0.18s ease;
+
+    }
+
+    .btn-primary {
+
+      color: #ffffff;
+
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+
+      box-shadow: 0 14px 26px rgba(109, 40, 217, 0.28);
+
+    }
+
+    .btn-light {
+
+      color: #334155;
+
+      background: #ffffff;
+
+      border: 1px solid var(--line);
+
+    }
+
+    .btn:hover {
+
+      transform: translateY(-2px);
+
+    }
+
+    .section {
+
+      padding: 34px 0;
+
+    }
+
+    .section-head {
+
+      margin-bottom: 20px;
+
+    }
+
+    .section-title {
+
+      margin: 0;
+
+      color: #111827;
+
+      font-size: clamp(28px, 4vw, 46px);
+
+      line-height: 1.05;
+
+      letter-spacing: -0.055em;
+
+    }
+
+    .section-desc {
+
+      margin: 10px 0 0;
+
+      max-width: 780px;
+
+      color: var(--muted);
+
+      font-size: 16px;
+
+    }
+
+    .topic-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      gap: 16px;
+
+    }
+
+    .topic-card {
+
+      display: flex;
+
+      flex-direction: column;
+
+      min-height: 178px;
+
+      padding: 22px;
+
+      border-radius: var(--radius);
+
+      background: rgba(255, 255, 255, 0.92);
+
+      border: 1px solid rgba(229, 231, 235, 0.96);
+
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+
+      transition: 0.18s ease;
+
+    }
+
+    .topic-card:hover {
+
+      transform: translateY(-4px);
+
+      box-shadow: 0 20px 38px rgba(15, 23, 42, 0.10);
+
+      border-color: rgba(109, 40, 217, 0.28);
+
+    }
+
+    .topic-num {
+
+      width: 38px;
+
+      height: 38px;
+
+      border-radius: 14px;
+
+      display: grid;
+
+      place-items: center;
+
+      background: var(--purple-soft);
+
+      color: #5b21b6;
+
+      font-weight: 900;
+
+      margin-bottom: 16px;
+
+    }
+
+    .topic-title {
+
+      margin: 0;
+
+      font-size: 20px;
+
+      line-height: 1.18;
+
+      letter-spacing: -0.035em;
+
+      color: #111827;
+
+    }
+
+    .topic-desc {
+
+      margin: 9px 0 0;
+
+      color: var(--muted);
+
+      font-size: 14px;
+
+    }
+
+    .topic-link {
+
+      margin-top: auto;
+
+      padding-top: 18px;
+
+      font-weight: 900;
+
+      color: var(--purple);
+
+      font-size: 14px;
+
+    }
+
+    .content-block {
+
+      margin-top: 18px;
+
+      padding: 28px;
+
+      border-radius: 28px;
+
+      background: rgba(255, 255, 255, 0.94);
+
+      border: 1px solid rgba(229, 231, 235, 0.96);
+
+      box-shadow: var(--shadow);
+
+    }
+
+    .content-block h3 {
+
+      margin: 0 0 12px;
+
+      font-size: 26px;
+
+      letter-spacing: -0.04em;
+
+      color: #111827;
+
+    }
+
+    .content-block p {
+
+      margin: 0 0 12px;
+
+      color: #374151;
+
+    }
+
+    .subtopic-list {
+
+      display: grid;
+
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 12px;
+
+      margin-top: 18px;
+
+    }
+
+    .subtopic-item {
+
+      padding: 15px 16px;
+
+      border-radius: 18px;
+
+      background: #f8fafc;
+
+      border: 1px solid #eef2f7;
+
+      font-weight: 800;
+
+      color: #334155;
+
+    }
+
+    .formula-box {
+
+      margin: 16px 0;
+
+      padding: 18px;
+
+      border-radius: 20px;
+
+      background: #f8fafc;
+
+      border: 1px solid #e2e8f0;
+
+    }
+
+    .formula-title {
+
+      font-weight: 900;
+
+      color: #111827;
+
+      margin-bottom: 8px;
+
+    }
+
+    .formula {
+
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+
+      font-size: 18px;
+
+      font-weight: 900;
+
+      color: #312e81;
+
+      background: #ffffff;
+
+      border: 1px solid #e5e7eb;
+
+      border-radius: 14px;
+
+      padding: 12px;
+
+      overflow-x: auto;
+
+    }
+
+    .example-box {
+
+      margin: 16px 0;
+
+      padding: 18px;
+
+      border-radius: 20px;
+
+      background: var(--orange-soft);
+
+      border: 1px solid var(--orange-line);
+
+    }
+
+    .example-title {
+
+      font-weight: 900;
+
+      color: #9a3412;
+
+      margin-bottom: 8px;
+
+    }
+
+    .task-box {
+
+      margin: 18px 0;
+
+      padding: 20px;
+
+      border-radius: 22px;
+
+      background: #ffffff;
+
+      border: 1px solid var(--line);
+
+    }
+
+    .task-question {
+
+      margin: 0 0 14px;
+
+      font-weight: 900;
+
+      color: #111827;
+
+    }
+
+    .options {
+
+      display: grid;
+
+      gap: 10px;
+
+    }
+
+    .option {
+
+      display: block;
+
+      padding: 12px 14px;
+
+      border-radius: 16px;
+
+      border: 1px solid #e5e7eb;
+
+      background: #f9fafb;
+
+      cursor: pointer;
+
+      transition: 0.15s ease;
+
+    }
+
+    .option:hover {
+
+      background: #f3f4f6;
+
+    }
+
+    .option input {
+
+      margin-right: 8px;
+
+    }
+
+    .question-feedback {
+
+      display: none;
+
+      margin-top: 14px;
+
+      padding: 14px;
+
+      border-radius: 16px;
+
+      font-weight: 800;
+
+    }
+
+    .question-feedback.correct {
+
+      display: block;
+
+      background: var(--green-soft);
+
+      color: #166534;
+
+      border: 1px solid #86efac;
+
+    }
+
+    .question-feedback.wrong {
+
+      display: block;
+
+      background: var(--red-soft);
+
+      color: #991b1b;
+
+      border: 1px solid #fecaca;
+
+    }
+
+    .explanation {
+
+      display: none;
+
+      margin-top: 12px;
+
+      padding: 15px;
+
+      border-radius: 16px;
+
+      background: #f8fafc;
+
+      border: 1px solid #e2e8f0;
+
+      color: #334155;
+
+    }
+
+    .explanation.show {
+
+      display: block;
+
+    }
+
+    .check-area {
+
+      margin-top: 18px;
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      align-items: center;
+
+    }
+
+    .score {
+
+      font-weight: 900;
+
+      color: #111827;
+
+    }
+
+    @media (max-width: 900px) {
+
+      .topic-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      }
+
+      .subtopic-list {
+
+        grid-template-columns: 1fr;
+
+      }
+
+      .hero-card {
+
+        padding: 32px;
+
+      }
+
+    }
+
+    @media (max-width: 640px) {
+
+      .page {
+
+        width: min(100% - 22px, 1180px);
+
+      }
+
+      .topbar-inner {
+
+        border-radius: 24px;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+      }
+
+      .lang-switch {
+
+        width: 100%;
+
+      }
+
+      .lang-btn {
+
+        flex: 1;
+
+      }
+
+      .hero {
+
+        padding: 38px 0 24px;
+
+      }
+
+      .hero-card {
+
+        padding: 24px;
+
+        border-radius: 26px;
+
+      }
+
+      .topic-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+      .content-block {
+
+        padding: 20px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="page">
+
+    <header class="topbar">
+
+      <div class="topbar-inner">
+
+        <div class="brand">
+
+          <div class="brand-mark">M</div>
+
+          <div>
+
+            <div class="lang lang-kz active">Магистратура</div>
+
+            <div class="lang lang-ru">Магистратура</div>
+
+          </div>
+
+        </div>
+
+        <div class="lang-switch">
+
+          <button class="lang-btn active" data-lang="kz">KZ</button>
+
+          <button class="lang-btn" data-lang="ru">RU</button>
+
+        </div>
+
+      </div>
+
+    </header>
+
+    <main>
+
+      <section class="hero">
+
+        <div class="hero-card">
+
+          <div class="lang lang-kz active">
+
+            <div class="hero-kicker">Магистратураға дайындық</div>
+
+            <h1>Магистратураға дайындық</h1>
+
+            <div class="hero-subtitle">Мат. сауаттылық / Сыни ойлау</div>
+
+            <div class="hero-actions">
+
+              <a href="#topics" class="btn btn-primary">Тақырыптар</a>
+
+              <a href="#section-1" class="btn btn-light">Бірінші бөлім</a>
+
+            </div>
+
+          </div>
+
+          <div class="lang lang-ru">
+
+            <div class="hero-kicker">Подготовка к магистратуре</div>
+
+            <h1>Подготовка к магистратуре</h1>
+
+            <div class="hero-subtitle">Мат. грамотность / Крит. мышление</div>
+
+            <div class="hero-actions">
+
+              <a href="#topics" class="btn btn-primary">Темы</a>
+
+              <a href="#section-1" class="btn btn-light">Первый раздел</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="section" id="topics">
+
+        <div class="section-head">
+
+          <div class="lang lang-kz active">
+
+            <h2 class="section-title">Тақырыптар</h2>
+
+          </div>
+
+          <div class="lang lang-ru">
+
+            <h2 class="section-title">Темы</h2>
+
+          </div>
+
+        </div>
+
+        <div class="topic-grid">
+
+          <a href="#section-1" class="topic-card">
+
+            <div class="topic-num">1</div>
+
+            <div class="lang lang-kz active">
+
+              <h3 class="topic-title">Сандар және арифметика</h3>
+
+              <p class="topic-desc">Сандар, бөлшектер, салыстыру, дөңгелектеу.</p>
+
+              <div class="topic-link">Ашу →</div>
+
+            </div>
+
+            <div class="lang lang-ru">
+
+              <h3 class="topic-title">Числа и арифметика</h3>
+
+              <p class="topic-desc">Числа, дроби, сравнение, округление.</p>
+
+              <div class="topic-link">Открыть →</div>
+
+            </div>
+
+          </a>
+
+          <a href="#section-2" class="topic-card">
+
+            <div class="topic-num">2</div>
+
+            <div class="lang lang-kz active">
+
+              <h3 class="topic-title">Проценттер</h3>
+
+              <p class="topic-desc">Процент табу, арттыру, азайту, кері процент.</p>
+
+              <div class="topic-link">Ашу →</div>
+
+            </div>
+
+            <div class="lang lang-ru">
+
+              <h3 class="topic-title">Проценты</h3>
+
+              <p class="topic-desc">Нахождение процента, увеличение, уменьшение.</p>
+
+              <div class="topic-link">Открыть →</div>
+
+            </div>
+
+          </a>
+
+          <a href="#section-3" class="topic-card">
+
+            <div class="topic-num">3</div>
+
+            <div class="lang lang-kz active">
+
+              <h3 class="topic-title">Қатынас және пропорция</h3>
+
+              <p class="topic-desc">Қатынас, пропорция, белгісіз мүшені табу.</p>
+
+              <div class="topic-link">Ашу →</div>
+
+            </div>
+
+            <div class="lang lang-ru">
+
+              <h3 class="topic-title">Отношение и пропорция</h3>
+
+              <p class="topic-desc">Отношение, пропорция, неизвестный член.</p>
+
+              <div class="topic-link">Открыть →</div>
+
+            </div>
+
+          </a>
+
+          <a href="#section-4" class="topic-card">
+
+            <div class="topic-num">4</div>
+
+            <div class="lang lang-kz active">
+
+              <h3 class="topic-title">Орташа шамалар</h3>
+
+              <p class="topic-desc">Арифметикалық және салмақталған орта.</p>
+
+              <div class="topic-link">Ашу →</div>
+
+            </div>
+
+            <div class="lang lang-ru">
+
+              <h3 class="topic-title">Средние величины</h3>
+
+              <p class="topic-desc">Арифметическое и взвешенное среднее.</p>
+
+              <div class="topic-link">Открыть →</div>
+
+            </div>
+
+          </a>
+
+          <a href="#section-5" class="topic-card">
+
+            <div class="topic-num">5</div>
+
+            <div class="lang lang-kz active">
+
+              <h3 class="topic-title">Алгебра негіздері</h3>
+
+              <p class="topic-desc">Өрнек, теңдеу, теңсіздік, формула.</p>
+
+              <div class="topic-link">Ашу →</div>
+
+            </div>
+
+            <div class="lang lang-ru">
+
+              <h3 class="topic-title">Основы алгебры</h3>
+
+              <p class="topic-desc">Выражение, уравнение, неравенство, формула.</p>
+
+              <div class="topic-link">Открыть →</div>
+
+            </div>
+
+          </a>
+
+          <a href="#section-6" class="topic-card">
+
+            <div class="topic-num">6</div>
+
+            <div class="lang lang-kz active">
+
+              <h3 class="topic-title">Логикалық есептер</h3>
+
+              <p class="topic-desc">Заңдылық, салыстыру, қорытынды.</p>
+
+              <div class="topic-link">Ашу →</div>
+
+            </div>
+
+            <div class="lang lang-ru">
+
+              <h3 class="topic-title">Логические задачи</h3>
+
+              <p class="topic-desc">Закономерность, сравнение, вывод.</p>
+
+              <div class="topic-link">Открыть →</div>
+
+            </div>
+
+          </a>
+
+          <a href="#section-7" class="topic-card">
+
+            <div class="topic-num">7</div>
+
+            <div class="lang lang-kz active">
+
+              <h3 class="topic-title">Сан теориясы</h3>
+
+              <p class="topic-desc">Жай сандар, ЕҮОБ, ЕКОЕ, бөлгіштер.</p>
+
+              <div class="topic-link">Ашу →</div>
+
+            </div>
+
+            <div class="lang lang-ru">
+
+              <h3 class="topic-title">Теория чисел</h3>
+
+              <p class="topic-desc">Простые числа, НОД, НОК, делители.</p>
+
+              <div class="topic-link">Открыть →</div>
+
+            </div>
+
+          </a>
+
+          <a href="#section-8" class="topic-card">
+
+            <div class="topic-num">8</div>
+
+            <div class="lang lang-kz active">
+
+              <h3 class="topic-title">Геометрия</h3>
+
+              <p class="topic-desc">Периметр, аудан, фигуралар, сызба.</p>
+
+              <div class="topic-link">Ашу →</div>
+
+            </div>
+
+            <div class="lang lang-ru">
+
+              <h3 class="topic-title">Геометрия</h3>
+
+              <p class="topic-desc">Периметр, площадь, фигуры, схема.</p>
+
+              <div class="topic-link">Открыть →</div>
+
+            </div>
+
+          </a>
+
+          <a href="#section-9" class="topic-card">
+
+            <div class="topic-num">9</div>
+
+            <div class="lang lang-kz active">
+
+              <h3 class="topic-title">Графиктер мен кестелер</h3>
+
+              <p class="topic-desc">Кесте, диаграмма, график, тренд.</p>
+
+              <div class="topic-link">Ашу →</div>
+
+            </div>
+
+            <div class="lang lang-ru">
+
+              <h3 class="topic-title">Графики и таблицы</h3>
+
+              <p class="topic-desc">Таблица, диаграмма, график, тренд.</p>
+
+              <div class="topic-link">Открыть →</div>
+
+            </div>
+
+          </a>
+
+          <a href="#section-10" class="topic-card">
+
+            <div class="topic-num">10</div>
+
+            <div class="lang lang-kz active">
+
+              <h3 class="topic-title">Интервалдар және теңсіздіктер</h3>
+
+              <p class="topic-desc">Сан түзуі, интервал, шешім аралығы.</p>
+
+              <div class="topic-link">Ашу →</div>
+
+            </div>
+
+            <div class="lang lang-ru">
+
+              <h3 class="topic-title">Интервалы и неравенства</h3>
+
+              <p class="topic-desc">Числовая прямая, интервал, область решений.</p>
+
+              <div class="topic-link">Открыть →</div>
+
+            </div>
+
+          </a>
+
+          <a href="#section-11" class="topic-card">
+
+            <div class="topic-num">11</div>
+
+            <div class="lang lang-kz active">
+
+              <h3 class="topic-title">Модуль</h3>
+
+              <p class="topic-desc">Абсолют мән, модульді өрнек, теңдеу.</p>
+
+              <div class="topic-link">Ашу →</div>
+
+            </div>
+
+            <div class="lang lang-ru">
+
+              <h3 class="topic-title">Модуль</h3>
+
+              <p class="topic-desc">Абсолютная величина, выражение, уравнение.</p>
+
+              <div class="topic-link">Открыть →</div>
+
+            </div>
+
+          </a>
+
+          <a href="#section-12" class="topic-card">
+
+            <div class="topic-num">12</div>
+
+            <div class="lang lang-kz active">
+
+              <h3 class="topic-title">Комбинаторика</h3>
+
+              <p class="topic-desc">Таңдау саны, барлық мүмкін нұсқа.</p>
+
+              <div class="topic-link">Ашу →</div>
+
+            </div>
+
+            <div class="lang lang-ru">
+
+              <h3 class="topic-title">Комбинаторика</h3>
+
+              <p class="topic-desc">Количество способов, все возможные варианты.</p>
+
+              <div class="topic-link">Открыть →</div>
+
+            </div>
+
+          </a>
+
+          <a href="#section-13" class="topic-card">
+
+            <div class="topic-num">13</div>
+
+            <div class="lang lang-kz active">
+
+              <h3 class="topic-title">Практикалық есептер</h3>
+
+              <p class="topic-desc">Баға, жеңілдік, уақыт, жылдамдық, жұмыс.</p>
+
+              <div class="topic-link">Ашу →</div>
+
+            </div>
+
+            <div class="lang lang-ru">
+
+              <h3 class="topic-title">Практические задачи</h3>
+
+              <p class="topic-desc">Цена, скидка, время, скорость, работа.</p>
+
+              <div class="topic-link">Открыть →</div>
+
+            </div>
+
+          </a>
+
+          <a href="#section-14" class="topic-card">
+
+            <div class="topic-num">14</div>
+
+            <div class="lang lang-kz active">
+
+              <h3 class="topic-title">Ақпаратты талдау</h3>
+
+              <p class="topic-desc">Артық ақпарат, қорытынды, тұжырым.</p>
+
+              <div class="topic-link">Ашу →</div>
+
+            </div>
+
+            <div class="lang lang-ru">
+
+              <h3 class="topic-title">Анализ информации</h3>
+
+              <p class="topic-desc">Лишняя информация, вывод, утверждение.</p>
+
+              <div class="topic-link">Открыть →</div>
+
+            </div>
+
+          </a>
+
+          <a href="#section-final" class="topic-card">
+
+            <div class="topic-num">15</div>
+
+            <div class="lang lang-kz active">
+
+              <h3 class="topic-title">Қорытынды тест</h3>
+
+              <p class="topic-desc">Барлық тақырып бойынша аралас тапсырмалар.</p>
+
+              <div class="topic-link">Ашу →</div>
+
+            </div>
+
+            <div class="lang lang-ru">
+
+              <h3 class="topic-title">Итоговый тест</h3>
+
+              <p class="topic-desc">Смешанные задания по всем темам.</p>
+
+              <div class="topic-link">Открыть →</div>
+
+            </div>
+
+          </a>
+
+        </div>
+
+      </section>
+
+'''
+
+path = Path("/mnt/data/code_1_index_start.txt")
+
+path.write_text(code1, encoding="utf-8")
+
+path.as_posix()
+    ass="lang lang-kz active">
+              <h3 class="topic-title">Қорытынды тест</h3>
+              <p class="topic-desc">Барлық тақырып бойынша аралас тапсырмалар.</p>
+              <div class="topic-link">Ашу →</div>
+            </div>
+            <div class="lang lang-ru">
+              <h3 class="topic-title">Итоговый тест</h3>
+              <p class="topic-desc">Смешанные задания по всем темам.</p>
+              <div class="topic-link">Открыть →</div>
+            </div>
+          </a>
+
+        </div>
+      </section>
+            <section class="section" id="section-1">
+        <div class="content-block">
+          <div class="lang lang-kz active">
+            <h3>1-бөлім. Сандар және арифметика</h3>
+            <p>Бұл бөлімде натурал сандар, бүтін сандар, рационал сандар, жай бөлшектер, ондық бөлшектер, сандарды салыстыру, дөңгелектеу және сандық бағалау қарастырылады.</p>
+
+            <div class="subtopic-list">
+              <div class="subtopic-item">1.1 Натурал сандар</div>
+              <div class="subtopic-item">1.2 Бүтін сандар</div>
+              <div class="subtopic-item">1.3 Рационал сандар</div>
+              <div class="subtopic-item">1.4 Жай бөлшектер</div>
+              <div class="subtopic-item">1.5 Ондық бөлшектер</div>
+              <div class="subtopic-item">1.6 Сандарды салыстыру</div>
+              <div class="subtopic-item">1.7 Дөңгелектеу</div>
+              <div class="subtopic-item">1.8 Сандық бағалау</div>
+            </div>
+          </div>
+
+          <div class="lang lang-ru">
+            <h3>Раздел 1. Числа и арифметика</h3>
+            <p>В этом разделе рассматриваются натуральные числа, целые числа, рациональные числа, обыкновенные дроби, десятичные дроби, сравнение чисел, округление и числовая оценка.</p>
+
+            <div class="subtopic-list">
+              <div class="subtopic-item">1.1 Натуральные числа</div>
+              <div class="subtopic-item">1.2 Целые числа</div>
+              <div class="subtopic-item">1.3 Рациональные числа</div>
+              <div class="subtopic-item">1.4 Обыкновенные дроби</div>
+              <div class="subtopic-item">1.5 Десятичные дроби</div>
+              <div class="subtopic-item">1.6 Сравнение чисел</div>
+              <div class="subtopic-item">1.7 Округление</div>
+              <div class="subtopic-item">1.8 Числовая оценка</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-block" id="natural-numbers">
+          <div class="lang lang-kz active">
+            <h3>1.1 Натурал сандар</h3>
+
+            <p>Натурал сандар санау үшін қолданылады. Заттарды санағанда 1, 2, 3, 4, 5 сияқты сандар пайдаланылады. Бұл сандар натурал сандар деп аталады.</p>
+
+            <p>Натурал сандар жиыны шексіз жалғасады: 1, 2, 3, 4, 5, 6, ... . Әрбір келесі натурал сан алдыңғы саннан 1-ге артық болады.</p>
+
+            <div class="formula-box">
+              <div class="formula-title">Натурал сандар қатары</div>
+              <div class="formula">1, 2, 3, 4, 5, 6, ...</div>
+            </div>
+
+            <p>Санның разрядтық құрамы оның қандай жүздіктерден, ондықтардан және бірліктерден құралғанын көрсетеді.</p>
+
+            <div class="formula-box">
+              <div class="formula-title">Разрядтық жіктеу</div>
+              <div class="formula">347 = 300 + 40 + 7</div>
+            </div>
+
+            <p>Мұнда 347 саны 3 жүздіктен, 4 ондықтан және 7 бірліктен тұрады. 300 — жүздік разряд, 40 — ондық разряд, 7 — бірлік разряд.</p>
+
+            <div class="example-box">
+              <div class="example-title">Мысал 1</div>
+              <p><b>586 санын разрядтық қосылғыштарға жіктеңіз.</b></p>
+              <p>586 санында 5 жүздік бар, сондықтан жүздік бөлігі — 500.</p>
+              <p>586 санында 8 ондық бар, сондықтан ондық бөлігі — 80.</p>
+              <p>586 санында 6 бірлік бар, сондықтан бірлік бөлігі — 6.</p>
+              <p><b>Жауап:</b> 586 = 500 + 80 + 6.</p>
+            </div>
+
+            <div class="example-box">
+              <div class="example-title">Мысал 2</div>
+              <p><b>42, 17, 95, 8 сандарын өсу ретімен жазыңыз.</b></p>
+              <p>Өсу реті ең кіші саннан басталады.</p>
+              <p>Берілген сандардың ішіндегі ең кішісі — 8.</p>
+              <p>Одан кейін 17, содан кейін 42, ең үлкені 95.</p>
+              <p><b>Жауап:</b> 8, 17, 42, 95.</p>
+            </div>
+
+            <div class="example-box">
+              <div class="example-title">Мысал 3</div>
+              <p><b>A = 6 × 8, B = 50. A мен B шамаларын салыстырыңыз.</b></p>
+              <p>Алдымен A мәнін табамыз: 6 × 8 = 48.</p>
+              <p>Енді 48 және 50 сандарын салыстырамыз.</p>
+              <p>48 саны 50-ден кіші.</p>
+              <p><b>Жауап:</b> A &lt; B.</p>
+            </div>
+
+            <div class="example-box">
+              <div class="example-title">Мысал 4</div>
+              <p><b>729 санындағы ондық разрядтағы цифрды анықтаңыз.</b></p>
+              <p>729 санын разрядтарға бөлеміз: 700 + 20 + 9.</p>
+              <p>700 — жүздік, 20 — ондық, 9 — бірлік.</p>
+              <p>20 саны 2 ондықтан тұрады.</p>
+              <p><b>Жауап:</b> ондық разрядтағы цифр — 2.</p>
+            </div>
+          </div>
+
+          <div class="lang lang-ru">
+            <h3>1.1 Натуральные числа</h3>
+
+            <p>Натуральные числа используются для счёта. Когда считают предметы, используют числа 1, 2, 3, 4, 5. Такие числа называются натуральными.</p>
+
+            <p>Ряд натуральных чисел продолжается бесконечно: 1, 2, 3, 4, 5, 6, ... . Каждое следующее натуральное число на 1 больше предыдущего.</p>
+
+            <div class="formula-box">
+              <div class="formula-title">Ряд натуральных чисел</div>
+              <div class="formula">1, 2, 3, 4, 5, 6, ...</div>
+            </div>
+
+            <p>Разрядный состав числа показывает, из каких сотен, десятков и единиц состоит число.</p>
+
+            <div class="formula-box">
+              <div class="formula-title">Разложение по разрядам</div>
+              <div class="formula">347 = 300 + 40 + 7</div>
+            </div>
+
+            <p>В числе 347 есть 3 сотни, 4 десятка и 7 единиц. 300 — разряд сотен, 40 — разряд десятков, 7 — разряд единиц.</p>
+
+            <div class="example-box">
+              <div class="example-title">Пример 1</div>
+              <p><b>Разложите число 586 на разрядные слагаемые.</b></p>
+              <p>В числе 586 есть 5 сотен, значит часть сотен — 500.</p>
+              <p>В числе 586 есть 8 десятков, значит часть десятков — 80.</p>
+              <p>В числе 586 есть 6 единиц, значит часть единиц — 6.</p>
+              <p><b>Ответ:</b> 586 = 500 + 80 + 6.</p>
+            </div>
+
+            <div class="example-box">
+              <div class="example-title">Пример 2</div>
+              <p><b>Запишите числа 42, 17, 95, 8 в порядке возрастания.</b></p>
+              <p>Порядок возрастания начинается с самого маленького числа.</p>
+              <p>Самое маленькое число из данных — 8.</p>
+              <p>После него идёт 17, затем 42, самое большое — 95.</p>
+              <p><b>Ответ:</b> 8, 17, 42, 95.</p>
+            </div>
+
+            <div class="example-box">
+              <div class="example-title">Пример 3</div>
+              <p><b>A = 6 × 8, B = 50. Сравните A и B.</b></p>
+              <p>Сначала находим значение A: 6 × 8 = 48.</p>
+              <p>Теперь сравниваем 48 и 50.</p>
+              <p>Число 48 меньше числа 50.</p>
+              <p><b>Ответ:</b> A &lt; B.</p>
+            </div>
+
+            <div class="example-box">
+              <div class="example-title">Пример 4</div>
+              <p><b>Определите цифру в разряде десятков в числе 729.</b></p>
+              <p>Разложим число 729 по разрядам: 700 + 20 + 9.</p>
+              <p>700 — сотни, 20 — десятки, 9 — единицы.</p>
+              <p>Число 20 состоит из 2 десятков.</p>
+              <p><b>Ответ:</b> цифра в разряде десятков — 2.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-block" id="natural-test">
+          <div class="lang lang-kz active">
+            <h3>Натурал сандар бойынша тест</h3>
+
+            <div class="task-box" data-question="n1" data-answer="b">
+              <p class="task-question">1. 908 санын разрядтық қосылғыштарға жіктеңіз.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="n1" value="a"> 90 + 8</label>
+                <label class="option"><input type="radio" name="n1" value="b"> 900 + 8</label>
+                <label class="option"><input type="radio" name="n1" value="c"> 900 + 80</label>
+                <label class="option"><input type="radio" name="n1" value="d"> 90 + 80 + 8</label>
+                <label class="option"><input type="radio" name="n1" value="e"> 800 + 90</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                908 санында 9 жүздік бар, сондықтан жүздік бөлігі — 900. Ондық разрядтағы цифр 0, сондықтан 10 немесе 90 қосылмайды. Бірлік разрядтағы цифр 8, сондықтан бірлік бөлігі — 8. Демек, 908 = 900 + 8.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="n2" data-answer="d">
+              <p class="task-question">2. 16, 61, 6, 106 сандарын өсу ретімен орналастырыңыз.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="n2" value="a"> 106, 61, 16, 6</label>
+                <label class="option"><input type="radio" name="n2" value="b"> 6, 61, 16, 106</label>
+                <label class="option"><input type="radio" name="n2" value="c"> 16, 6, 61, 106</label>
+                <label class="option"><input type="radio" name="n2" value="d"> 6, 16, 61, 106</label>
+                <label class="option"><input type="radio" name="n2" value="e"> 16, 61, 6, 106</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Өсу реті ең кіші саннан басталады. Берілген сандар: 16, 61, 6, 106. Ең кішісі — 6. Одан кейін 16, содан кейін 61, ең үлкені 106. Сондықтан дұрыс рет: 6, 16, 61, 106.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="n3" data-answer="c">
+              <p class="task-question">3. A = 7 × 9, B = 64. Дұрыс салыстыруды таңдаңыз.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="n3" value="a"> A &gt; B</label>
+                <label class="option"><input type="radio" name="n3" value="b"> A = B</label>
+                <label class="option"><input type="radio" name="n3" value="c"> A &lt; B</label>
+                <label class="option"><input type="radio" name="n3" value="d"> 2A = B</label>
+                <label class="option"><input type="radio" name="n3" value="e"> Мәлімет жеткіліксіз</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Алдымен A мәнін табамыз: 7 × 9 = 63. B мәні 64-ке тең. Енді 63 пен 64-ті салыстырамыз. 63 саны 64-тен кіші. Сондықтан A &lt; B.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="n4" data-answer="a">
+              <p class="task-question">4. 438 санындағы жүздік разрядтағы цифрды табыңыз.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="n4" value="a"> 4</label>
+                <label class="option"><input type="radio" name="n4" value="b"> 3</label>
+                <label class="option"><input type="radio" name="n4" value="c"> 8</label>
+                <label class="option"><input type="radio" name="n4" value="d"> 43</label>
+                <label class="option"><input type="radio" name="n4" value="e"> 38</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                438 санын разрядтарға бөлеміз: 400 + 30 + 8. 400 — жүздік бөлік. Бұл бөліктегі цифр 4. Сондықтан жүздік разрядтағы цифр — 4.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="n5" data-answer="e">
+              <p class="task-question">5. Қай сан натурал санға жатады?</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="n5" value="a"> -7</label>
+                <label class="option"><input type="radio" name="n5" value="b"> -1</label>
+                <label class="option"><input type="radio" name="n5" value="c"> 0,5</label>
+                <label class="option"><input type="radio" name="n5" value="d"> 2/3</label>
+                <label class="option"><input type="radio" name="n5" value="e"> 12</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Натурал сандар санау үшін қолданылады: 1, 2, 3, 4, ... . Теріс сандар натурал сан емес. Бөлшек және ондық бөлшек те натурал сан емес. 12 саны санауда қолданылатын бүтін оң сан, сондықтан ол натурал сан.
+              </div>
+            </div>
+
+            <div class="check-area">
+              <button class="btn btn-primary" onclick="checkQuiz(['n1','n2','n3','n4','n5'], 'score-natural-kz', 'kz')">Нәтижені көрсету</button>
+              <div class="score" id="score-natural-kz"></div>
+            </div>
+          </div>
+
+          <div class="lang lang-ru">
+            <h3>Тест по натуральным числам</h3>
+
+            <div class="task-box" data-question="rn1" data-answer="b">
+              <p class="task-question">1. Разложите число 908 на разрядные слагаемые.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="rn1" value="a"> 90 + 8</label>
+                <label class="option"><input type="radio" name="rn1" value="b"> 900 + 8</label>
+                <label class="option"><input type="radio" name="rn1" value="c"> 900 + 80</label>
+                <label class="option"><input type="radio" name="rn1" value="d"> 90 + 80 + 8</label>
+                <label class="option"><input type="radio" name="rn1" value="e"> 800 + 90</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                В числе 908 есть 9 сотен, поэтому часть сотен — 900. В разряде десятков стоит 0, поэтому 10 или 90 не добавляются. В разряде единиц стоит 8, поэтому часть единиц — 8. Значит, 908 = 900 + 8.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="rn2" data-answer="d">
+              <p class="task-question">2. Расположите числа 16, 61, 6, 106 в порядке возрастания.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="rn2" value="a"> 106, 61, 16, 6</label>
+                <label class="option"><input type="radio" name="rn2" value="b"> 6, 61, 16, 106</label>
+                <label class="option"><input type="radio" name="rn2" value="c"> 16, 6, 61, 106</label>
+                <label class="option"><input type="radio" name="rn2" value="d"> 6, 16, 61, 106</label>
+                <label class="option"><input type="radio" name="rn2" value="e"> 16, 61, 6, 106</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Порядок возрастания начинается с самого маленького числа. Даны числа 16, 61, 6, 106. Самое маленькое — 6. Затем идёт 16, потом 61, самое большое — 106. Правильный порядок: 6, 16, 61, 106.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="rn3" data-answer="c">
+              <p class="task-question">3. A = 7 × 9, B = 64. Выберите верное сравнение.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="rn3" value="a"> A &gt; B</label>
+                <label class="option"><input type="radio" name="rn3" value="b"> A = B</label>
+                <label class="option"><input type="radio" name="rn3" value="c"> A &lt; B</label>
+                <label class="option"><input type="radio" name="rn3" value="d"> 2A = B</label>
+                <label class="option"><input type="radio" name="rn3" value="e"> Недостаточно данных</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Сначала найдём значение A: 7 × 9 = 63. Значение B равно 64. Сравниваем 63 и 64. Число 63 меньше числа 64. Значит, A &lt; B.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="rn4" data-answer="a">
+              <p class="task-question">4. Найдите цифру в разряде сотен в числе 438.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="rn4" value="a"> 4</label>
+                <label class="option"><input type="radio" name="rn4" value="b"> 3</label>
+                <label class="option"><input type="radio" name="rn4" value="c"> 8</label>
+                <label class="option"><input type="radio" name="rn4" value="d"> 43</label>
+                <label class="option"><input type="radio" name="rn4" value="e"> 38</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Разложим число 438 по разрядам: 400 + 30 + 8. Число 400 относится к сотням. Цифра в разряде сотен — 4.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="rn5" data-answer="e">
+              <p class="task-question">5. Какое число является натуральным?</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="rn5" value="a"> -7</label>
+                <label class="option"><input type="radio" name="rn5" value="b"> -1</label>
+                <label class="option"><input type="radio" name="rn5" value="c"> 0,5</label>
+                <label class="option"><input type="radio" name="rn5" value="d"> 2/3</label>
+                <label class="option"><input type="radio" name="rn5" value="e"> 12</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Натуральные числа используются для счёта: 1, 2, 3, 4, ... . Отрицательные числа не являются натуральными. Дроби и десятичные дроби тоже не являются натуральными. Число 12 — положительное целое число, которое можно использовать при счёте, поэтому оно натуральное.
+              </div>
+            </div>
+
+            <div class="check-area">
+              <button class="btn btn-primary" onclick="checkQuiz(['rn1','rn2','rn3','rn4','rn5'], 'score-natural-ru', 'ru')">Показать результат</button>
+              <div class="score" id="score-natural-ru"></div>
+            </div>
+          </div>
+        </div>
+                <div class="content-block" id="integer-numbers">
+          <div class="lang lang-kz active">
+            <h3>1.2 Бүтін сандар</h3>
+
+            <p>Бүтін сандарға оң сандар, теріс сандар және нөл жатады. Оң сандар нөлден үлкен болады, ал теріс сандар нөлден кіші болады.</p>
+
+            <p>Бүтін сандар сан түзуінде орналасады. Сан түзуінде оңға қарай жүрген сайын сандар үлкейеді, солға қарай жүрген сайын сандар кішірейеді.</p>
+
+            <div class="formula-box">
+              <div class="formula-title">Бүтін сандар қатары</div>
+              <div class="formula">..., -4, -3, -2, -1, 0, 1, 2, 3, 4, ...</div>
+            </div>
+
+            <p>Қарама-қарсы сандардың таңбалары әртүрлі, бірақ нөлден қашықтығы бірдей болады. Мысалы, 5 және -5 — қарама-қарсы сандар.</p>
+
+            <div class="formula-box">
+              <div class="formula-title">Қарама-қарсы сандар</div>
+              <div class="formula">a және -a</div>
+            </div>
+
+            <p>Мысалы, 7 санының қарама-қарсы саны -7, ал -12 санының қарама-қарсы саны 12 болады.</p>
+
+            <div class="example-box">
+              <div class="example-title">Мысал 1</div>
+              <p><b>-3 және 2 сандарын салыстырыңыз.</b></p>
+              <p>-3 саны теріс сан, ал 2 саны оң сан.</p>
+              <p>Кез келген теріс сан кез келген оң саннан кіші болады.</p>
+              <p>Сондықтан -3 саны 2 санынан кіші.</p>
+              <p><b>Жауап:</b> -3 &lt; 2.</p>
+            </div>
+
+            <div class="example-box">
+              <div class="example-title">Мысал 2</div>
+              <p><b>-8, -2, 0, 5 сандарын өсу ретімен жазыңыз.</b></p>
+              <p>Өсу реті ең кіші саннан басталады.</p>
+              <p>Теріс сандардың ішінде нөлден алысырақ орналасқан сан кішірек болады.</p>
+              <p>-8 саны -2 санынан кіші, себебі -8 сан түзуінде сол жақта орналасады.</p>
+              <p>Одан кейін 0, содан кейін оң сан 5 келеді.</p>
+              <p><b>Жауап:</b> -8, -2, 0, 5.</p>
+            </div>
+
+            <div class="example-box">
+              <div class="example-title">Мысал 3</div>
+              <p><b>-15 санының қарама-қарсы санын табыңыз.</b></p>
+              <p>Қарама-қарсы санды табу үшін санның таңбасын өзгертеміз.</p>
+              <p>-15 саны теріс таңбамен берілген.</p>
+              <p>Оның таңбасын оң таңбаға өзгертеміз.</p>
+              <p><b>Жауап:</b> 15.</p>
+            </div>
+
+            <div class="example-box">
+              <div class="example-title">Мысал 4</div>
+              <p><b>A = -4 + 9, B = 3. A мен B шамаларын салыстырыңыз.</b></p>
+              <p>Алдымен A мәнін табамыз.</p>
+              <p>-4 + 9 дегеніміз: 9 санынан 4-ті азайтамыз, себебі таңбалары әртүрлі.</p>
+              <p>9 - 4 = 5, үлкен санның таңбасы оң болғандықтан нәтиже 5 болады.</p>
+              <p>Енді A = 5, B = 3.</p>
+              <p>5 саны 3-тен үлкен.</p>
+              <p><b>Жауап:</b> A &gt; B.</p>
+            </div>
+          </div>
+
+          <div class="lang lang-ru">
+            <h3>1.2 Целые числа</h3>
+
+            <p>К целым числам относятся положительные числа, отрицательные числа и ноль. Положительные числа больше нуля, а отрицательные числа меньше нуля.</p>
+
+            <p>Целые числа располагаются на числовой прямой. Чем правее число находится на числовой прямой, тем оно больше. Чем левее число находится, тем оно меньше.</p>
+
+            <div class="formula-box">
+              <div class="formula-title">Ряд целых чисел</div>
+              <div class="formula">..., -4, -3, -2, -1, 0, 1, 2, 3, 4, ...</div>
+            </div>
+
+            <p>Противоположные числа имеют разные знаки, но находятся на одинаковом расстоянии от нуля. Например, 5 и -5 — противоположные числа.</p>
+
+            <div class="formula-box">
+              <div class="formula-title">Противоположные числа</div>
+              <div class="formula">a и -a</div>
+            </div>
+
+            <p>Например, противоположное число для 7 — это -7, а противоположное число для -12 — это 12.</p>
+
+            <div class="example-box">
+              <div class="example-title">Пример 1</div>
+              <p><b>Сравните числа -3 и 2.</b></p>
+              <p>-3 — отрицательное число, а 2 — положительное число.</p>
+              <p>Любое отрицательное число меньше любого положительного числа.</p>
+              <p>Значит, -3 меньше 2.</p>
+              <p><b>Ответ:</b> -3 &lt; 2.</p>
+            </div>
+
+            <div class="example-box">
+              <div class="example-title">Пример 2</div>
+              <p><b>Запишите числа -8, -2, 0, 5 в порядке возрастания.</b></p>
+              <p>Порядок возрастания начинается с самого маленького числа.</p>
+              <p>Среди отрицательных чисел меньше то число, которое дальше от нуля влево.</p>
+              <p>-8 меньше -2, потому что -8 находится левее на числовой прямой.</p>
+              <p>После них идёт 0, затем положительное число 5.</p>
+              <p><b>Ответ:</b> -8, -2, 0, 5.</p>
+            </div>
+
+            <div class="example-box">
+              <div class="example-title">Пример 3</div>
+              <p><b>Найдите противоположное число для -15.</b></p>
+              <p>Чтобы найти противоположное число, нужно изменить знак числа.</p>
+              <p>Число -15 дано с отрицательным знаком.</p>
+              <p>Меняем знак на положительный.</p>
+              <p><b>Ответ:</b> 15.</p>
+            </div>
+
+            <div class="example-box">
+              <div class="example-title">Пример 4</div>
+              <p><b>A = -4 + 9, B = 3. Сравните A и B.</b></p>
+              <p>Сначала найдём значение A.</p>
+              <p>-4 + 9: знаки разные, поэтому из большего по модулю числа 9 вычитаем 4.</p>
+              <p>9 - 4 = 5. У большего числа знак положительный, поэтому результат равен 5.</p>
+              <p>Теперь A = 5, B = 3.</p>
+              <p>5 больше 3.</p>
+              <p><b>Ответ:</b> A &gt; B.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-block" id="integer-test">
+          <div class="lang lang-kz active">
+            <h3>Бүтін сандар бойынша тест</h3>
+
+            <div class="task-box" data-question="i1" data-answer="c">
+              <p class="task-question">1. Қай қатарда бүтін сандар ғана берілген?</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="i1" value="a"> -3, 0, 2, 1/2</label>
+                <label class="option"><input type="radio" name="i1" value="b"> 4, -7, 0, 0,8</label>
+                <label class="option"><input type="radio" name="i1" value="c"> -9, -1, 0, 6</label>
+                <label class="option"><input type="radio" name="i1" value="d"> 2/3, 5, -4, 0</label>
+                <label class="option"><input type="radio" name="i1" value="e"> 1, 3, 4, 7,5</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Бүтін сандарға бөлшексіз сандар жатады: теріс бүтін сандар, нөл және оң бүтін сандар. 1/2, 0,8, 2/3, 7,5 сияқты сандар бүтін емес. -9, -1, 0, 6 сандарының бәрі бөлшексіз жазылған, сондықтан бұл қатарда бүтін сандар ғана берілген.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="i2" data-answer="b">
+              <p class="task-question">2. -6 және -2 сандарын салыстырыңыз.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="i2" value="a"> -6 &gt; -2</label>
+                <label class="option"><input type="radio" name="i2" value="b"> -6 &lt; -2</label>
+                <label class="option"><input type="radio" name="i2" value="c"> -6 = -2</label>
+                <label class="option"><input type="radio" name="i2" value="d"> 2 · (-6) = -2</label>
+                <label class="option"><input type="radio" name="i2" value="e"> Мәлімет жеткіліксіз</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Екі сан да теріс. Теріс сандарды салыстырғанда нөлден алысырақ жатқан сан кіші болады. -6 саны сан түзуінде -2 санынан сол жақта орналасады. Сол жақтағы сан кіші болғандықтан, -6 &lt; -2.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="i3" data-answer="d">
+              <p class="task-question">3. -11 санының қарама-қарсы санын табыңыз.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="i3" value="a"> -11</label>
+                <label class="option"><input type="radio" name="i3" value="b"> 0</label>
+                <label class="option"><input type="radio" name="i3" value="c"> -1</label>
+                <label class="option"><input type="radio" name="i3" value="d"> 11</label>
+                <label class="option"><input type="radio" name="i3" value="e"> 22</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Қарама-қарсы санды табу үшін санның таңбасын өзгертеміз. -11 саны теріс таңбамен берілген. Оның таңбасын оңға ауыстырсақ, 11 шығады. Сондықтан -11 санының қарама-қарсы саны — 11.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="i4" data-answer="a">
+              <p class="task-question">4. -4, 3, -1, 0 сандарын өсу ретімен орналастырыңыз.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="i4" value="a"> -4, -1, 0, 3</label>
+                <label class="option"><input type="radio" name="i4" value="b"> 3, 0, -1, -4</label>
+                <label class="option"><input type="radio" name="i4" value="c"> -1, -4, 0, 3</label>
+                <label class="option"><input type="radio" name="i4" value="d"> 0, -1, -4, 3</label>
+                <label class="option"><input type="radio" name="i4" value="e"> -4, 0, -1, 3</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Өсу реті ең кіші саннан басталады. Теріс сандардың ішінде -4 саны -1 санынан кіші. Одан кейін 0 келеді, себебі 0 теріс сандардан үлкен. Соңында 3 келеді, себебі ол оң сан. Дұрыс рет: -4, -1, 0, 3.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="i5" data-answer="e">
+              <p class="task-question">5. A = -7 + 12, B = 4. Дұрыс салыстыруды таңдаңыз.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="i5" value="a"> A &lt; B</label>
+                <label class="option"><input type="radio" name="i5" value="b"> A = B</label>
+                <label class="option"><input type="radio" name="i5" value="c"> Мәлімет жеткіліксіз</label>
+                <label class="option"><input type="radio" name="i5" value="d"> 2A = B</label>
+                <label class="option"><input type="radio" name="i5" value="e"> A &gt; B</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Алдымен A мәнін табамыз: -7 + 12. Таңбалары әртүрлі болғандықтан, 12-ден 7-ні азайтамыз: 12 - 7 = 5. Үлкен сан 12 оң таңбалы болғандықтан, нәтиже 5 болады. Енді A = 5, B = 4. 5 саны 4-тен үлкен, сондықтан A &gt; B.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="i6" data-answer="b">
+              <p class="task-question">6. -8 + 3 өрнегінің мәнін табыңыз.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="i6" value="a"> -11</label>
+                <label class="option"><input type="radio" name="i6" value="b"> -5</label>
+                <label class="option"><input type="radio" name="i6" value="c"> 5</label>
+                <label class="option"><input type="radio" name="i6" value="d"> 11</label>
+                <label class="option"><input type="radio" name="i6" value="e"> -3</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                -8 + 3 өрнегінде сандардың таңбалары әртүрлі. Сондықтан үлкен модульден кіші модульді азайтамыз: 8 - 3 = 5. Үлкен модуль 8 санына тиесілі, оның таңбасы теріс. Сондықтан нәтиже -5 болады.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="i7" data-answer="c">
+              <p class="task-question">7. -5 - 4 өрнегінің мәнін табыңыз.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="i7" value="a"> -1</label>
+                <label class="option"><input type="radio" name="i7" value="b"> 1</label>
+                <label class="option"><input type="radio" name="i7" value="c"> -9</label>
+                <label class="option"><input type="radio" name="i7" value="d"> 9</label>
+                <label class="option"><input type="radio" name="i7" value="e"> -20</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                -5 - 4 дегеніміз -5 санына тағы 4 бірлікке азаю дегенді білдіреді. Сан түзуінде -5-тен солға қарай 4 қадам жүреміз: -6, -7, -8, -9. Сондықтан нәтиже -9 болады.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="i8" data-answer="a">
+              <p class="task-question">8. Қай тұжырым дұрыс?</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="i8" value="a"> Кез келген оң бүтін сан нөлден үлкен</label>
+                <label class="option"><input type="radio" name="i8" value="b"> Кез келген теріс бүтін сан нөлден үлкен</label>
+                <label class="option"><input type="radio" name="i8" value="c"> Нөл кез келген оң саннан үлкен</label>
+                <label class="option"><input type="radio" name="i8" value="d"> -1 саны 1 санынан үлкен</label>
+                <label class="option"><input type="radio" name="i8" value="e"> Теріс сандар сан түзуінде оң жақта орналасады</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Оң бүтін сандар 1, 2, 3, 4 сияқты сандар. Олардың бәрі нөлден оң жақта орналасады, сондықтан нөлден үлкен болады. Теріс сандар нөлден кіші. Сондықтан дұрыс тұжырым: кез келген оң бүтін сан нөлден үлкен.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="i9" data-answer="d">
+              <p class="task-question">9. 6 - 14 өрнегінің мәнін табыңыз.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="i9" value="a"> 20</label>
+                <label class="option"><input type="radio" name="i9" value="b"> 8</label>
+                <label class="option"><input type="radio" name="i9" value="c"> -20</label>
+                <label class="option"><input type="radio" name="i9" value="d"> -8</label>
+                <label class="option"><input type="radio" name="i9" value="e"> -6</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                6 - 14 дегеніміз 6 санынан 14-ті азайту. 14 саны 6-дан үлкен, сондықтан нәтиже теріс болады. Айырманың шамасын табамыз: 14 - 6 = 8. Сондықтан 6 - 14 = -8.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="i10" data-answer="e">
+              <p class="task-question">10. A = -2 · 6, B = -15. Дұрыс салыстыруды таңдаңыз.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="i10" value="a"> A = B</label>
+                <label class="option"><input type="radio" name="i10" value="b"> A &lt; B</label>
+                <label class="option"><input type="radio" name="i10" value="c"> 2A = B</label>
+                <label class="option"><input type="radio" name="i10" value="d"> Мәлімет жеткіліксіз</label>
+                <label class="option"><input type="radio" name="i10" value="e"> A &gt; B</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Алдымен A мәнін табамыз: -2 · 6 = -12. Енді A = -12, B = -15. Теріс сандарды салыстырғанда нөлге жақынырақ сан үлкен болады. -12 саны -15-тен нөлге жақын. Сондықтан -12 &gt; -15, яғни A &gt; B.
+              </div>
+            </div>
+
+            <div class="check-area">
+              <button class="btn btn-primary" onclick="checkQuiz(['i1','i2','i3','i4','i5','i6','i7','i8','i9','i10'], 'score-integer-kz', 'kz')">Нәтижені көрсету</button>
+              <div class="score" id="score-integer-kz"></div>
+            </div>
+          </div>
+
+          <div class="lang lang-ru">
+            <h3>Тест по целым числам</h3>
+
+            <div class="task-box" data-question="ri1" data-answer="c">
+              <p class="task-question">1. В каком ряду даны только целые числа?</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="ri1" value="a"> -3, 0, 2, 1/2</label>
+                <label class="option"><input type="radio" name="ri1" value="b"> 4, -7, 0, 0,8</label>
+                <label class="option"><input type="radio" name="ri1" value="c"> -9, -1, 0, 6</label>
+                <label class="option"><input type="radio" name="ri1" value="d"> 2/3, 5, -4, 0</label>
+                <label class="option"><input type="radio" name="ri1" value="e"> 1, 3, 4, 7,5</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Целые числа — это числа без дробной части: отрицательные целые числа, ноль и положительные целые числа. Числа 1/2, 0,8, 2/3, 7,5 не являются целыми. В ряду -9, -1, 0, 6 все числа записаны без дробной части, поэтому это целые числа.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="ri2" data-answer="b">
+              <p class="task-question">2. Сравните числа -6 и -2.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="ri2" value="a"> -6 &gt; -2</label>
+                <label class="option"><input type="radio" name="ri2" value="b"> -6 &lt; -2</label>
+                <label class="option"><input type="radio" name="ri2" value="c"> -6 = -2</label>
+                <label class="option"><input type="radio" name="ri2" value="d"> 2 · (-6) = -2</label>
+                <label class="option"><input type="radio" name="ri2" value="e"> Недостаточно данных</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Оба числа отрицательные. При сравнении отрицательных чисел меньше то число, которое находится дальше от нуля влево. Число -6 находится левее числа -2 на числовой прямой. Поэтому -6 &lt; -2.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="ri3" data-answer="d">
+              <p class="task-question">3. Найдите противоположное число для -11.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="ri3" value="a"> -11</label>
+                <label class="option"><input type="radio" name="ri3" value="b"> 0</label>
+                <label class="option"><input type="radio" name="ri3" value="c"> -1</label>
+                <label class="option"><input type="radio" name="ri3" value="d"> 11</label>
+                <label class="option"><input type="radio" name="ri3" value="e"> 22</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Чтобы найти противоположное число, нужно изменить знак числа. Число -11 дано с отрицательным знаком. Если поменять знак на положительный, получится 11. Значит, противоположное число для -11 — это 11.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="ri4" data-answer="a">
+              <p class="task-question">4. Расположите числа -4, 3, -1, 0 в порядке возрастания.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="ri4" value="a"> -4, -1, 0, 3</label>
+                <label class="option"><input type="radio" name="ri4" value="b"> 3, 0, -1, -4</label>
+                <label class="option"><input type="radio" name="ri4" value="c"> -1, -4, 0, 3</label>
+                <label class="option"><input type="radio" name="ri4" value="d"> 0, -1, -4, 3</label>
+                <label class="option"><input type="radio" name="ri4" value="e"> -4, 0, -1, 3</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Порядок возрастания начинается с самого маленького числа. Среди отрицательных чисел -4 меньше, чем -1. После них идёт 0, потому что 0 больше отрицательных чисел. Затем идёт положительное число 3. Правильный порядок: -4, -1, 0, 3.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="ri5" data-answer="e">
+              <p class="task-question">5. A = -7 + 12, B = 4. Выберите верное сравнение.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="ri5" value="a"> A &lt; B</label>
+                <label class="option"><input type="radio" name="ri5" value="b"> A = B</label>
+                <label class="option"><input type="radio" name="ri5" value="c"> Недостаточно данных</label>
+                <label class="option"><input type="radio" name="ri5" value="d"> 2A = B</label>
+                <label class="option"><input type="radio" name="ri5" value="e"> A &gt; B</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Сначала найдём A: -7 + 12. Знаки разные, поэтому из 12 вычитаем 7: 12 - 7 = 5. Большее число 12 имеет положительный знак, поэтому результат равен 5. Теперь A = 5, B = 4. Число 5 больше числа 4, значит A &gt; B.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="ri6" data-answer="b">
+              <p class="task-question">6. Найдите значение выражения -8 + 3.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="ri6" value="a"> -11</label>
+                <label class="option"><input type="radio" name="ri6" value="b"> -5</label>
+                <label class="option"><input type="radio" name="ri6" value="c"> 5</label>
+                <label class="option"><input type="radio" name="ri6" value="d"> 11</label>
+                <label class="option"><input type="radio" name="ri6" value="e"> -3</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                В выражении -8 + 3 числа имеют разные знаки. Поэтому из большего модуля вычитаем меньший: 8 - 3 = 5. Больший модуль принадлежит числу -8, у него отрицательный знак. Поэтому результат равен -5.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="ri7" data-answer="c">
+              <p class="task-question">7. Найдите значение выражения -5 - 4.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="ri7" value="a"> -1</label>
+                <label class="option"><input type="radio" name="ri7" value="b"> 1</label>
+                <label class="option"><input type="radio" name="ri7" value="c"> -9</label>
+                <label class="option"><input type="radio" name="ri7" value="d"> 9</label>
+                <label class="option"><input type="radio" name="ri7" value="e"> -20</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                -5 - 4 означает, что от числа -5 нужно уменьшиться ещё на 4 единицы. На числовой прямой от -5 идём на 4 шага влево: -6, -7, -8, -9. Поэтому результат равен -9.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="ri8" data-answer="a">
+              <p class="task-question">8. Какое утверждение верно?</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="ri8" value="a"> Любое положительное целое число больше нуля</label>
+                <label class="option"><input type="radio" name="ri8" value="b"> Любое отрицательное целое число больше нуля</label>
+                <label class="option"><input type="radio" name="ri8" value="c"> Ноль больше любого положительного числа</label>
+                <label class="option"><input type="radio" name="ri8" value="d"> -1 больше 1</label>
+                <label class="option"><input type="radio" name="ri8" value="e"> Отрицательные числа находятся справа на числовой прямой</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Положительные целые числа — это 1, 2, 3, 4 и так далее. Все они находятся правее нуля на числовой прямой, поэтому они больше нуля. Отрицательные числа меньше нуля. Верное утверждение: любое положительное целое число больше нуля.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="ri9" data-answer="d">
+              <p class="task-question">9. Найдите значение выражения 6 - 14.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="ri9" value="a"> 20</label>
+                <label class="option"><input type="radio" name="ri9" value="b"> 8</label>
+                <label class="option"><input type="radio" name="ri9" value="c"> -20</label>
+                <label class="option"><input type="radio" name="ri9" value="d"> -8</label>
+                <label class="option"><input type="radio" name="ri9" value="e"> -6</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                6 - 14 означает, что из 6 нужно вычесть 14. Число 14 больше числа 6, поэтому результат будет отрицательным. Находим разницу: 14 - 6 = 8. Значит, 6 - 14 = -8.
+              </div>
+            </div>
+
+            <div class="task-box" data-question="ri10" data-answer="e">
+              <p class="task-question">10. A = -2 · 6, B = -15. Выберите верное сравнение.</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="ri10" value="a"> A = B</label>
+                <label class="option"><input type="radio" name="ri10" value="b"> A &lt; B</label>
+                <label class="option"><input type="radio" name="ri10" value="c"> 2A = B</label>
+                <label class="option"><input type="radio" name="ri10" value="d"> Недостаточно данных</label>
+                <label class="option"><input type="radio" name="ri10" value="e"> A &gt; B</label>
+              </div>
+              <div class="question-feedback"></div>
+              <div class="explanation">
+                Сначала найдём A: -2 · 6 = -12. Теперь A = -12, B = -15. При сравнении отрицательных чисел больше то число, которое ближе к нулю. Число -12 ближе к нулю, чем -15. Значит, -12 &gt; -15, поэтому A &gt; B.
+              </div>
+            </div>
+
+            <div class="check-area">
+              <button class="btn btn-primary" onclick="checkQuiz(['ri1','ri2','ri3','ri4','ri5','ri6','ri7','ri8','ri9','ri10'], 'score-integer-ru', 'ru')">Показать результат</button>
+              <div class="score" id="score-integer-ru"></div>
+            </div>
+          </div>
+        </div>
