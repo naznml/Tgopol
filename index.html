@@ -8793,5 +8793,1166 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="result" data-result="algebra-mixed-test"></div>
     </div>
   </div>
+    <section class="section" id="data-analysis">
+  <style>
+    #data-analysis .mini-chart{
+      margin:18px 0;
+      padding:16px;
+      border:1px solid rgba(148,163,184,.35);
+      border-radius:18px;
+      background:rgba(255,255,255,.72);
+      overflow-x:auto;
+    }
+    #data-analysis .bar-chart{
+      display:flex;
+      align-items:flex-end;
+      gap:16px;
+      height:220px;
+      padding:18px 10px 8px;
+      border-left:2px solid rgba(15,23,42,.35);
+      border-bottom:2px solid rgba(15,23,42,.35);
+      min-width:520px;
+    }
+    #data-analysis .bar-item{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-end;
+      gap:8px;
+      min-width:72px;
+      height:100%;
+    }
+    #data-analysis .bar{
+      width:44px;
+      border-radius:12px 12px 4px 4px;
+      background:linear-gradient(180deg,#fb923c,#f97316);
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      color:white;
+      font-weight:800;
+      font-size:12px;
+      padding-top:6px;
+      box-shadow:0 10px 22px rgba(249,115,22,.25);
+    }
+    #data-analysis .bar-label{
+      font-weight:700;
+      font-size:13px;
+      text-align:center;
+    }
+    #data-analysis .line-chart{
+      min-width:560px;
+      padding:10px;
+    }
+    #data-analysis .pie-wrap{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:22px;
+    }
+    #data-analysis .pie{
+      width:190px;
+      height:190px;
+      border-radius:50%;
+      background:conic-gradient(#f97316 0 40%, #3b82f6 40% 65%, #22c55e 65% 85%, #a855f7 85% 100%);
+      box-shadow:0 16px 34px rgba(15,23,42,.18);
+    }
+    #data-analysis .legend{
+      display:grid;
+      gap:10px;
+      font-size:14px;
+      font-weight:700;
+    }
+    #data-analysis .legend-row{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    #data-analysis .dot{
+      width:14px;
+      height:14px;
+      border-radius:50%;
+      display:inline-block;
+    }
+  </style>
+
+  <div class="tags">
+    <span class="tag">6-бөлім</span>
+    <span class="tag orange">
+      <span class="lang kk">Кесте</span>
+      <span class="lang ru">Таблица</span>
+    </span>
+    <span class="tag orange">
+      <span class="lang kk">График</span>
+      <span class="lang ru">График</span>
+    </span>
+    <span class="tag orange">
+      <span class="lang kk">Диаграмма</span>
+      <span class="lang ru">Диаграмма</span>
+    </span>
+    <span class="tag orange">
+      <span class="lang kk">Ақпаратты талдау</span>
+      <span class="lang ru">Анализ данных</span>
+    </span>
+  </div>
+
+  <h2>
+    <span class="lang kk">Кесте, график және диаграмма бойынша есептер</span>
+    <span class="lang ru">Задачи по таблицам, графикам и диаграммам</span>
+  </h2>
+
+  <p class="block lang kk">
+    Бұл бөлімде кестеден ақпарат оқу, бағанды диаграмма бойынша салыстыру, дөңгелек диаграмма арқылы пайыз және бұрыш табу, сызықтық график бойынша өзгерісті анықтау, орташа мән, айырма, ең үлкен және ең кіші көрсеткіштер қарастырылады.
+  </p>
+  <p class="block lang ru">
+    В этом разделе рассматриваются чтение информации из таблицы, сравнение по столбчатой диаграмме, нахождение процентов и углов по круговой диаграмме, определение изменений по линейному графику, среднее значение, разность, максимум и минимум.
+  </p>
+
+  <h3>
+    <span class="lang kk">1. Кесте және диаграмма бойынша ақпарат оқу</span>
+    <span class="lang ru">1. Чтение информации по таблице и диаграмме</span>
+  </h3>
+
+  <div class="formula-box">
+    <p class="block lang kk">
+      Кесте немесе диаграмма берілген есепте алдымен қандай шамалар салыстырылып тұрғанын анықтау керек. Содан кейін сұраққа қарай қосынды, айырма, орташа мән, пайыз, үлес немесе өзгеріс есептеледі.
+    </p>
+
+    <p class="block lang ru">
+      В задаче с таблицей или диаграммой сначала нужно определить, какие величины сравниваются. Затем по вопросу вычисляется сумма, разность, среднее значение, процент, доля или изменение.
+    </p>
+  </div>
+
+  <div class="example">
+    <div class="example-title">
+      <span class="lang kk">Мысал. Кестеде дүкеннің 5 күндегі сатылымы берілген. Орташа сатылымды табыңыз.</span>
+      <span class="lang ru">Пример. В таблице дана выручка магазина за 5 дней. Найдите среднюю выручку.</span>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>
+            <span class="lang kk">Күн</span>
+            <span class="lang ru">День</span>
+          </th>
+          <td>
+            <span class="lang kk">Дүйсенбі</span>
+            <span class="lang ru">Понедельник</span>
+          </td>
+          <td>
+            <span class="lang kk">Сейсенбі</span>
+            <span class="lang ru">Вторник</span>
+          </td>
+          <td>
+            <span class="lang kk">Сәрсенбі</span>
+            <span class="lang ru">Среда</span>
+          </td>
+          <td>
+            <span class="lang kk">Бейсенбі</span>
+            <span class="lang ru">Четверг</span>
+          </td>
+          <td>
+            <span class="lang kk">Жұма</span>
+            <span class="lang ru">Пятница</span>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <span class="lang kk">Сатылым, мың тг</span>
+            <span class="lang ru">Выручка, тыс. тг</span>
+          </th>
+          <td>120</td>
+          <td>180</td>
+          <td>150</td>
+          <td>210</td>
+          <td>240</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <span class="lang kk">1. Барлық күннің сатылымын қосамыз: 120 + 180 + 150 + 210 + 240.</span>
+        <span class="lang ru">1. Складываем выручку за все дни: 120 + 180 + 150 + 210 + 240.</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">2. Қосынды: 900 мың теңге.</span>
+        <span class="lang ru">2. Сумма: 900 тысяч тенге.</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">3. Күн саны: 5.</span>
+        <span class="lang ru">3. Количество дней: 5.</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">4. Орташа сатылым: 900 ÷ 5 = 180 мың теңге.</span>
+        <span class="lang ru">4. Средняя выручка: 900 ÷ 5 = 180 тысяч тенге.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="test-block" id="data-table-chart-test">
+    <h3>
+      <span class="lang kk">Тест: Кесте, график және диаграмма</span>
+      <span class="lang ru">Тест: Таблица, график и диаграмма</span>
+    </h3>
+
+    <article class="question" data-answer="C">
+      <div class="q-head">
+        <div class="q-num">1</div>
+        <div class="q-text">
+          <span class="lang kk">Кестеде дүкеннің 5 күндегі сатылымы берілген. Сатылымның орташа мәнін табыңыз.</span>
+          <span class="lang ru">В таблице дана выручка магазина за 5 дней. Найдите среднее значение выручки.</span>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>
+              <span class="lang kk">Күн</span>
+              <span class="lang ru">День</span>
+            </th>
+            <td>
+              <span class="lang kk">Дс</span>
+              <span class="lang ru">Пн</span>
+            </td>
+            <td>
+              <span class="lang kk">Сс</span>
+              <span class="lang ru">Вт</span>
+            </td>
+            <td>
+              <span class="lang kk">Ср</span>
+              <span class="lang ru">Ср</span>
+            </td>
+            <td>
+              <span class="lang kk">Бс</span>
+              <span class="lang ru">Чт</span>
+            </td>
+            <td>
+              <span class="lang kk">Жм</span>
+              <span class="lang ru">Пт</span>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <span class="lang kk">Сатылым, мың тг</span>
+              <span class="lang ru">Выручка, тыс. тг</span>
+            </th>
+            <td>120</td>
+            <td>180</td>
+            <td>150</td>
+            <td>210</td>
+            <td>240</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="dct1" value="A"><span>170</span></label>
+        <label class="option"><input type="radio" name="dct1" value="B"><span>175</span></label>
+        <label class="option"><input type="radio" name="dct1" value="C"><span>180</span></label>
+        <label class="option"><input type="radio" name="dct1" value="D"><span>185</span></label>
+        <label class="option"><input type="radio" name="dct1" value="E"><span>190</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: C.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Орташа мәнді табу үшін барлық мәнді қосып, мәндер санына бөлеміз.</li>
+          <li>Қосынды: 120 + 180 + 150 + 210 + 240 = 900.</li>
+          <li>Күн саны: 5.</li>
+          <li>Орташа мән: 900 ÷ 5 = 180.</li>
+          <li>Жауап: 180 мың теңге.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: C.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Чтобы найти среднее значение, складываем все значения и делим на их количество.</li>
+          <li>Сумма: 120 + 180 + 150 + 210 + 240 = 900.</li>
+          <li>Количество дней: 5.</li>
+          <li>Среднее значение: 900 ÷ 5 = 180.</li>
+          <li>Ответ: 180 тысяч тенге.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="D">
+      <div class="q-head">
+        <div class="q-num">2</div>
+        <div class="q-text">
+          <span class="lang kk">Бағанды диаграммада төрт бөлімнің айлық шығыны көрсетілген. Ең көп шығын мен ең аз шығынның айырмасын табыңыз.</span>
+          <span class="lang ru">На столбчатой диаграмме показаны месячные расходы четырёх отделов. Найдите разницу между наибольшим и наименьшим расходом.</span>
+        </div>
+      </div>
+
+      <div class="mini-chart">
+        <div class="bar-chart">
+          <div class="bar-item">
+            <div class="bar" style="height:120px;">240</div>
+            <div class="bar-label">A</div>
+          </div>
+          <div class="bar-item">
+            <div class="bar" style="height:175px;">350</div>
+            <div class="bar-label">B</div>
+          </div>
+          <div class="bar-item">
+            <div class="bar" style="height:145px;">290</div>
+            <div class="bar-label">C</div>
+          </div>
+          <div class="bar-item">
+            <div class="bar" style="height:210px;">420</div>
+            <div class="bar-label">D</div>
+          </div>
+        </div>
+        <p class="block">
+          <span class="lang kk">Мәндер мың теңгемен берілген.</span>
+          <span class="lang ru">Значения даны в тысячах тенге.</span>
+        </p>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="dct2" value="A"><span>120</span></label>
+        <label class="option"><input type="radio" name="dct2" value="B"><span>150</span></label>
+        <label class="option"><input type="radio" name="dct2" value="C"><span>160</span></label>
+        <label class="option"><input type="radio" name="dct2" value="D"><span>180</span></label>
+        <label class="option"><input type="radio" name="dct2" value="E"><span>190</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: D.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Диаграммадағы мәндер: A = 240, B = 350, C = 290, D = 420.</li>
+          <li>Ең көп шығын: 420.</li>
+          <li>Ең аз шығын: 240.</li>
+          <li>Айырма: 420 - 240 = 180.</li>
+          <li>Жауап: 180 мың теңге.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: D.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Значения на диаграмме: A = 240, B = 350, C = 290, D = 420.</li>
+          <li>Наибольший расход: 420.</li>
+          <li>Наименьший расход: 240.</li>
+          <li>Разница: 420 - 240 = 180.</li>
+          <li>Ответ: 180 тысяч тенге.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="B">
+      <div class="q-head">
+        <div class="q-num">3</div>
+        <div class="q-text">
+          <span class="lang kk">Дөңгелек диаграммада оқушылардың үйірмелерге қатысу үлесі көрсетілген. Спорт үйірмесіне 96 оқушы қатысса, барлық оқушы санын табыңыз.</span>
+          <span class="lang ru">На круговой диаграмме показана доля учащихся по кружкам. Если спортивный кружок посещают 96 учащихся, найдите общее число учащихся.</span>
+        </div>
+      </div>
+
+      <div class="mini-chart">
+        <div class="pie-wrap">
+          <div class="pie"></div>
+          <div class="legend">
+            <div class="legend-row"><span class="dot" style="background:#f97316;"></span><span class="lang kk">Спорт — 40%</span><span class="lang ru">Спорт — 40%</span></div>
+            <div class="legend-row"><span class="dot" style="background:#3b82f6;"></span><span class="lang kk">Музыка — 25%</span><span class="lang ru">Музыка — 25%</span></div>
+            <div class="legend-row"><span class="dot" style="background:#22c55e;"></span><span class="lang kk">Сурет — 20%</span><span class="lang ru">Рисование — 20%</span></div>
+            <div class="legend-row"><span class="dot" style="background:#a855f7;"></span><span class="lang kk">Би — 15%</span><span class="lang ru">Танцы — 15%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="dct3" value="A"><span>220</span></label>
+        <label class="option"><input type="radio" name="dct3" value="B"><span>240</span></label>
+        <label class="option"><input type="radio" name="dct3" value="C"><span>260</span></label>
+        <label class="option"><input type="radio" name="dct3" value="D"><span>280</span></label>
+        <label class="option"><input type="radio" name="dct3" value="E"><span>300</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: B.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Диаграмма бойынша спорт үйірмесі барлық оқушының 40%-ын құрайды.</li>
+          <li>40% = 96 оқушы.</li>
+          <li>Барлық оқушы санын x деп белгілейміз.</li>
+          <li>40% · x = 96.</li>
+          <li>40% = 0,4.</li>
+          <li>0,4x = 96.</li>
+          <li>x = 96 ÷ 0,4 = 240.</li>
+          <li>Жауап: 240 оқушы.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: B.</b></p>
+        <ol class="solution-list lang ru">
+          <li>По диаграмме спорт составляет 40% всех учащихся.</li>
+          <li>40% = 96 учащихся.</li>
+          <li>Общее число учащихся обозначим через x.</li>
+          <li>40% · x = 96.</li>
+          <li>40% = 0,4.</li>
+          <li>0,4x = 96.</li>
+          <li>x = 96 ÷ 0,4 = 240.</li>
+          <li>Ответ: 240 учащихся.</li>
+        </ol>
+      </div>
+    </article>
+        <article class="question" data-answer="C">
+      <div class="q-head">
+        <div class="q-num">4</div>
+        <div class="q-text">
+          <span class="lang kk">Графикте 5 айдағы электр энергиясын тұтыну көрсетілген. Қаңтардан мамырға дейін тұтыну қанша пайызға артты?</span>
+          <span class="lang ru">На графике показано потребление электроэнергии за 5 месяцев. На сколько процентов потребление выросло с января по май?</span>
+        </div>
+      </div>
+
+      <div class="mini-chart">
+        <svg class="line-chart" viewBox="0 0 620 280" role="img">
+          <line x1="60" y1="230" x2="580" y2="230" stroke="#334155" stroke-width="2"/>
+          <line x1="60" y1="30" x2="60" y2="230" stroke="#334155" stroke-width="2"/>
+
+          <line x1="60" y1="190" x2="580" y2="190" stroke="#cbd5e1" stroke-width="1"/>
+          <line x1="60" y1="150" x2="580" y2="150" stroke="#cbd5e1" stroke-width="1"/>
+          <line x1="60" y1="110" x2="580" y2="110" stroke="#cbd5e1" stroke-width="1"/>
+          <line x1="60" y1="70" x2="580" y2="70" stroke="#cbd5e1" stroke-width="1"/>
+
+          <text x="22" y="234" font-size="12">100</text>
+          <text x="22" y="194" font-size="12">120</text>
+          <text x="22" y="154" font-size="12">140</text>
+          <text x="22" y="114" font-size="12">160</text>
+          <text x="22" y="74" font-size="12">180</text>
+
+          <polyline points="90,190 205,170 320,150 435,110 550,70" fill="none" stroke="#f97316" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <circle cx="90" cy="190" r="6" fill="#f97316"/>
+          <circle cx="205" cy="170" r="6" fill="#f97316"/>
+          <circle cx="320" cy="150" r="6" fill="#f97316"/>
+          <circle cx="435" cy="110" r="6" fill="#f97316"/>
+          <circle cx="550" cy="70" r="6" fill="#f97316"/>
+
+          <text x="78" y="252" font-size="13">Қаң/Янв</text>
+          <text x="193" y="252" font-size="13">Ақп/Фев</text>
+          <text x="310" y="252" font-size="13">Нау/Мар</text>
+          <text x="425" y="252" font-size="13">Сәу/Апр</text>
+          <text x="540" y="252" font-size="13">Мам/Май</text>
+
+          <text x="82" y="178" font-size="13" font-weight="700">120</text>
+          <text x="197" y="158" font-size="13" font-weight="700">130</text>
+          <text x="312" y="138" font-size="13" font-weight="700">140</text>
+          <text x="427" y="98" font-size="13" font-weight="700">160</text>
+          <text x="542" y="58" font-size="13" font-weight="700">180</text>
+        </svg>
+        <p class="block">
+          <span class="lang kk">Мәндер кВт·сағ бойынша берілген.</span>
+          <span class="lang ru">Значения даны в кВт·ч.</span>
+        </p>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="dct4" value="A"><span>40%</span></label>
+        <label class="option"><input type="radio" name="dct4" value="B"><span>45%</span></label>
+        <label class="option"><input type="radio" name="dct4" value="C"><span>50%</span></label>
+        <label class="option"><input type="radio" name="dct4" value="D"><span>55%</span></label>
+        <label class="option"><input type="radio" name="dct4" value="E"><span>60%</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: C.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Қаңтардағы тұтыну: 120 кВт·сағ.</li>
+          <li>Мамырдағы тұтыну: 180 кВт·сағ.</li>
+          <li>Өсу мөлшерін табамыз: 180 - 120 = 60.</li>
+          <li>Пайыздық өсім бастапқы мән арқылы есептеледі.</li>
+          <li>Формула: <span class="frac"><span class="top">өсу мөлшері</span><span class="bottom">бастапқы мән</span></span> · 100%.</li>
+          <li>Есептейміз: <span class="frac"><span class="top">60</span><span class="bottom">120</span></span> · 100%.</li>
+          <li><span class="frac"><span class="top">60</span><span class="bottom">120</span></span> = 0,5.</li>
+          <li>0,5 · 100% = 50%.</li>
+          <li>Жауап: 50%.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: C.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Потребление в январе: 120 кВт·ч.</li>
+          <li>Потребление в мае: 180 кВт·ч.</li>
+          <li>Находим увеличение: 180 - 120 = 60.</li>
+          <li>Процентный рост считается от начального значения.</li>
+          <li>Формула: <span class="frac"><span class="top">увеличение</span><span class="bottom">начальное значение</span></span> · 100%.</li>
+          <li>Считаем: <span class="frac"><span class="top">60</span><span class="bottom">120</span></span> · 100%.</li>
+          <li><span class="frac"><span class="top">60</span><span class="bottom">120</span></span> = 0,5.</li>
+          <li>0,5 · 100% = 50%.</li>
+          <li>Ответ: 50%.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="A">
+      <div class="q-head">
+        <div class="q-num">5</div>
+        <div class="q-text">
+          <span class="lang kk">Дөңгелек диаграммада кітапханадағы кітаптардың жанрлар бойынша үлесі берілген. Егер барлық кітап саны 720 болса, көркем әдебиет пен ғылыми кітаптардың жалпы санын табыңыз.</span>
+          <span class="lang ru">На круговой диаграмме дана доля книг в библиотеке по жанрам. Если всего 720 книг, найдите общее количество художественных и научных книг.</span>
+        </div>
+      </div>
+
+      <div class="mini-chart">
+        <div class="pie-wrap">
+          <div style="width:190px;height:190px;border-radius:50%;background:conic-gradient(#f97316 0 35%, #3b82f6 35% 60%, #22c55e 60% 80%, #a855f7 80% 100%);box-shadow:0 16px 34px rgba(15,23,42,.18);"></div>
+          <div class="legend">
+            <div class="legend-row"><span class="dot" style="background:#f97316;"></span><span class="lang kk">Көркем әдебиет — 35%</span><span class="lang ru">Художественная литература — 35%</span></div>
+            <div class="legend-row"><span class="dot" style="background:#3b82f6;"></span><span class="lang kk">Ғылыми кітаптар — 25%</span><span class="lang ru">Научные книги — 25%</span></div>
+            <div class="legend-row"><span class="dot" style="background:#22c55e;"></span><span class="lang kk">Тарих — 20%</span><span class="lang ru">История — 20%</span></div>
+            <div class="legend-row"><span class="dot" style="background:#a855f7;"></span><span class="lang kk">Басқа кітаптар — 20%</span><span class="lang ru">Другие книги — 20%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="dct5" value="A"><span>432</span></label>
+        <label class="option"><input type="radio" name="dct5" value="B"><span>420</span></label>
+        <label class="option"><input type="radio" name="dct5" value="C"><span>408</span></label>
+        <label class="option"><input type="radio" name="dct5" value="D"><span>396</span></label>
+        <label class="option"><input type="radio" name="dct5" value="E"><span>384</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: A.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Көркем әдебиет үлесі: 35%.</li>
+          <li>Ғылыми кітаптар үлесі: 25%.</li>
+          <li>Екеуінің жалпы үлесі: 35% + 25% = 60%.</li>
+          <li>Барлық кітап саны: 720.</li>
+          <li>60%-ын табамыз: <span class="frac"><span class="top">60</span><span class="bottom">100</span></span> · 720.</li>
+          <li>60% = 0,6.</li>
+          <li>0,6 · 720 = 432.</li>
+          <li>Жауап: 432 кітап.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: A.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Доля художественной литературы: 35%.</li>
+          <li>Доля научных книг: 25%.</li>
+          <li>Общая доля: 35% + 25% = 60%.</li>
+          <li>Всего книг: 720.</li>
+          <li>Находим 60% от 720: <span class="frac"><span class="top">60</span><span class="bottom">100</span></span> · 720.</li>
+          <li>60% = 0,6.</li>
+          <li>0,6 · 720 = 432.</li>
+          <li>Ответ: 432 книги.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="E">
+      <div class="q-head">
+        <div class="q-num">6</div>
+        <div class="q-text">
+          <span class="lang kk">Кестеде төрт айдағы өнім шығару жоспары мен нақты орындалуы берілген. Қай айда жоспардың орындалу пайызы ең жоғары болды?</span>
+          <span class="lang ru">В таблице даны план выпуска продукции и фактическое выполнение за четыре месяца. В каком месяце процент выполнения плана был наибольшим?</span>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>
+              <span class="lang kk">Ай</span>
+              <span class="lang ru">Месяц</span>
+            </th>
+            <td>
+              <span class="lang kk">Қаңтар</span>
+              <span class="lang ru">Январь</span>
+            </td>
+            <td>
+              <span class="lang kk">Ақпан</span>
+              <span class="lang ru">Февраль</span>
+            </td>
+            <td>
+              <span class="lang kk">Наурыз</span>
+              <span class="lang ru">Март</span>
+            </td>
+            <td>
+              <span class="lang kk">Сәуір</span>
+              <span class="lang ru">Апрель</span>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <span class="lang kk">Жоспар</span>
+              <span class="lang ru">План</span>
+            </th>
+            <td>400</td>
+            <td>500</td>
+            <td>600</td>
+            <td>800</td>
+          </tr>
+          <tr>
+            <th>
+              <span class="lang kk">Нақты</span>
+              <span class="lang ru">Факт</span>
+            </th>
+            <td>460</td>
+            <td>550</td>
+            <td>630</td>
+            <td>880</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="dct6" value="A"><span class="lang kk">Қаңтар</span><span class="lang ru">Январь</span></label>
+        <label class="option"><input type="radio" name="dct6" value="B"><span class="lang kk">Ақпан</span><span class="lang ru">Февраль</span></label>
+        <label class="option"><input type="radio" name="dct6" value="C"><span class="lang kk">Наурыз</span><span class="lang ru">Март</span></label>
+        <label class="option"><input type="radio" name="dct6" value="D"><span class="lang kk">Сәуір</span><span class="lang ru">Апрель</span></label>
+        <label class="option"><input type="radio" name="dct6" value="E"><span class="lang kk">Қаңтар мен сәуір тең</span><span class="lang ru">Январь и апрель равны</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: A.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Жоспардың орындалу пайызы: <span class="frac"><span class="top">нақты</span><span class="bottom">жоспар</span></span> · 100%.</li>
+          <li>Қаңтар: <span class="frac"><span class="top">460</span><span class="bottom">400</span></span> · 100% = 115%.</li>
+          <li>Ақпан: <span class="frac"><span class="top">550</span><span class="bottom">500</span></span> · 100% = 110%.</li>
+          <li>Наурыз: <span class="frac"><span class="top">630</span><span class="bottom">600</span></span> · 100% = 105%.</li>
+          <li>Сәуір: <span class="frac"><span class="top">880</span><span class="bottom">800</span></span> · 100% = 110%.</li>
+          <li>Ең жоғары көрсеткіш — 115%.</li>
+          <li>Жауап: Қаңтар.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: A.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Процент выполнения плана: <span class="frac"><span class="top">факт</span><span class="bottom">план</span></span> · 100%.</li>
+          <li>Январь: <span class="frac"><span class="top">460</span><span class="bottom">400</span></span> · 100% = 115%.</li>
+          <li>Февраль: <span class="frac"><span class="top">550</span><span class="bottom">500</span></span> · 100% = 110%.</li>
+          <li>Март: <span class="frac"><span class="top">630</span><span class="bottom">600</span></span> · 100% = 105%.</li>
+          <li>Апрель: <span class="frac"><span class="top">880</span><span class="bottom">800</span></span> · 100% = 110%.</li>
+          <li>Самый высокий показатель — 115%.</li>
+          <li>Ответ: январь.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="B">
+      <div class="q-head">
+        <div class="q-num">7</div>
+        <div class="q-text">
+          <span class="lang kk">Дөңгелек диаграммада бір сыныптағы оқушылардың таңдаған пәндері көрсетілген. Математика секторы 108° болса, математика таңдаған оқушылар барлық оқушының қанша пайызын құрайды?</span>
+          <span class="lang ru">На круговой диаграмме показан выбор предметов в одном классе. Если сектор математики равен 108°, какой процент всех учащихся выбрал математику?</span>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="dct7" value="A"><span>25%</span></label>
+        <label class="option"><input type="radio" name="dct7" value="B"><span>30%</span></label>
+        <label class="option"><input type="radio" name="dct7" value="C"><span>35%</span></label>
+        <label class="option"><input type="radio" name="dct7" value="D"><span>40%</span></label>
+        <label class="option"><input type="radio" name="dct7" value="E"><span>45%</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: B.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Дөңгелек диаграмманың толық бұрышы: 360°.</li>
+          <li>Математика секторы: 108°.</li>
+          <li>Үлесті табамыз: <span class="frac"><span class="top">108</span><span class="bottom">360</span></span>.</li>
+          <li><span class="frac"><span class="top">108</span><span class="bottom">360</span></span> = 0,3.</li>
+          <li>0,3 · 100% = 30%.</li>
+          <li>Жауап: 30%.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: B.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Полный угол круговой диаграммы: 360°.</li>
+          <li>Сектор математики: 108°.</li>
+          <li>Находим долю: <span class="frac"><span class="top">108</span><span class="bottom">360</span></span>.</li>
+          <li><span class="frac"><span class="top">108</span><span class="bottom">360</span></span> = 0,3.</li>
+          <li>0,3 · 100% = 30%.</li>
+          <li>Ответ: 30%.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="D">
+      <div class="q-head">
+        <div class="q-num">8</div>
+        <div class="q-text">
+          <span class="lang kk">Кестеде үш дүкендегі екі тауардың бағасы берілген. Әр дүкеннен бір нан және бір сүт алынса, қай дүкенде жалпы баға ең төмен?</span>
+          <span class="lang ru">В таблице даны цены двух товаров в трёх магазинах. Если в каждом магазине купить один хлеб и одно молоко, в каком магазине общая цена будет наименьшей?</span>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>
+              <span class="lang kk">Дүкен</span>
+              <span class="lang ru">Магазин</span>
+            </th>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+          </tr>
+          <tr>
+            <th>
+              <span class="lang kk">Нан, тг</span>
+              <span class="lang ru">Хлеб, тг</span>
+            </th>
+            <td>185</td>
+            <td>170</td>
+            <td>195</td>
+          </tr>
+          <tr>
+            <th>
+              <span class="lang kk">Сүт, тг</span>
+              <span class="lang ru">Молоко, тг</span>
+            </th>
+            <td>420</td>
+            <td>450</td>
+            <td>390</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="dct8" value="A"><span>A</span></label>
+        <label class="option"><input type="radio" name="dct8" value="B"><span>B</span></label>
+        <label class="option"><input type="radio" name="dct8" value="C"><span>A және B тең</span></label>
+        <label class="option"><input type="radio" name="dct8" value="D"><span>C</span></label>
+        <label class="option"><input type="radio" name="dct8" value="E"><span>B және C тең</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: D.</b></p>
+        <ol class="solution-list lang kk">
+          <li>A дүкені: 185 + 420 = 605.</li>
+          <li>B дүкені: 170 + 450 = 620.</li>
+          <li>C дүкені: 195 + 390 = 585.</li>
+          <li>Ең төмен жалпы баға: 585.</li>
+          <li>Жауап: C дүкені.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: D.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Магазин A: 185 + 420 = 605.</li>
+          <li>Магазин B: 170 + 450 = 620.</li>
+          <li>Магазин C: 195 + 390 = 585.</li>
+          <li>Наименьшая общая цена: 585.</li>
+          <li>Ответ: магазин C.</li>
+        </ol>
+      </div>
+    </article>
+        <article class="question" data-answer="C">
+      <div class="q-head">
+        <div class="q-num">9</div>
+        <div class="q-text">
+          <span class="lang kk">Бағанды диаграммада 4 аптадағы сатылған билеттер саны берілген. Бірінші және төртінші апталардың жалпы саны екінші және үшінші апталардың жалпы санынан қаншаға артық?</span>
+          <span class="lang ru">На столбчатой диаграмме дано количество проданных билетов за 4 недели. На сколько сумма первой и четвёртой недель больше суммы второй и третьей недель?</span>
+        </div>
+      </div>
+
+      <div class="mini-chart">
+        <div class="bar-chart">
+          <div class="bar-item">
+            <div class="bar" style="height:160px;">320</div>
+            <div class="bar-label">
+              <span class="lang kk">1-апта</span>
+              <span class="lang ru">1 нед.</span>
+            </div>
+          </div>
+          <div class="bar-item">
+            <div class="bar" style="height:125px;">250</div>
+            <div class="bar-label">
+              <span class="lang kk">2-апта</span>
+              <span class="lang ru">2 нед.</span>
+            </div>
+          </div>
+          <div class="bar-item">
+            <div class="bar" style="height:140px;">280</div>
+            <div class="bar-label">
+              <span class="lang kk">3-апта</span>
+              <span class="lang ru">3 нед.</span>
+            </div>
+          </div>
+          <div class="bar-item">
+            <div class="bar" style="height:190px;">380</div>
+            <div class="bar-label">
+              <span class="lang kk">4-апта</span>
+              <span class="lang ru">4 нед.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="dct9" value="A"><span>140</span></label>
+        <label class="option"><input type="radio" name="dct9" value="B"><span>150</span></label>
+        <label class="option"><input type="radio" name="dct9" value="C"><span>170</span></label>
+        <label class="option"><input type="radio" name="dct9" value="D"><span>180</span></label>
+        <label class="option"><input type="radio" name="dct9" value="E"><span>190</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: C.</b></p>
+        <ol class="solution-list lang kk">
+          <li>1-аптадағы билет саны: 320.</li>
+          <li>4-аптадағы билет саны: 380.</li>
+          <li>Олардың қосындысы: 320 + 380 = 700.</li>
+          <li>2-аптадағы билет саны: 250.</li>
+          <li>3-аптадағы билет саны: 280.</li>
+          <li>Олардың қосындысы: 250 + 280 = 530.</li>
+          <li>Айырма: 700 - 530 = 170.</li>
+          <li>Жауап: 170 билет.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: C.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Количество билетов за 1 неделю: 320.</li>
+          <li>Количество билетов за 4 неделю: 380.</li>
+          <li>Их сумма: 320 + 380 = 700.</li>
+          <li>Количество билетов за 2 неделю: 250.</li>
+          <li>Количество билетов за 3 неделю: 280.</li>
+          <li>Их сумма: 250 + 280 = 530.</li>
+          <li>Разница: 700 - 530 = 170.</li>
+          <li>Ответ: 170 билетов.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="E">
+      <div class="q-head">
+        <div class="q-num">10</div>
+        <div class="q-text">
+          <span class="lang kk">Кестеде екі топтың тест нәтижелері берілген. Қай топтың орташа ұпайы жоғары және айырмасы қанша?</span>
+          <span class="lang ru">В таблице даны результаты теста двух групп. У какой группы средний балл выше и на сколько?</span>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>
+              <span class="lang kk">Топ</span>
+              <span class="lang ru">Группа</span>
+            </th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+          </tr>
+          <tr>
+            <th>A</th>
+            <td>72</td>
+            <td>84</td>
+            <td>78</td>
+            <td>86</td>
+          </tr>
+          <tr>
+            <th>B</th>
+            <td>80</td>
+            <td>76</td>
+            <td>88</td>
+            <td>84</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="dct10" value="A"><span class="lang kk">A тобы, 1 ұпайға</span><span class="lang ru">Группа A, на 1 балл</span></label>
+        <label class="option"><input type="radio" name="dct10" value="B"><span class="lang kk">A тобы, 2 ұпайға</span><span class="lang ru">Группа A, на 2 балла</span></label>
+        <label class="option"><input type="radio" name="dct10" value="C"><span class="lang kk">B тобы, 1 ұпайға</span><span class="lang ru">Группа B, на 1 балл</span></label>
+        <label class="option"><input type="radio" name="dct10" value="D"><span class="lang kk">Орташа мәндері тең</span><span class="lang ru">Средние значения равны</span></label>
+        <label class="option"><input type="radio" name="dct10" value="E"><span class="lang kk">B тобы, 2 ұпайға</span><span class="lang ru">Группа B, на 2 балла</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: E.</b></p>
+        <ol class="solution-list lang kk">
+          <li>A тобының қосындысы: 72 + 84 + 78 + 86 = 320.</li>
+          <li>A тобының орташа ұпайы: 320 ÷ 4 = 80.</li>
+          <li>B тобының қосындысы: 80 + 76 + 88 + 84 = 328.</li>
+          <li>B тобының орташа ұпайы: 328 ÷ 4 = 82.</li>
+          <li>82 &gt; 80, сондықтан B тобының орташа ұпайы жоғары.</li>
+          <li>Айырма: 82 - 80 = 2.</li>
+          <li>Жауап: B тобы, 2 ұпайға.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: E.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Сумма группы A: 72 + 84 + 78 + 86 = 320.</li>
+          <li>Средний балл группы A: 320 ÷ 4 = 80.</li>
+          <li>Сумма группы B: 80 + 76 + 88 + 84 = 328.</li>
+          <li>Средний балл группы B: 328 ÷ 4 = 82.</li>
+          <li>82 &gt; 80, значит средний балл группы B выше.</li>
+          <li>Разница: 82 - 80 = 2.</li>
+          <li>Ответ: группа B, на 2 балла.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="B">
+      <div class="q-head">
+        <div class="q-num">11</div>
+        <div class="q-text">
+          <span class="lang kk">Сызықтық графикте өнім бағасының өзгерісі берілген. Қай аралықта баға ең көп өсті?</span>
+          <span class="lang ru">На линейном графике показано изменение цены товара. На каком промежутке цена выросла больше всего?</span>
+        </div>
+      </div>
+
+      <div class="mini-chart">
+        <svg class="line-chart" viewBox="0 0 620 280" role="img">
+          <line x1="60" y1="230" x2="580" y2="230" stroke="#334155" stroke-width="2"/>
+          <line x1="60" y1="30" x2="60" y2="230" stroke="#334155" stroke-width="2"/>
+
+          <line x1="60" y1="190" x2="580" y2="190" stroke="#cbd5e1" stroke-width="1"/>
+          <line x1="60" y1="150" x2="580" y2="150" stroke="#cbd5e1" stroke-width="1"/>
+          <line x1="60" y1="110" x2="580" y2="110" stroke="#cbd5e1" stroke-width="1"/>
+          <line x1="60" y1="70" x2="580" y2="70" stroke="#cbd5e1" stroke-width="1"/>
+
+          <polyline points="90,190 205,170 320,90 435,130 550,70" fill="none" stroke="#f97316" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <circle cx="90" cy="190" r="6" fill="#f97316"/>
+          <circle cx="205" cy="170" r="6" fill="#f97316"/>
+          <circle cx="320" cy="90" r="6" fill="#f97316"/>
+          <circle cx="435" cy="130" r="6" fill="#f97316"/>
+          <circle cx="550" cy="70" r="6" fill="#f97316"/>
+
+          <text x="82" y="178" font-size="13" font-weight="700">120</text>
+          <text x="197" y="158" font-size="13" font-weight="700">130</text>
+          <text x="312" y="78" font-size="13" font-weight="700">170</text>
+          <text x="427" y="118" font-size="13" font-weight="700">150</text>
+          <text x="542" y="58" font-size="13" font-weight="700">180</text>
+
+          <text x="82" y="252" font-size="13">I</text>
+          <text x="197" y="252" font-size="13">II</text>
+          <text x="312" y="252" font-size="13">III</text>
+          <text x="427" y="252" font-size="13">IV</text>
+          <text x="542" y="252" font-size="13">V</text>
+        </svg>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="dct11" value="A"><span>I–II</span></label>
+        <label class="option"><input type="radio" name="dct11" value="B"><span>II–III</span></label>
+        <label class="option"><input type="radio" name="dct11" value="C"><span>III–IV</span></label>
+        <label class="option"><input type="radio" name="dct11" value="D"><span>IV–V</span></label>
+        <label class="option"><input type="radio" name="dct11" value="E"><span>I–V</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: B.</b></p>
+        <ol class="solution-list lang kk">
+          <li>I кезеңдегі баға: 120.</li>
+          <li>II кезеңдегі баға: 130, өсім: 130 - 120 = 10.</li>
+          <li>III кезеңдегі баға: 170, II–III өсімі: 170 - 130 = 40.</li>
+          <li>IV кезеңдегі баға: 150, бұл жерде баға төмендеген.</li>
+          <li>V кезеңдегі баға: 180, IV–V өсімі: 180 - 150 = 30.</li>
+          <li>Ең үлкен өсім: 40.</li>
+          <li>Жауап: II–III.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: B.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Цена в период I: 120.</li>
+          <li>Цена в период II: 130, рост: 130 - 120 = 10.</li>
+          <li>Цена в период III: 170, рост II–III: 170 - 130 = 40.</li>
+          <li>Цена в период IV: 150, здесь цена снизилась.</li>
+          <li>Цена в период V: 180, рост IV–V: 180 - 150 = 30.</li>
+          <li>Наибольший рост: 40.</li>
+          <li>Ответ: II–III.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="A">
+      <div class="q-head">
+        <div class="q-num">12</div>
+        <div class="q-text">
+          <span class="lang kk">Дөңгелек диаграммада шығын құрылымы берілген. Егер көлік шығыны 72° секторға тең болса, ал жалпы шығын 450 000 тг болса, көлікке жұмсалған соманы табыңыз.</span>
+          <span class="lang ru">На круговой диаграмме дана структура расходов. Если транспорт занимает сектор 72°, а общие расходы равны 450 000 тг, найдите сумму расходов на транспорт.</span>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="dct12" value="A"><span>90 000 тг</span></label>
+        <label class="option"><input type="radio" name="dct12" value="B"><span>95 000 тг</span></label>
+        <label class="option"><input type="radio" name="dct12" value="C"><span>100 000 тг</span></label>
+        <label class="option"><input type="radio" name="dct12" value="D"><span>108 000 тг</span></label>
+        <label class="option"><input type="radio" name="dct12" value="E"><span>112 500 тг</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: A.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Дөңгелек диаграмманың толық бұрышы: 360°.</li>
+          <li>Көлік секторы: 72°.</li>
+          <li>Көлік үлесі: <span class="frac"><span class="top">72</span><span class="bottom">360</span></span>.</li>
+          <li><span class="frac"><span class="top">72</span><span class="bottom">360</span></span> = 0,2 = 20%.</li>
+          <li>Жалпы шығын: 450 000 тг.</li>
+          <li>20%-ын табамыз: 450 000 · 0,2 = 90 000.</li>
+          <li>Жауап: 90 000 тг.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: A.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Полный угол круговой диаграммы: 360°.</li>
+          <li>Сектор транспорта: 72°.</li>
+          <li>Доля транспорта: <span class="frac"><span class="top">72</span><span class="bottom">360</span></span>.</li>
+          <li><span class="frac"><span class="top">72</span><span class="bottom">360</span></span> = 0,2 = 20%.</li>
+          <li>Общие расходы: 450 000 тг.</li>
+          <li>Находим 20%: 450 000 · 0,2 = 90 000.</li>
+          <li>Ответ: 90 000 тг.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="D">
+      <div class="q-head">
+        <div class="q-num">13</div>
+        <div class="q-text">
+          <span class="lang kk">Кестеде қала тұрғындарының үш жылдағы саны берілген. 2022 жылдан 2024 жылға дейін халық саны қанша пайызға артты?</span>
+          <span class="lang ru">В таблице дана численность населения города за три года. На сколько процентов выросло население с 2022 по 2024 год?</span>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>
+              <span class="lang kk">Жыл</span>
+              <span class="lang ru">Год</span>
+            </th>
+            <td>2022</td>
+            <td>2023</td>
+            <td>2024</td>
+          </tr>
+          <tr>
+            <th>
+              <span class="lang kk">Халық саны</span>
+              <span class="lang ru">Население</span>
+            </th>
+            <td>80 000</td>
+            <td>84 000</td>
+            <td>92 000</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="dct13" value="A"><span>10%</span></label>
+        <label class="option"><input type="radio" name="dct13" value="B"><span>12%</span></label>
+        <label class="option"><input type="radio" name="dct13" value="C"><span>14%</span></label>
+        <label class="option"><input type="radio" name="dct13" value="D"><span>15%</span></label>
+        <label class="option"><input type="radio" name="dct13" value="E"><span>18%</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: D.</b></p>
+        <ol class="solution-list lang kk">
+          <li>2022 жылғы халық саны: 80 000.</li>
+          <li>2024 жылғы халық саны: 92 000.</li>
+          <li>Өсім: 92 000 - 80 000 = 12 000.</li>
+          <li>Пайыздық өсім бастапқы мән бойынша есептеледі.</li>
+          <li>Формула: <span class="frac"><span class="top">12 000</span><span class="bottom">80 000</span></span> · 100%.</li>
+          <li><span class="frac"><span class="top">12 000</span><span class="bottom">80 000</span></span> = 0,15.</li>
+          <li>0,15 · 100% = 15%.</li>
+          <li>Жауап: 15%.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: D.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Население в 2022 году: 80 000.</li>
+          <li>Население в 2024 году: 92 000.</li>
+          <li>Рост: 92 000 - 80 000 = 12 000.</li>
+          <li>Процентный рост считается от начального значения.</li>
+          <li>Формула: <span class="frac"><span class="top">12 000</span><span class="bottom">80 000</span></span> · 100%.</li>
+          <li><span class="frac"><span class="top">12 000</span><span class="bottom">80 000</span></span> = 0,15.</li>
+          <li>0,15 · 100% = 15%.</li>
+          <li>Ответ: 15%.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="B">
+      <div class="q-head">
+        <div class="q-num">14</div>
+        <div class="q-text">
+          <span class="lang kk">Кестеде төрт бөлімнің қызметкерлер саны және бір қызметкерге шаққандағы орташа өнімділігі берілген. Жалпы өнім көлемі ең жоғары бөлімді анықтаңыз.</span>
+          <span class="lang ru">В таблице даны количество сотрудников четырёх отделов и средняя производительность на одного сотрудника. Определите отдел с наибольшим общим объёмом продукции.</span>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>
+              <span class="lang kk">Бөлім</span>
+              <span class="lang ru">Отдел</span>
+            </th>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td>D</td>
+          </tr>
+          <tr>
+            <th>
+              <span class="lang kk">Қызметкер саны</span>
+              <span class="lang ru">Сотрудники</span>
+            </th>
+            <td>18</td>
+            <td>24</td>
+            <td>20</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <th>
+              <span class="lang kk">Өнімділік</span>
+              <span class="lang ru">Производительность</span>
+            </th>
+            <td>42</td>
+            <td>35</td>
+            <td>39</td>
+            <td>48</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="dct14" value="A"><span>A</span></label>
+        <label class="option"><input type="radio" name="dct14" value="B"><span>B</span></label>
+        <label class="option"><input type="radio" name="dct14" value="C"><span>C</span></label>
+        <label class="option"><input type="radio" name="dct14" value="D"><span>D</span></label>
+        <label class="option"><input type="radio" name="dct14" value="E"><span class="lang kk">B және C тең</span><span class="lang ru">B и C равны</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: B.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Жалпы өнім көлемі = қызметкер саны · бір қызметкердің өнімділігі.</li>
+          <li>A бөлімі: 18 · 42 = 756.</li>
+          <li>B бөлімі: 24 · 35 = 840.</li>
+          <li>C бөлімі: 20 · 39 = 780.</li>
+          <li>D бөлімі: 15 · 48 = 720.</li>
+          <li>Ең жоғары жалпы өнім көлемі: 840.</li>
+          <li>Жауап: B бөлімі.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: B.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Общий объём продукции = количество сотрудников · производительность одного сотрудника.</li>
+          <li>Отдел A: 18 · 42 = 756.</li>
+          <li>Отдел B: 24 · 35 = 840.</li>
+          <li>Отдел C: 20 · 39 = 780.</li>
+          <li>Отдел D: 15 · 48 = 720.</li>
+          <li>Наибольший общий объём: 840.</li>
+          <li>Ответ: отдел B.</li>
+        </ol>
+      </div>
+    </article>
+
+    <div class="section-actions">
+      <button class="check-btn" type="button" data-check="data-table-chart-test">
+        <span class="lang kk">Нәтижені көрсету</span>
+        <span class="lang ru">Показать результат</span>
+      </button>
+      <div class="result" data-result="data-table-chart-test"></div>
+    </div>
+  </div>
+</section>
     
   
