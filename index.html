@@ -9,11 +9,11 @@
 :root{
   --bg:#f5f1e8;
   --card:#fffdf8;
-  --ink:#211b16;
-  --muted:#6e6258;
-  --line:#e1d5c4;
-  --accent:#334685;
-  --accent2:#b86f3f;
+  --ink:#201b16;
+  --muted:#6d6258;
+  --line:#e0d3c2;
+  --accent:#344681;
+  --accent2:#b36b3d;
   --soft:#eef1fb;
   --soft2:#fff1e7;
   --good:#24764d;
@@ -27,10 +27,11 @@ body{
   background:var(--bg);
   color:var(--ink);
   font-family:Inter,Arial,sans-serif;
-  line-height:1.62;
+  line-height:1.65;
 }
 .wrap{max-width:1180px;margin:0 auto;padding:0 18px}
 a{text-decoration:none;color:inherit}
+
 .hero{
   background:linear-gradient(135deg,#26346b,#5267b4 55%,#c17a47);
   color:white;
@@ -71,6 +72,7 @@ h1{
 }
 .hero-card b{display:block;font-size:18px}
 .hero-card span{font-size:13px;color:#eeeaff}
+
 .topbar{
   background:#fffdf8;
   border-bottom:1px solid var(--line);
@@ -118,6 +120,7 @@ h1{
   background:var(--accent);
   color:white;
 }
+
 main{padding:24px 0 60px}
 .section{
   background:var(--card);
@@ -152,7 +155,11 @@ main{padding:24px 0 60px}
   font-size:12px;
   font-weight:900;
 }
-.tag.orange{background:var(--soft2);color:#9a522b;border-color:#f2cbb4}
+.tag.orange{
+  background:var(--soft2);
+  color:#9a522b;
+  border-color:#f2cbb4;
+}
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -236,6 +243,66 @@ main{padding:24px 0 60px}
   color:#8b4c2d;
   margin-bottom:8px;
 }
+
+/* Әдемі бөлшек / красивая дробь */
+.frac{
+  display:inline-grid;
+  grid-template-rows:auto auto;
+  align-items:center;
+  justify-items:center;
+  vertical-align:middle;
+  line-height:1;
+  margin:0 3px;
+  font-weight:850;
+}
+.frac .top{
+  border-bottom:2px solid currentColor;
+  padding:0 4px 3px;
+  min-width:18px;
+  text-align:center;
+}
+.frac .bottom{
+  padding:3px 4px 0;
+  min-width:18px;
+  text-align:center;
+}
+
+/* Айқастырып көбейту / перекрёстное умножение */
+.cross-box{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:14px;
+  margin:14px 0;
+  overflow-x:auto;
+}
+.cross-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  font-size:20px;
+  font-weight:900;
+  color:#2d3672;
+}
+.cross-arrow{
+  font-size:26px;
+  color:#b36b3d;
+  font-weight:950;
+}
+.cross-detail{
+  margin-top:12px;
+  display:grid;
+  gap:8px;
+}
+.cross-detail div{
+  background:#fffaf1;
+  border:1px solid #eadcc9;
+  border-radius:14px;
+  padding:10px;
+}
+
 .table-wrap{overflow-x:auto;margin:12px 0}
 table{
   width:100%;
@@ -262,6 +329,7 @@ th{background:#f2eefb;color:#333d77}
   padding:15px;
 }
 .task b{color:#34427b}
+
 .question{
   background:#fffaf3;
   border:1px solid var(--line);
@@ -341,18 +409,21 @@ th{background:#f2eefb;color:#333d77}
   font-weight:950;
   color:#2d3672;
 }
+
 .lang.ru{display:none}
 body.ru .lang.kk{display:none}
 body.ru .lang.ru{display:inline}
 body.ru .block.lang.ru{display:block}
 body.ru .block.lang.kk{display:none}
 .block.lang.ru{display:none}
+
 @media(max-width:680px){
   .section{padding:17px;border-radius:22px}
   .hero{padding:32px 0 26px}
   .q-head{gap:9px}
   .q-text{font-size:15px}
   .formula{font-size:21px}
+  .cross-row{font-size:18px}
 }
 </style>
 
@@ -427,14 +498,14 @@ document.addEventListener('DOMContentLoaded', function(){
         <span class="lang ru">основных тем</span>
       </div>
       <div class="hero-card">
-        <b>A/B</b>
-        <span class="lang kk">салыстыру форматы</span>
-        <span class="lang ru">формат сравнения</span>
+        <b>A және B</b>
+        <span class="lang kk">шамаларды салыстыру</span>
+        <span class="lang ru">сравнение величин</span>
       </div>
       <div class="hero-card">
-        <b>Final</b>
-        <span class="lang kk">соңында аралас тесттер</span>
-        <span class="lang ru">смешанные тесты в конце</span>
+        <b>5 × 20</b>
+        <span class="lang kk">соңында аралас нұсқалар</span>
+        <span class="lang ru">смешанные варианты в конце</span>
       </div>
     </div>
   </div>
@@ -466,8 +537,14 @@ document.addEventListener('DOMContentLoaded', function(){
 <section class="section" id="numbers">
   <div class="tags">
     <span class="tag">1-бөлім</span>
-    <span class="tag orange">A/B салыстыру</span>
-    <span class="tag orange">Estimate</span>
+    <span class="tag orange">
+      <span class="lang kk">Шамаларды салыстыру</span>
+      <span class="lang ru">Сравнение величин</span>
+    </span>
+    <span class="tag orange">
+      <span class="lang kk">Жуықтау</span>
+      <span class="lang ru">Округление</span>
+    </span>
   </div>
 
   <h2>
@@ -476,10 +553,10 @@ document.addEventListener('DOMContentLoaded', function(){
   </h2>
 
   <p class="block lang kk">
-    Бұл бөлімде санды дұрыс оқу, бөлшек пен ондық бөлшекті салыстыру, санның жуық мәнін бағалау, A және B шамаларын салыстыру, есептеуді қысқа әрі дәл жүргізу қарастырылады.
+    Бұл бөлімде сан түрлері, бөлшек пен ондық бөлшекті салыстыру, жуықтау, сандық өрнектерді ықшам есептеу және A мен B шамаларын салыстыру қарастырылады.
   </p>
   <p class="block lang ru">
-    В этом разделе рассматриваются чтение чисел, сравнение дробей и десятичных дробей, оценка приблизительного значения, сравнение величин A и B, быстрый и точный арифметический расчёт.
+    В этом разделе рассматриваются виды чисел, сравнение дробей и десятичных дробей, округление, быстрый расчёт числовых выражений и сравнение величин A и B.
   </p>
 
   <div class="grid">
@@ -511,110 +588,129 @@ document.addEventListener('DOMContentLoaded', function(){
         <span class="lang ru">Рациональные числа</span>
       </b>
       <p>
-        <span class="lang kk">Бөлшек түрінде жазылатын сандар: a/b, мұнда b ≠ 0.</span>
-        <span class="lang ru">Числа, которые можно записать дробью a/b, где b ≠ 0.</span>
+        <span class="lang kk">Бөлшек түрінде жазылатын сандар. Бөлім нөлге тең болмайды.</span>
+        <span class="lang ru">Числа, которые можно записать дробью. Знаменатель не равен нулю.</span>
       </p>
     </div>
   </div>
 
   <h3>
-    <span class="lang kk">1. Сан түрлерін ажырату</span>
-    <span class="lang ru">1. Как различать виды чисел</span>
+    <span class="lang kk">1. Бөлшекті дұрыс оқу және жазу</span>
+    <span class="lang ru">1. Как правильно читать и записывать дробь</span>
   </h3>
 
   <div class="formula-box">
-    <div class="formula">a / b, &nbsp; b ≠ 0</div>
+    <div class="formula">
+      <span class="frac"><span class="top">a</span><span class="bottom">b</span></span>, b ≠ 0
+    </div>
     <p class="block lang kk">
-      Бұл жазылу рационал санды білдіреді. Мұндағы <b>a</b> — алым, <b>b</b> — бөлім. Бөлім нөлге тең болмауы керек, себебі 0-ге бөлу анықталмаған.
+      Бөлшекте жоғарыдағы сан алым деп аталады, төмендегі сан бөлім деп аталады. Алым қанша бөлік алынғанын көрсетеді, бөлім бүтіннің қанша тең бөлікке бөлінгенін көрсетеді.
     </p>
     <p class="block lang ru">
-      Такая запись обозначает рациональное число. Здесь <b>a</b> — числитель, <b>b</b> — знаменатель. Знаменатель не может быть равен нулю, потому что деление на 0 не определено.
+      В дроби верхнее число называется числителем, нижнее число называется знаменателем. Числитель показывает, сколько частей взято, знаменатель показывает, на сколько равных частей разделили целое.
     </p>
   </div>
 
   <div class="note">
-    <span class="lang kk"><b>Маңызды:</b> аралас санды салыстыруда оны бұрыс бөлшекке немесе ондық бөлшекке айналдыру ыңғайлы.</span>
-    <span class="lang ru"><b>Важно:</b> при сравнении смешанное число удобно переводить в неправильную дробь или десятичную дробь.</span>
+    <span class="lang kk"><b>Маңызды:</b> сайтта бөлшектер қатар жазылмайды. Мысалы, үштің екісі былай көрсетіледі: <span class="frac"><span class="top">2</span><span class="bottom">3</span></span>.</span>
+    <span class="lang ru"><b>Важно:</b> на сайте дроби не пишутся в одну строку. Например, две третьих показываются так: <span class="frac"><span class="top">2</span><span class="bottom">3</span></span>.</span>
   </div>
 
   <h3>
-    <span class="lang kk">2. Бөлшектерді салыстыру</span>
-    <span class="lang ru">2. Сравнение дробей</span>
+    <span class="lang kk">2. Бөлшектерді айқастырып салыстыру</span>
+    <span class="lang ru">2. Сравнение дробей крест-накрест</span>
   </h3>
 
   <div class="formula-box">
-    <div class="formula">a/b ? c/d → a·d ? c·b</div>
+    <div class="formula">
+      <span class="frac"><span class="top">a</span><span class="bottom">b</span></span>
+      ?
+      <span class="frac"><span class="top">c</span><span class="bottom">d</span></span>
+    </div>
     <p class="block lang kk">
-      Егер екі бөлшектің бөлімдері әртүрлі болса, айқастырып көбейтуге болады. Сол жақ бөлшектің алымын оң жақ бөлшектің бөліміне көбейтеміз, ал оң жақ бөлшектің алымын сол жақ бөлшектің бөліміне көбейтеміз.
+      Бөлімдері әртүрлі екі бөлшекті салыстыру үшін айқастырып көбейтеміз: сол жақ алым оң жақ бөлімге көбейеді, оң жақ алым сол жақ бөлімге көбейеді.
     </p>
     <p class="block lang ru">
-      Если знаменатели разные, дроби можно сравнить крест-накрест. Числитель левой дроби умножаем на знаменатель правой дроби, а числитель правой дроби — на знаменатель левой дроби.
+      Чтобы сравнить две дроби с разными знаменателями, умножаем крест-накрест: числитель левой дроби умножается на знаменатель правой, а числитель правой дроби — на знаменатель левой.
+    </p>
+  </div>
+
+  <div class="cross-box">
+    <div class="cross-row">
+      <span class="frac"><span class="top">7</span><span class="bottom">12</span></span>
+      <span>?</span>
+      <span class="frac"><span class="top">5</span><span class="bottom">8</span></span>
+    </div>
+    <div class="cross-row">
+      <span>7</span>
+      <span class="cross-arrow">↘</span>
+      <span>8</span>
+      <span style="width:20px"></span>
+      <span>5</span>
+      <span class="cross-arrow">↙</span>
+      <span>12</span>
+    </div>
+    <div class="cross-detail">
+      <div>
+        <span class="lang kk">Сол жақ көбейтінді: 7 · 8 = 56</span>
+        <span class="lang ru">Левое произведение: 7 · 8 = 56</span>
+      </div>
+      <div>
+        <span class="lang kk">Оң жақ көбейтінді: 5 · 12 = 60</span>
+        <span class="lang ru">Правое произведение: 5 · 12 = 60</span>
+      </div>
+      <div>
+        <span class="lang kk">56 < 60, сондықтан <span class="frac"><span class="top">7</span><span class="bottom">12</span></span> < <span class="frac"><span class="top">5</span><span class="bottom">8</span></span>.</span>
+        <span class="lang ru">56 < 60, поэтому <span class="frac"><span class="top">7</span><span class="bottom">12</span></span> < <span class="frac"><span class="top">5</span><span class="bottom">8</span></span>.</span>
+      </div>
+    </div>
+  </div>
+
+  <h3>
+    <span class="lang kk">3. Бөлшекті ондық бөлшекке айналдыру</span>
+    <span class="lang ru">3. Перевод дроби в десятичную дробь</span>
+  </h3>
+
+  <div class="formula-box">
+    <div class="formula">
+      <span class="frac"><span class="top">a</span><span class="bottom">b</span></span> = a ÷ b
+    </div>
+    <p class="block lang kk">
+      Бөлшекті ондық бөлшекке айналдыру үшін алымды бөлімге бөлеміз. Бұл тәсіл бірнеше санды бір қатарға келтіріп салыстыруға ыңғайлы.
+    </p>
+    <p class="block lang ru">
+      Чтобы перевести дробь в десятичную, числитель делим на знаменатель. Этот способ удобен, когда нужно привести несколько чисел к одному виду и сравнить.
     </p>
   </div>
 
   <div class="example">
     <div class="example-title">
-      <span class="lang kk">Мысал 1. Қайсысы үлкен: 7/12 немесе 5/8?</span>
-      <span class="lang ru">Пример 1. Что больше: 7/12 или 5/8?</span>
+      <span class="lang kk">Мысал. Сандарды өсу ретімен орналастырыңыз.</span>
+      <span class="lang ru">Пример. Расположите числа по возрастанию.</span>
+    </div>
+
+    <div class="formula">
+      <span class="frac"><span class="top">3</span><span class="bottom">8</span></span>,
+      0,36,
+      <span class="frac"><span class="top">5</span><span class="bottom">12</span></span>
     </div>
 
     <div class="steps">
       <div class="step">
-        <span class="lang kk">Бөлшектердің бөлімдері әртүрлі: 12 және 8. Сондықтан айқастырып көбейтеміз.</span>
-        <span class="lang ru">Знаменатели разные: 12 и 8. Поэтому сравниваем крест-накрест.</span>
+        <span class="lang kk"><span class="frac"><span class="top">3</span><span class="bottom">8</span></span> = 3 ÷ 8 = 0,375.</span>
+        <span class="lang ru"><span class="frac"><span class="top">3</span><span class="bottom">8</span></span> = 3 ÷ 8 = 0,375.</span>
       </div>
       <div class="step">
-        <span class="lang kk">7 · 8 = 56. Бұл 7/12 бөлшегіне сәйкес көбейтінді.</span>
-        <span class="lang ru">7 · 8 = 56. Это произведение, соответствующее дроби 7/12.</span>
+        <span class="lang kk">0,36 ондық бөлшек түрінде берілген, оны өзгертпейміз.</span>
+        <span class="lang ru">0,36 уже дано в виде десятичной дроби, его не изменяем.</span>
       </div>
       <div class="step">
-        <span class="lang kk">5 · 12 = 60. Бұл 5/8 бөлшегіне сәйкес көбейтінді.</span>
-        <span class="lang ru">5 · 12 = 60. Это произведение, соответствующее дроби 5/8.</span>
+        <span class="lang kk"><span class="frac"><span class="top">5</span><span class="bottom">12</span></span> = 5 ÷ 12 ≈ 0,4167.</span>
+        <span class="lang ru"><span class="frac"><span class="top">5</span><span class="bottom">12</span></span> = 5 ÷ 12 ≈ 0,4167.</span>
       </div>
       <div class="step">
-        <span class="lang kk">56 < 60, сондықтан 7/12 < 5/8.</span>
-        <span class="lang ru">56 < 60, значит 7/12 < 5/8.</span>
-      </div>
-    </div>
-  </div>
-
-  <h3>
-    <span class="lang kk">3. Ондық бөлшекке айналдыру</span>
-    <span class="lang ru">3. Перевод в десятичную дробь</span>
-  </h3>
-
-  <div class="formula-box">
-    <div class="formula">a/b = a ÷ b</div>
-    <p class="block lang kk">
-      Бөлшекті ондық бөлшекке айналдыру үшін алымды бөлімге бөлеміз. Бұл әдіс салыстыруда, жуықтауда және пайызға байланысты есептерде пайдалы.
-    </p>
-    <p class="block lang ru">
-      Чтобы перевести дробь в десятичную, числитель делим на знаменатель. Этот способ полезен при сравнении, оценке и задачах на проценты.
-    </p>
-  </div>
-
-  <div class="example">
-    <div class="example-title">
-      <span class="lang kk">Мысал 2. 3/8, 0,36 және 5/12 сандарын өсу ретімен орналастырыңыз.</span>
-      <span class="lang ru">Пример 2. Расположите 3/8, 0,36 и 5/12 по возрастанию.</span>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <span class="lang kk">3/8 = 3 ÷ 8 = 0,375.</span>
-        <span class="lang ru">3/8 = 3 ÷ 8 = 0,375.</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">0,36 ондық бөлшек түрінде берілген, сондықтан өзгеріссіз қалдырамыз.</span>
-        <span class="lang ru">0,36 уже дано в виде десятичной дроби, оставляем без изменения.</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">5/12 ≈ 0,4167, себебі 5 ÷ 12 = 0,4166...</span>
-        <span class="lang ru">5/12 ≈ 0,4167, потому что 5 ÷ 12 = 0,4166...</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">Салыстырамыз: 0,36 < 0,375 < 0,4167. Жауап: 0,36; 3/8; 5/12.</span>
-        <span class="lang ru">Сравниваем: 0,36 < 0,375 < 0,4167. Ответ: 0,36; 3/8; 5/12.</span>
+        <span class="lang kk">Салыстырамыз: 0,36 < 0,375 < 0,4167. Жауап: 0,36; <span class="frac"><span class="top">3</span><span class="bottom">8</span></span>; <span class="frac"><span class="top">5</span><span class="bottom">12</span></span>.</span>
+        <span class="lang ru">Сравниваем: 0,36 < 0,375 < 0,4167. Ответ: 0,36; <span class="frac"><span class="top">3</span><span class="bottom">8</span></span>; <span class="frac"><span class="top">5</span><span class="bottom">12</span></span>.</span>
       </div>
     </div>
   </div>
@@ -627,17 +723,17 @@ document.addEventListener('DOMContentLoaded', function(){
   <div class="formula-box">
     <div class="formula">A ? B</div>
     <p class="block lang kk">
-      Мұндай тапсырмада нақты жауап сан емес, салыстыру нәтижесі болады: A > B, A < B, A = B немесе мәлімет жеткіліксіз. Ең маңыздысы — екі шаманы да бірдей түрге келтіру.
+      Мұндай тапсырмаларда санды ғана табу жеткіліксіз. Екі шаманы бірдей түрге келтіріп, қайсысы үлкен, қайсысы кіші, тең бе, әлде мәлімет жеткіліксіз бе — соны анықтаймыз.
     </p>
     <p class="block lang ru">
-      В таких заданиях ответом является не число, а результат сравнения: A > B, A < B, A = B или данных недостаточно. Главное — привести обе величины к одному виду.
+      В таких заданиях недостаточно просто вычислить одно число. Нужно привести обе величины к одному виду и определить, что больше, что меньше, равны ли они или данных недостаточно.
     </p>
   </div>
 
   <div class="example">
     <div class="example-title">
-      <span class="lang kk">Мысал 3. A = 7/9 · 36, B = 29. Салыстырыңыз.</span>
-      <span class="lang ru">Пример 3. A = 7/9 · 36, B = 29. Сравните.</span>
+      <span class="lang kk">Мысал. A = <span class="frac"><span class="top">7</span><span class="bottom">9</span></span> · 36, B = 29. Салыстырыңыз.</span>
+      <span class="lang ru">Пример. A = <span class="frac"><span class="top">7</span><span class="bottom">9</span></span> · 36, B = 29. Сравните.</span>
     </div>
 
     <div class="steps">
@@ -650,8 +746,8 @@ document.addEventListener('DOMContentLoaded', function(){
         <span class="lang ru">Теперь умножаем 4 на 7: 4 · 7 = 28. Значит, A = 28.</span>
       </div>
       <div class="step">
-        <span class="lang kk">B = 29 берілген. Салыстырамыз: 28 < 29.</span>
-        <span class="lang ru">B = 29 дано. Сравниваем: 28 < 29.</span>
+        <span class="lang kk">B = 29. Салыстырамыз: 28 < 29.</span>
+        <span class="lang ru">B = 29. Сравниваем: 28 < 29.</span>
       </div>
       <div class="step">
         <span class="lang kk">Жауап: A шамасы B шамасынан кіші.</span>
@@ -661,74 +757,20 @@ document.addEventListener('DOMContentLoaded', function(){
   </div>
 
   <h3>
-    <span class="lang kk">5. Жуықтау және сандық бағалау</span>
-    <span class="lang ru">5. Округление и численная оценка</span>
+    <span class="lang kk">5. Жуықтау</span>
+    <span class="lang ru">5. Округление и приближённая оценка</span>
   </h3>
 
   <div class="formula-box">
-    <div class="formula">estimate ≈ ыңғайлы жақын мән</div>
+    <div class="formula">
+      49,8 · 19,9 ≈ 50 · 20 = 1000
+    </div>
     <p class="block lang kk">
-      Жуықтау нақты жауапты бірден есептеу қиын болғанда қолданылады. Сан есептеуге ыңғайлы жақын мәнге ауыстырылады. Мысалы, 198 ≈ 200, 49,7 ≈ 50, 0,249 ≈ 0,25.
+      Жуықтау нақты есеп ұзақ болғанда қолданылады. Сан есептеуге ыңғайлы жақын мәнге ауыстырылады. Бірақ жауаптың үлкен немесе кіші бағытқа өзгеруін бақылау керек.
     </p>
     <p class="block lang ru">
-      Оценка используется, когда точное вычисление занимает много времени. Число заменяют близким удобным значением. Например, 198 ≈ 200, 49,7 ≈ 50, 0,249 ≈ 0,25.
+      Приближённая оценка используется, когда точный расчёт занимает много времени. Число заменяют близким удобным значением. Но нужно следить, в какую сторону изменяется результат.
     </p>
-  </div>
-
-  <div class="warning">
-    <span class="lang kk"><b>Жиі қате:</b> жуықтауды қолданғанда жауаптың бағытын бақылау керек. Егер санды үлкейтсек, нәтиже де үлкеюі мүмкін; егер кішірейтсек, нәтиже азаюы мүмкін.</span>
-    <span class="lang ru"><b>Частая ошибка:</b> при оценке нужно следить за направлением. Если число увеличили, результат может увеличиться; если уменьшили — результат может уменьшиться.</span>
-  </div>
-
-  <div class="example">
-    <div class="example-title">
-      <span class="lang kk">Мысал 4. 49,8 · 19,9 мәнін жуықтаңыз.</span>
-      <span class="lang ru">Пример 4. Оцените значение 49,8 · 19,9.</span>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <span class="lang kk">49,8 саны 50-ге өте жақын, сондықтан 49,8 ≈ 50.</span>
-        <span class="lang ru">Число 49,8 очень близко к 50, значит 49,8 ≈ 50.</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">19,9 саны 20-ға өте жақын, сондықтан 19,9 ≈ 20.</span>
-        <span class="lang ru">Число 19,9 очень близко к 20, значит 19,9 ≈ 20.</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">Енді ыңғайлы көбейтеміз: 50 · 20 = 1000.</span>
-        <span class="lang ru">Теперь удобно умножаем: 50 · 20 = 1000.</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">Демек, нақты мән 1000-ға өте жақын және 1000-нан сәл кіші.</span>
-        <span class="lang ru">Значит, точное значение близко к 1000 и немного меньше 1000.</span>
-      </div>
-    </div>
-  </div>
-
-  <h3>
-    <span class="lang kk">Жаттығу тапсырмалары</span>
-    <span class="lang ru">Тренировочные задания</span>
-  </h3>
-
-  <div class="practice">
-    <div class="task">
-      <b>1.</b>
-      <span class="lang kk">A = 5/6 · 42, B = 36. A мен B шамаларын салыстырыңыз.</span>
-      <span class="lang ru">A = 5/6 · 42, B = 36. Сравните A и B.</span>
-    </div>
-
-    <div class="task">
-      <b>2.</b>
-      <span class="lang kk">0,48; 7/15; 1/2 сандарын өсу ретімен орналастырыңыз.</span>
-      <span class="lang ru">Расположите 0,48; 7/15; 1/2 по возрастанию.</span>
-    </div>
-
-    <div class="task">
-      <b>3.</b>
-      <span class="lang kk">19,7 · 4,9 мәнін жуықтап бағалаңыз.</span>
-      <span class="lang ru">Оцените приблизительно значение 19,7 · 4,9.</span>
-    </div>
   </div>
 
   <div class="test-block" id="numbers-test">
@@ -741,23 +783,20 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="q-head">
         <div class="q-num">1</div>
         <div class="q-text">
-          <span class="lang kk">A = 11/12 · 48, B = 45. Салыстырыңыз.</span>
-          <span class="lang ru">A = 11/12 · 48, B = 45. Сравните.</span>
+          <span class="lang kk">A = <span class="frac"><span class="top">11</span><span class="bottom">12</span></span> · 48, B = 45. Салыстырыңыз.</span>
+          <span class="lang ru">A = <span class="frac"><span class="top">11</span><span class="bottom">12</span></span> · 48, B = 45. Сравните.</span>
         </div>
       </div>
-
       <div class="options">
-        <label class="option"><input type="radio" name="nq1" value="A"><span>A шамасы B шамасынан үлкен / A больше B</span></label>
-        <label class="option"><input type="radio" name="nq1" value="B"><span>A шамасы B шамасынан кіші / A меньше B</span></label>
-        <label class="option"><input type="radio" name="nq1" value="C"><span>A шамасы B шамасына тең / A равно B</span></label>
+        <label class="option"><input type="radio" name="nq1" value="A"><span class="lang kk">A шамасы B шамасынан үлкен</span><span class="lang ru">A больше B</span></label>
+        <label class="option"><input type="radio" name="nq1" value="B"><span class="lang kk">A шамасы B шамасынан кіші</span><span class="lang ru">A меньше B</span></label>
+        <label class="option"><input type="radio" name="nq1" value="C"><span class="lang kk">A шамасы B шамасына тең</span><span class="lang ru">A равно B</span></label>
         <label class="option"><input type="radio" name="nq1" value="D"><span>2A = B</span></label>
-        <label class="option"><input type="radio" name="nq1" value="E"><span>Мәлімет жеткіліксіз / Данных недостаточно</span></label>
+        <label class="option"><input type="radio" name="nq1" value="E"><span class="lang kk">Мәлімет жеткіліксіз</span><span class="lang ru">Данных недостаточно</span></label>
       </div>
-
       <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> B.</p>
-        <p class="lang kk">Шешуі: 48 ÷ 12 = 4. Енді 4 · 11 = 44, демек A = 44. B = 45. 44 < 45, сондықтан A шамасы B шамасынан кіші.</p>
-        <p class="lang ru">Решение: 48 ÷ 12 = 4. Затем 4 · 11 = 44, значит A = 44. B = 45. 44 < 45, поэтому A меньше B.</p>
+        <p class="lang kk"><b>Дұрыс жауап: B.</b> 48 ÷ 12 = 4. 4 · 11 = 44. A = 44, B = 45. 44 < 45, сондықтан A шамасы B шамасынан кіші.</p>
+        <p class="lang ru"><b>Правильный ответ: B.</b> 48 ÷ 12 = 4. 4 · 11 = 44. A = 44, B = 45. 44 < 45, поэтому A меньше B.</p>
       </div>
     </article>
 
@@ -765,23 +804,20 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="q-head">
         <div class="q-num">2</div>
         <div class="q-text">
-          <span class="lang kk">3/7, 0,41, 5/12 сандарының ең үлкенін табыңыз.</span>
-          <span class="lang ru">Найдите наибольшее число среди 3/7, 0,41, 5/12.</span>
+          <span class="lang kk"><span class="frac"><span class="top">3</span><span class="bottom">7</span></span>, 0,41, <span class="frac"><span class="top">5</span><span class="bottom">12</span></span> сандарының ең үлкенін табыңыз.</span>
+          <span class="lang ru">Найдите наибольшее число среди <span class="frac"><span class="top">3</span><span class="bottom">7</span></span>, 0,41, <span class="frac"><span class="top">5</span><span class="bottom">12</span></span>.</span>
         </div>
       </div>
-
       <div class="options">
         <label class="option"><input type="radio" name="nq2" value="A"><span>0,41</span></label>
-        <label class="option"><input type="radio" name="nq2" value="B"><span>5/12</span></label>
-        <label class="option"><input type="radio" name="nq2" value="C"><span>3/7 және 5/12 тең / 3/7 и 5/12 равны</span></label>
-        <label class="option"><input type="radio" name="nq2" value="D"><span>3/7</span></label>
-        <label class="option"><input type="radio" name="nq2" value="E"><span>Үшеуі де тең / Все три равны</span></label>
+        <label class="option"><input type="radio" name="nq2" value="B"><span class="frac"><span class="top">5</span><span class="bottom">12</span></span></label>
+        <label class="option"><input type="radio" name="nq2" value="C"><span class="lang kk">Үшеуі де тең</span><span class="lang ru">Все три равны</span></label>
+        <label class="option"><input type="radio" name="nq2" value="D"><span class="frac"><span class="top">3</span><span class="bottom">7</span></span></label>
+        <label class="option"><input type="radio" name="nq2" value="E"><span class="lang kk">Салыстыруға болмайды</span><span class="lang ru">Нельзя сравнить</span></label>
       </div>
-
       <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> D.</p>
-        <p class="lang kk">Шешуі: 3/7 ≈ 0,4286. 5/12 ≈ 0,4167. 0,41 өзгермейді. Салыстыру: 0,4286 > 0,4167 > 0,41. Ең үлкені — 3/7.</p>
-        <p class="lang ru">Решение: 3/7 ≈ 0,4286. 5/12 ≈ 0,4167. 0,41 оставляем. Сравнение: 0,4286 > 0,4167 > 0,41. Наибольшее — 3/7.</p>
+        <p class="lang kk"><b>Дұрыс жауап: D.</b> <span class="frac"><span class="top">3</span><span class="bottom">7</span></span> ≈ 0,4286; <span class="frac"><span class="top">5</span><span class="bottom">12</span></span> ≈ 0,4167. 0,4286 > 0,4167 > 0,41. Ең үлкені — <span class="frac"><span class="top">3</span><span class="bottom">7</span></span>.</p>
+        <p class="lang ru"><b>Правильный ответ: D.</b> <span class="frac"><span class="top">3</span><span class="bottom">7</span></span> ≈ 0,4286; <span class="frac"><span class="top">5</span><span class="bottom">12</span></span> ≈ 0,4167. 0,4286 > 0,4167 > 0,41. Наибольшее — <span class="frac"><span class="top">3</span><span class="bottom">7</span></span>.</p>
       </div>
     </article>
 
@@ -793,19 +829,16 @@ document.addEventListener('DOMContentLoaded', function(){
           <span class="lang ru">A = 0,125 · 640, B = 8² + 15. Сравните.</span>
         </div>
       </div>
-
       <div class="options">
         <label class="option"><input type="radio" name="nq3" value="A"><span>A > B</span></label>
         <label class="option"><input type="radio" name="nq3" value="B"><span>A < B</span></label>
         <label class="option"><input type="radio" name="nq3" value="C"><span>A = B</span></label>
         <label class="option"><input type="radio" name="nq3" value="D"><span>A = B + 2</span></label>
-        <label class="option"><input type="radio" name="nq3" value="E"><span>Мәлімет жеткіліксіз / Данных недостаточно</span></label>
+        <label class="option"><input type="radio" name="nq3" value="E"><span class="lang kk">Мәлімет жеткіліксіз</span><span class="lang ru">Данных недостаточно</span></label>
       </div>
-
       <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> A.</p>
-        <p class="lang kk">Шешуі: 0,125 = 1/8. Сондықтан A = 640 ÷ 8 = 80. B = 8² + 15 = 64 + 15 = 79. Салыстырамыз: 80 > 79, демек A > B.</p>
-        <p class="lang ru">Решение: 0,125 = 1/8. Поэтому A = 640 ÷ 8 = 80. B = 8² + 15 = 64 + 15 = 79. Сравниваем: 80 > 79, значит A > B.</p>
+        <p class="lang kk"><b>Дұрыс жауап: A.</b> 0,125 = <span class="frac"><span class="top">1</span><span class="bottom">8</span></span>. A = 640 ÷ 8 = 80. B = 64 + 15 = 79. 80 > 79, сондықтан A > B.</p>
+        <p class="lang ru"><b>Правильный ответ: A.</b> 0,125 = <span class="frac"><span class="top">1</span><span class="bottom">8</span></span>. A = 640 ÷ 8 = 80. B = 64 + 15 = 79. 80 > 79, поэтому A > B.</p>
       </div>
     </article>
 
@@ -817,7 +850,6 @@ document.addEventListener('DOMContentLoaded', function(){
           <span class="lang ru">Выберите число, наиболее близкое к 49,6 · 20,2.</span>
         </div>
       </div>
-
       <div class="options">
         <label class="option"><input type="radio" name="nq4" value="A"><span>1000</span></label>
         <label class="option"><input type="radio" name="nq4" value="B"><span>900</span></label>
@@ -825,11 +857,9 @@ document.addEventListener('DOMContentLoaded', function(){
         <label class="option"><input type="radio" name="nq4" value="D"><span>1200</span></label>
         <label class="option"><input type="radio" name="nq4" value="E"><span>800</span></label>
       </div>
-
       <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> A.</p>
-        <p class="lang kk">Шешуі: 49,6 ≈ 50, ал 20,2 ≈ 20. Жуық мән: 50 · 20 = 1000. Нақты мән 49,6 · 20,2 = 1001,92, сондықтан ең жақын жауап — 1000.</p>
-        <p class="lang ru">Решение: 49,6 ≈ 50, а 20,2 ≈ 20. Оценка: 50 · 20 = 1000. Точное значение 49,6 · 20,2 = 1001,92, поэтому ближайший ответ — 1000.</p>
+        <p class="lang kk"><b>Дұрыс жауап: A.</b> 49,6 ≈ 50 және 20,2 ≈ 20. 50 · 20 = 1000. Нақты мән 1001,92, сондықтан ең жақын жауап — 1000.</p>
+        <p class="lang ru"><b>Правильный ответ: A.</b> 49,6 ≈ 50 и 20,2 ≈ 20. 50 · 20 = 1000. Точное значение 1001,92, поэтому ближайший ответ — 1000.</p>
       </div>
     </article>
 
@@ -837,23 +867,20 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="q-head">
         <div class="q-num">5</div>
         <div class="q-text">
-          <span class="lang kk">Қай сан 0,6 және 2/3 аралығында орналасқан?</span>
-          <span class="lang ru">Какое число находится между 0,6 и 2/3?</span>
+          <span class="lang kk">Қай сан 0,6 және <span class="frac"><span class="top">2</span><span class="bottom">3</span></span> аралығында орналасқан?</span>
+          <span class="lang ru">Какое число находится между 0,6 и <span class="frac"><span class="top">2</span><span class="bottom">3</span></span>?</span>
         </div>
       </div>
-
       <div class="options">
         <label class="option"><input type="radio" name="nq5" value="A"><span>0,58</span></label>
-        <label class="option"><input type="radio" name="nq5" value="B"><span>2/3</span></label>
+        <label class="option"><input type="radio" name="nq5" value="B"><span class="frac"><span class="top">2</span><span class="bottom">3</span></span></label>
         <label class="option"><input type="radio" name="nq5" value="C"><span>0,69</span></label>
-        <label class="option"><input type="radio" name="nq5" value="D"><span>3/5</span></label>
-        <label class="option"><input type="radio" name="nq5" value="E"><span>5/8</span></label>
+        <label class="option"><input type="radio" name="nq5" value="D"><span class="frac"><span class="top">3</span><span class="bottom">5</span></span></label>
+        <label class="option"><input type="radio" name="nq5" value="E"><span class="frac"><span class="top">5</span><span class="bottom">8</span></span></label>
       </div>
-
       <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> E.</p>
-        <p class="lang kk">Шешуі: 0,6 = 3/5. 2/3 ≈ 0,6667. 5/8 = 0,625. Бұл 0,6 мен 0,6667 арасында жатыр. Сондықтан дұрыс жауап — 5/8.</p>
-        <p class="lang ru">Решение: 0,6 = 3/5. 2/3 ≈ 0,6667. 5/8 = 0,625. Это число находится между 0,6 и 0,6667. Ответ — 5/8.</p>
+        <p class="lang kk"><b>Дұрыс жауап: E.</b> 0,6 = <span class="frac"><span class="top">3</span><span class="bottom">5</span></span>. <span class="frac"><span class="top">2</span><span class="bottom">3</span></span> ≈ 0,6667. <span class="frac"><span class="top">5</span><span class="bottom">8</span></span> = 0,625. Бұл 0,6 мен 0,6667 арасында жатыр.</p>
+        <p class="lang ru"><b>Правильный ответ: E.</b> 0,6 = <span class="frac"><span class="top">3</span><span class="bottom">5</span></span>. <span class="frac"><span class="top">2</span><span class="bottom">3</span></span> ≈ 0,6667. <span class="frac"><span class="top">5</span><span class="bottom">8</span></span> = 0,625. Это число находится между 0,6 и 0,6667.</p>
       </div>
     </article>
 
@@ -865,19 +892,16 @@ document.addEventListener('DOMContentLoaded', function(){
           <span class="lang ru">A = 13² − 12², B = 25. Сравните.</span>
         </div>
       </div>
-
       <div class="options">
         <label class="option"><input type="radio" name="nq6" value="A"><span>A < B</span></label>
         <label class="option"><input type="radio" name="nq6" value="B"><span>A = B</span></label>
         <label class="option"><input type="radio" name="nq6" value="C"><span>A > B</span></label>
         <label class="option"><input type="radio" name="nq6" value="D"><span>A = 2B</span></label>
-        <label class="option"><input type="radio" name="nq6" value="E"><span>Мәлімет жеткіліксіз / Данных недостаточно</span></label>
+        <label class="option"><input type="radio" name="nq6" value="E"><span class="lang kk">Мәлімет жеткіліксіз</span><span class="lang ru">Данных недостаточно</span></label>
       </div>
-
       <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> B.</p>
-        <p class="lang kk">Шешуі: 13² − 12² = (13 − 12)(13 + 12) = 1 · 25 = 25. B = 25. Сондықтан A = B.</p>
-        <p class="lang ru">Решение: 13² − 12² = (13 − 12)(13 + 12) = 1 · 25 = 25. B = 25. Значит A = B.</p>
+        <p class="lang kk"><b>Дұрыс жауап: B.</b> 13² − 12² = (13 − 12)(13 + 12) = 1 · 25 = 25. B = 25. Сондықтан A = B.</p>
+        <p class="lang ru"><b>Правильный ответ: B.</b> 13² − 12² = (13 − 12)(13 + 12) = 1 · 25 = 25. B = 25. Значит A = B.</p>
       </div>
     </article>
 
@@ -889,7 +913,6 @@ document.addEventListener('DOMContentLoaded', function(){
           <span class="lang ru">Если x = −3, найдите значение x² − 4x.</span>
         </div>
       </div>
-
       <div class="options">
         <label class="option"><input type="radio" name="nq7" value="A"><span>−3</span></label>
         <label class="option"><input type="radio" name="nq7" value="B"><span>3</span></label>
@@ -897,11 +920,9 @@ document.addEventListener('DOMContentLoaded', function(){
         <label class="option"><input type="radio" name="nq7" value="D"><span>21</span></label>
         <label class="option"><input type="radio" name="nq7" value="E"><span>−21</span></label>
       </div>
-
       <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> D.</p>
-        <p class="lang kk">Шешуі: x² = (−3)² = 9. Енді −4x = −4 · (−3) = 12. Барлығы: 9 + 12 = 21. Теріс санды көбейткенде таңбаға мұқият болу керек.</p>
-        <p class="lang ru">Решение: x² = (−3)² = 9. Далее −4x = −4 · (−3) = 12. Итого: 9 + 12 = 21. Важно следить за знаками.</p>
+        <p class="lang kk"><b>Дұрыс жауап: D.</b> x² = (−3)² = 9. −4x = −4 · (−3) = 12. 9 + 12 = 21.</p>
+        <p class="lang ru"><b>Правильный ответ: D.</b> x² = (−3)² = 9. −4x = −4 · (−3) = 12. 9 + 12 = 21.</p>
       </div>
     </article>
 
@@ -928,11 +949,9 @@ document.addEventListener('DOMContentLoaded', function(){
         <label class="option"><input type="radio" name="nq8" value="D"><span>27</span></label>
         <label class="option"><input type="radio" name="nq8" value="E"><span>29</span></label>
       </div>
-
       <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> C.</p>
-        <p class="lang kk">Шешуі: y мәндері 5, 9, 13, 17 болып, әр жолы 4-ке артып тұр. Формула: y = 4x + 1. Егер x = 6 болса, y = 4 · 6 + 1 = 25.</p>
-        <p class="lang ru">Решение: значения y: 5, 9, 13, 17 — каждый раз увеличиваются на 4. Формула: y = 4x + 1. При x = 6 получаем y = 4 · 6 + 1 = 25.</p>
+        <p class="lang kk"><b>Дұрыс жауап: C.</b> y мәндері әр жолы 4-ке артады: 5, 9, 13, 17. Формула: y = 4x + 1. x = 6 болса, y = 4 · 6 + 1 = 25.</p>
+        <p class="lang ru"><b>Правильный ответ: C.</b> Значения y увеличиваются на 4: 5, 9, 13, 17. Формула: y = 4x + 1. При x = 6 получаем y = 4 · 6 + 1 = 25.</p>
       </div>
     </article>
 
@@ -940,11 +959,10 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="q-head">
         <div class="q-num">9</div>
         <div class="q-text">
-          <span class="lang kk">A = 2/5 санының 75-ке көбейтіндісі, B = 31. Салыстырыңыз.</span>
-          <span class="lang ru">A равно произведению 2/5 и 75, B = 31. Сравните.</span>
+          <span class="lang kk">A = <span class="frac"><span class="top">2</span><span class="bottom">5</span></span> санының 75-ке көбейтіндісі, B = 31. Салыстырыңыз.</span>
+          <span class="lang ru">A равно произведению <span class="frac"><span class="top">2</span><span class="bottom">5</span></span> и 75, B = 31. Сравните.</span>
         </div>
       </div>
-
       <div class="options">
         <label class="option"><input type="radio" name="nq9" value="A"><span>A < B</span></label>
         <label class="option"><input type="radio" name="nq9" value="B"><span>A > B</span></label>
@@ -952,11 +970,9 @@ document.addEventListener('DOMContentLoaded', function(){
         <label class="option"><input type="radio" name="nq9" value="D"><span>2A = B</span></label>
         <label class="option"><input type="radio" name="nq9" value="E"><span>A = B + 5</span></label>
       </div>
-
       <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> A.</p>
-        <p class="lang kk">Шешуі: 75 · 2/5. Алдымен 75-ті 5-ке бөлеміз: 75 ÷ 5 = 15. Енді 15 · 2 = 30. A = 30, B = 31. Сондықтан A < B.</p>
-        <p class="lang ru">Решение: 75 · 2/5. Сначала 75 ÷ 5 = 15. Затем 15 · 2 = 30. A = 30, B = 31. Поэтому A < B.</p>
+        <p class="lang kk"><b>Дұрыс жауап: A.</b> 75 · <span class="frac"><span class="top">2</span><span class="bottom">5</span></span> = 75 ÷ 5 · 2 = 15 · 2 = 30. A = 30, B = 31. Сондықтан A < B.</p>
+        <p class="lang ru"><b>Правильный ответ: A.</b> 75 · <span class="frac"><span class="top">2</span><span class="bottom">5</span></span> = 75 ÷ 5 · 2 = 15 · 2 = 30. A = 30, B = 31. Поэтому A < B.</p>
       </div>
     </article>
 
@@ -964,143 +980,125 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="q-head">
         <div class="q-num">10</div>
         <div class="q-text">
-          <span class="lang kk">0,2; 1/6; 0,18; 3/20 сандарының ең кішісін табыңыз.</span>
-          <span class="lang ru">Найдите наименьшее число среди 0,2; 1/6; 0,18; 3/20.</span>
+          <span class="lang kk">0,2; <span class="frac"><span class="top">1</span><span class="bottom">6</span></span>; 0,18; <span class="frac"><span class="top">3</span><span class="bottom">20</span></span> сандарының ең кішісін табыңыз.</span>
+          <span class="lang ru">Найдите наименьшее число среди 0,2; <span class="frac"><span class="top">1</span><span class="bottom">6</span></span>; 0,18; <span class="frac"><span class="top">3</span><span class="bottom">20</span></span>.</span>
         </div>
       </div>
-
       <div class="options">
         <label class="option"><input type="radio" name="nq10" value="A"><span>0,2</span></label>
-        <label class="option"><input type="radio" name="nq10" value="B"><span>1/6</span></label>
+        <label class="option"><input type="radio" name="nq10" value="B"><span class="frac"><span class="top">1</span><span class="bottom">6</span></span></label>
         <label class="option"><input type="radio" name="nq10" value="C"><span>0,18</span></label>
-        <label class="option"><input type="radio" name="nq10" value="D"><span>0,2 және 0,18 тең / 0,2 и 0,18 равны</span></label>
-        <label class="option"><input type="radio" name="nq10" value="E"><span>3/20</span></label>
+        <label class="option"><input type="radio" name="nq10" value="D"><span class="lang kk">0,2 және 0,18 тең</span><span class="lang ru">0,2 и 0,18 равны</span></label>
+        <label class="option"><input type="radio" name="nq10" value="E"><span class="frac"><span class="top">3</span><span class="bottom">20</span></span></label>
       </div>
-
       <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> E.</p>
-        <p class="lang kk">Шешуі: 0,2 = 0,20. 1/6 ≈ 0,1667. 0,18 = 0,18. 3/20 = 0,15. Ең кішісі — 0,15, яғни 3/20.</p>
-        <p class="lang ru">Решение: 0,2 = 0,20. 1/6 ≈ 0,1667. 0,18 = 0,18. 3/20 = 0,15. Наименьшее — 0,15, то есть 3/20.</p>
-      </div>
-    </article>
-
-    <article class="question" data-answer="B">
-      <div class="q-head">
-        <div class="q-num">11</div>
-        <div class="q-text">
-          <span class="lang kk">A = 24 санының 3/8 бөлігі, B = 10. Салыстырыңыз.</span>
-          <span class="lang ru">A равна 3/8 от 24, B = 10. Сравните.</span>
-        </div>
-      </div>
-
-      <div class="options">
-        <label class="option"><input type="radio" name="nq11" value="A"><span>A > B</span></label>
-        <label class="option"><input type="radio" name="nq11" value="B"><span>A < B</span></label>
-        <label class="option"><input type="radio" name="nq11" value="C"><span>A = B</span></label>
-        <label class="option"><input type="radio" name="nq11" value="D"><span>A = B + 2</span></label>
-        <label class="option"><input type="radio" name="nq11" value="E"><span>Мәлімет жеткіліксіз / Данных недостаточно</span></label>
-      </div>
-
-      <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> B.</p>
-        <p class="lang kk">Шешуі: 24 · 3/8. Алдымен 24 ÷ 8 = 3. Содан кейін 3 · 3 = 9. A = 9, B = 10. Демек, A < B.</p>
-        <p class="lang ru">Решение: 24 · 3/8. Сначала 24 ÷ 8 = 3. Затем 3 · 3 = 9. A = 9, B = 10. Значит, A < B.</p>
+        <p class="lang kk"><b>Дұрыс жауап: E.</b> 0,2 = 0,20. <span class="frac"><span class="top">1</span><span class="bottom">6</span></span> ≈ 0,1667. 0,18 = 0,18. <span class="frac"><span class="top">3</span><span class="bottom">20</span></span> = 0,15. Ең кішісі — 0,15.</p>
+        <p class="lang ru"><b>Правильный ответ: E.</b> 0,2 = 0,20. <span class="frac"><span class="top">1</span><span class="bottom">6</span></span> ≈ 0,1667. 0,18 = 0,18. <span class="frac"><span class="top">3</span><span class="bottom">20</span></span> = 0,15. Наименьшее — 0,15.</p>
       </div>
     </article>
 
     <article class="question" data-answer="C">
       <div class="q-head">
-        <div class="q-num">12</div>
+        <div class="q-num">11</div>
         <div class="q-text">
           <span class="lang kk">Егер n бүтін сан және −2 < n < 4 болса, n мәндерінің қосындысын табыңыз.</span>
           <span class="lang ru">Если n — целое число и −2 < n < 4, найдите сумму всех возможных значений n.</span>
         </div>
       </div>
-
       <div class="options">
-        <label class="option"><input type="radio" name="nq12" value="A"><span>3</span></label>
-        <label class="option"><input type="radio" name="nq12" value="B"><span>4</span></label>
-        <label class="option"><input type="radio" name="nq12" value="C"><span>5</span></label>
-        <label class="option"><input type="radio" name="nq12" value="D"><span>6</span></label>
-        <label class="option"><input type="radio" name="nq12" value="E"><span>7</span></label>
+        <label class="option"><input type="radio" name="nq11" value="A"><span>3</span></label>
+        <label class="option"><input type="radio" name="nq11" value="B"><span>4</span></label>
+        <label class="option"><input type="radio" name="nq11" value="C"><span>5</span></label>
+        <label class="option"><input type="radio" name="nq11" value="D"><span>6</span></label>
+        <label class="option"><input type="radio" name="nq11" value="E"><span>7</span></label>
       </div>
-
       <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> C.</p>
-        <p class="lang kk">Шешуі: −2 < n < 4 аралығында жатқан бүтін сандар: −1, 0, 1, 2, 3. Қосындысы: −1 + 0 + 1 + 2 + 3 = 5. Сондықтан дұрыс жауап — 5.</p>
-        <p class="lang ru">Решение: целые числа в промежутке −2 < n < 4: −1, 0, 1, 2, 3. Сумма: −1 + 0 + 1 + 2 + 3 = 5. Правильный ответ — 5.</p>
+        <p class="lang kk"><b>Дұрыс жауап: C.</b> Аралықтағы бүтін сандар: −1, 0, 1, 2, 3. Қосындысы: −1 + 0 + 1 + 2 + 3 = 5.</p>
+        <p class="lang ru"><b>Правильный ответ: C.</b> Целые числа в промежутке: −1, 0, 1, 2, 3. Сумма: −1 + 0 + 1 + 2 + 3 = 5.</p>
       </div>
     </article>
 
     <article class="question" data-answer="A">
       <div class="q-head">
-        <div class="q-num">13</div>
+        <div class="q-num">12</div>
         <div class="q-text">
           <span class="lang kk">0 < a < 1. A = a, B = a². Салыстырыңыз.</span>
           <span class="lang ru">0 < a < 1. A = a, B = a². Сравните.</span>
         </div>
       </div>
-
       <div class="options">
-        <label class="option"><input type="radio" name="nq13" value="A"><span>A > B</span></label>
-        <label class="option"><input type="radio" name="nq13" value="B"><span>A < B</span></label>
-        <label class="option"><input type="radio" name="nq13" value="C"><span>A = B</span></label>
-        <label class="option"><input type="radio" name="nq13" value="D"><span>A = 2B</span></label>
-        <label class="option"><input type="radio" name="nq13" value="E"><span>Мәлімет жеткіліксіз / Данных недостаточно</span></label>
+        <label class="option"><input type="radio" name="nq12" value="A"><span>A > B</span></label>
+        <label class="option"><input type="radio" name="nq12" value="B"><span>A < B</span></label>
+        <label class="option"><input type="radio" name="nq12" value="C"><span>A = B</span></label>
+        <label class="option"><input type="radio" name="nq12" value="D"><span>A = 2B</span></label>
+        <label class="option"><input type="radio" name="nq12" value="E"><span class="lang kk">Мәлімет жеткіліксіз</span><span class="lang ru">Данных недостаточно</span></label>
       </div>
-
       <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> A.</p>
-        <p class="lang kk">Шешуі: 0 мен 1 арасындағы санды квадраттасақ, ол кішірейеді. Мысалы, a = 1/2 болса, a² = 1/4. Сондықтан барлық 0 < a < 1 үшін a > a².</p>
-        <p class="lang ru">Решение: если число находится между 0 и 1, при возведении в квадрат оно уменьшается. Например, при a = 1/2 получаем a² = 1/4. Поэтому при 0 < a < 1 всегда a > a².</p>
+        <p class="lang kk"><b>Дұрыс жауап: A.</b> 0 мен 1 арасындағы санды квадраттасақ, ол кішірейеді. Мысалы, a = <span class="frac"><span class="top">1</span><span class="bottom">2</span></span> болса, a² = <span class="frac"><span class="top">1</span><span class="bottom">4</span></span>. Сондықтан a > a².</p>
+        <p class="lang ru"><b>Правильный ответ: A.</b> Если число находится между 0 и 1, при возведении в квадрат оно уменьшается. Например, при a = <span class="frac"><span class="top">1</span><span class="bottom">2</span></span>, a² = <span class="frac"><span class="top">1</span><span class="bottom">4</span></span>. Поэтому a > a².</p>
       </div>
     </article>
 
     <article class="question" data-answer="E">
       <div class="q-head">
-        <div class="q-num">14</div>
+        <div class="q-num">13</div>
         <div class="q-text">
           <span class="lang kk">A = x², B = x. x нақты сан. Салыстырыңыз.</span>
           <span class="lang ru">A = x², B = x. x — действительное число. Сравните.</span>
         </div>
       </div>
-
       <div class="options">
-        <label class="option"><input type="radio" name="nq14" value="A"><span>A > B</span></label>
-        <label class="option"><input type="radio" name="nq14" value="B"><span>A < B</span></label>
-        <label class="option"><input type="radio" name="nq14" value="C"><span>A = B</span></label>
-        <label class="option"><input type="radio" name="nq14" value="D"><span>A = −B</span></label>
-        <label class="option"><input type="radio" name="nq14" value="E"><span>Мәлімет жеткіліксіз / Данных недостаточно</span></label>
+        <label class="option"><input type="radio" name="nq13" value="A"><span>A > B</span></label>
+        <label class="option"><input type="radio" name="nq13" value="B"><span>A < B</span></label>
+        <label class="option"><input type="radio" name="nq13" value="C"><span>A = B</span></label>
+        <label class="option"><input type="radio" name="nq13" value="D"><span>A = −B</span></label>
+        <label class="option"><input type="radio" name="nq13" value="E"><span class="lang kk">Мәлімет жеткіліксіз</span><span class="lang ru">Данных недостаточно</span></label>
       </div>
-
       <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> E.</p>
-        <p class="lang kk">Шешуі: x туралы қосымша шарт жоқ. Егер x = 2 болса, x² = 4, сонда A > B. Егер x = 1/2 болса, x² = 1/4, сонда A < B. Егер x = 1 болса, A = B. Әртүрлі жағдай шығады, сондықтан мәлімет жеткіліксіз.</p>
-        <p class="lang ru">Решение: о x нет дополнительного условия. Если x = 2, то x² = 4 и A > B. Если x = 1/2, то x² = 1/4 и A < B. Если x = 1, то A = B. Получаются разные случаи, значит данных недостаточно.</p>
+        <p class="lang kk"><b>Дұрыс жауап: E.</b> x туралы қосымша шарт жоқ. x = 2 болса, A > B. x = <span class="frac"><span class="top">1</span><span class="bottom">2</span></span> болса, A < B. x = 1 болса, A = B. Әртүрлі жағдай шығады.</p>
+        <p class="lang ru"><b>Правильный ответ: E.</b> О x нет дополнительного условия. Если x = 2, A > B. Если x = <span class="frac"><span class="top">1</span><span class="bottom">2</span></span>, A < B. Если x = 1, A = B. Получаются разные случаи.</p>
       </div>
     </article>
 
     <article class="question" data-answer="D">
       <div class="q-head">
-        <div class="q-num">15</div>
+        <div class="q-num">14</div>
         <div class="q-text">
           <span class="lang kk">8, 11, 17, 29, 53, ... тізбегіндегі келесі санды табыңыз.</span>
           <span class="lang ru">Найдите следующее число в последовательности 8, 11, 17, 29, 53, ...</span>
         </div>
       </div>
-
       <div class="options">
-        <label class="option"><input type="radio" name="nq15" value="A"><span>77</span></label>
-        <label class="option"><input type="radio" name="nq15" value="B"><span>89</span></label>
-        <label class="option"><input type="radio" name="nq15" value="C"><span>95</span></label>
-        <label class="option"><input type="radio" name="nq15" value="D"><span>101</span></label>
-        <label class="option"><input type="radio" name="nq15" value="E"><span>107</span></label>
+        <label class="option"><input type="radio" name="nq14" value="A"><span>77</span></label>
+        <label class="option"><input type="radio" name="nq14" value="B"><span>89</span></label>
+        <label class="option"><input type="radio" name="nq14" value="C"><span>95</span></label>
+        <label class="option"><input type="radio" name="nq14" value="D"><span>101</span></label>
+        <label class="option"><input type="radio" name="nq14" value="E"><span>107</span></label>
       </div>
-
       <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> D.</p>
-        <p class="lang kk">Шешуі: айырмаларды қараймыз: 11−8=3, 17−11=6, 29−17=12, 53−29=24. Айырмалар екі еселеніп тұр: 3, 6, 12, 24. Келесі айырма 48 болады. Сондықтан келесі сан: 53 + 48 = 101.</p>
-        <p class="lang ru">Решение: смотрим разности: 11−8=3, 17−11=6, 29−17=12, 53−29=24. Разности удваиваются: 3, 6, 12, 24. Следующая разность 48. Значит следующее число: 53 + 48 = 101.</p>
+        <p class="lang kk"><b>Дұрыс жауап: D.</b> Айырмалар: 3, 6, 12, 24. Әр айырма екі еселенеді. Келесі айырма 48. 53 + 48 = 101.</p>
+        <p class="lang ru"><b>Правильный ответ: D.</b> Разности: 3, 6, 12, 24. Каждая следующая разность удваивается. Следующая разность 48. 53 + 48 = 101.</p>
+      </div>
+    </article>
+
+    <article class="question" data-answer="C">
+      <div class="q-head">
+        <div class="q-num">15</div>
+        <div class="q-text">
+          <span class="lang kk">A = <span class="frac"><span class="top">4</span><span class="bottom">9</span></span> · 81, B = 6². Салыстырыңыз.</span>
+          <span class="lang ru">A = <span class="frac"><span class="top">4</span><span class="bottom">9</span></span> · 81, B = 6². Сравните.</span>
+        </div>
+      </div>
+      <div class="options">
+        <label class="option"><input type="radio" name="nq15" value="A"><span>A > B</span></label>
+        <label class="option"><input type="radio" name="nq15" value="B"><span>A < B</span></label>
+        <label class="option"><input type="radio" name="nq15" value="C"><span>A = B</span></label>
+        <label class="option"><input type="radio" name="nq15" value="D"><span>A = B + 9</span></label>
+        <label class="option"><input type="radio" name="nq15" value="E"><span class="lang kk">Мәлімет жеткіліксіз</span><span class="lang ru">Данных недостаточно</span></label>
+      </div>
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: C.</b> 81 ÷ 9 = 9. 9 · 4 = 36, демек A = 36. B = 6² = 36. Сондықтан A = B.</p>
+        <p class="lang ru"><b>Правильный ответ: C.</b> 81 ÷ 9 = 9. 9 · 4 = 36, значит A = 36. B = 6² = 36. Поэтому A = B.</p>
       </div>
     </article>
 
@@ -1113,400 +1111,3 @@ document.addEventListener('DOMContentLoaded', function(){
     </div>
   </div>
 </section>
-          <section class="section" id="percent">
-  <div class="tags">
-    <span class="tag">2-бөлім</span>
-    <span class="tag orange">Процент</span>
-    <span class="tag orange">Кері процент</span>
-    <span class="tag orange">Көп қадамды есеп</span>
-  </div>
-
-  <h2>
-    <span class="lang kk">Проценттер</span>
-    <span class="lang ru">Проценты</span>
-  </h2>
-
-  <p class="block lang kk">
-    Бұл бөлімде проценттің мағынасы, санның процентін табу, санды процентке арттыру немесе азайту, кері процент және бірнеше қадамды проценттік өзгерістер қарастырылады.
-  </p>
-  <p class="block lang ru">
-    В этом разделе рассматриваются смысл процента, нахождение процента от числа, увеличение и уменьшение на процент, обратный процент и многошаговые процентные изменения.
-  </p>
-
-  <div class="grid">
-    <div class="card">
-      <b>
-        <span class="lang kk">Процент деген не?</span>
-        <span class="lang ru">Что такое процент?</span>
-      </b>
-      <p>
-        <span class="lang kk">1% = 1/100 = 0,01. Процент — бүтіннің жүзден бір бөлігі.</span>
-        <span class="lang ru">1% = 1/100 = 0,01. Процент — это одна сотая часть целого.</span>
-      </p>
-    </div>
-
-    <div class="card">
-      <b>
-        <span class="lang kk">Процентті ондық бөлшекке айналдыру</span>
-        <span class="lang ru">Перевод процента в десятичную дробь</span>
-      </b>
-      <p>
-        <span class="lang kk">p% = p/100. Мысалы, 35% = 35/100 = 0,35.</span>
-        <span class="lang ru">p% = p/100. Например, 35% = 35/100 = 0,35.</span>
-      </p>
-    </div>
-
-    <div class="card">
-      <b>
-        <span class="lang kk">Коэффициент арқылы есептеу</span>
-        <span class="lang ru">Расчёт через коэффициент</span>
-      </b>
-      <p>
-        <span class="lang kk">20% арттыру → 1,20-ға көбейту. 20% азайту → 0,80-ге көбейту.</span>
-        <span class="lang ru">Увеличить на 20% → умножить на 1,20. Уменьшить на 20% → умножить на 0,80.</span>
-      </p>
-    </div>
-  </div>
-
-  <h3>
-    <span class="lang kk">1. Санның процентін табу</span>
-    <span class="lang ru">1. Нахождение процента от числа</span>
-  </h3>
-
-  <div class="formula-box">
-    <div class="formula">p% of N = N · p/100</div>
-    <p class="block lang kk">
-      Мұнда <b>N</b> — бастапқы сан, <b>p</b> — процент. Процентті табу үшін процентті жүзге бөліп, бастапқы санға көбейтеміз.
-    </p>
-    <p class="block lang ru">
-      Здесь <b>N</b> — исходное число, <b>p</b> — процент. Чтобы найти процент от числа, делим процент на 100 и умножаем на исходное число.
-    </p>
-  </div>
-
-  <div class="example">
-    <div class="example-title">
-      <span class="lang kk">Мысал 1. 240 санының 35%-ын табыңыз.</span>
-      <span class="lang ru">Пример 1. Найдите 35% от числа 240.</span>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <span class="lang kk">35%-ды ондық бөлшекке айналдырамыз: 35% = 35/100 = 0,35.</span>
-        <span class="lang ru">Переводим 35% в десятичную дробь: 35% = 35/100 = 0,35.</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">Бастапқы санға көбейтеміз: 240 · 0,35.</span>
-        <span class="lang ru">Умножаем на исходное число: 240 · 0,35.</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">Ыңғайлы есептейміз: 240 · 35/100 = 84.</span>
-        <span class="lang ru">Считаем удобно: 240 · 35/100 = 84.</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">Жауап: 84.</span>
-        <span class="lang ru">Ответ: 84.</span>
-      </div>
-    </div>
-  </div>
-
-  <h3>
-    <span class="lang kk">2. Процентке арттыру</span>
-    <span class="lang ru">2. Увеличение на процент</span>
-  </h3>
-
-  <div class="formula-box">
-    <div class="formula">Жаңа мән = Бастапқы мән · (1 + p/100)</div>
-    <p class="block lang kk">
-      Егер сан <b>p%</b>-ға артса, бастапқы сан 100% болып қалады және оған тағы p% қосылады. Сондықтан көбейту коэффициенті <b>1 + p/100</b>.
-    </p>
-    <p class="block lang ru">
-      Если число увеличивается на <b>p%</b>, исходное число считается как 100%, и к нему добавляется ещё p%. Поэтому коэффициент равен <b>1 + p/100</b>.
-    </p>
-  </div>
-
-  <div class="example">
-    <div class="example-title">
-      <span class="lang kk">Мысал 2. Баға 80 000 тг еді. Ол 15%-ға қымбаттады. Жаңа баға қанша?</span>
-      <span class="lang ru">Пример 2. Цена была 80 000 тг. Она выросла на 15%. Какая новая цена?</span>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <span class="lang kk">15% арттыру коэффициенті: 1 + 15/100 = 1,15.</span>
-        <span class="lang ru">Коэффициент увеличения на 15%: 1 + 15/100 = 1,15.</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">Бастапқы бағаны коэффициентке көбейтеміз: 80 000 · 1,15.</span>
-        <span class="lang ru">Умножаем исходную цену на коэффициент: 80 000 · 1,15.</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">80 000 · 1,15 = 92 000.</span>
-        <span class="lang ru">80 000 · 1,15 = 92 000.</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">Жауап: жаңа баға 92 000 тг.</span>
-        <span class="lang ru">Ответ: новая цена 92 000 тг.</span>
-      </div>
-    </div>
-  </div>
-
-  <h3>
-    <span class="lang kk">3. Процентке азайту</span>
-    <span class="lang ru">3. Уменьшение на процент</span>
-  </h3>
-
-  <div class="formula-box">
-    <div class="formula">Жаңа мән = Бастапқы мән · (1 − p/100)</div>
-    <p class="block lang kk">
-      Егер сан <b>p%</b>-ға азайса, бастапқы 100%-дан p% алынады. Сондықтан көбейту коэффициенті <b>1 − p/100</b>.
-    </p>
-    <p class="block lang ru">
-      Если число уменьшается на <b>p%</b>, из исходных 100% вычитается p%. Поэтому коэффициент равен <b>1 − p/100</b>.
-    </p>
-  </div>
-
-  <div class="example">
-    <div class="example-title">
-      <span class="lang kk">Мысал 3. 120 000 тг тұратын зат 25%-ға арзандады. Жаңа бағаны табыңыз.</span>
-      <span class="lang ru">Пример 3. Товар стоил 120 000 тг и подешевел на 25%. Найдите новую цену.</span>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <span class="lang kk">25% азайту коэффициенті: 1 − 25/100 = 0,75.</span>
-        <span class="lang ru">Коэффициент уменьшения на 25%: 1 − 25/100 = 0,75.</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">120 000 · 0,75 есептейміз.</span>
-        <span class="lang ru">Считаем 120 000 · 0,75.</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">0,75 = 3/4, сондықтан 120 000 · 3/4 = 90 000.</span>
-        <span class="lang ru">0,75 = 3/4, поэтому 120 000 · 3/4 = 90 000.</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">Жауап: жаңа баға 90 000 тг.</span>
-        <span class="lang ru">Ответ: новая цена 90 000 тг.</span>
-      </div>
-    </div>
-  </div>
-
-  <h3>
-    <span class="lang kk">4. Кері процент</span>
-    <span class="lang ru">4. Обратный процент</span>
-  </h3>
-
-  <div class="formula-box">
-    <div class="formula">Бастапқы мән = Соңғы мән ÷ коэффициент</div>
-    <p class="block lang kk">
-      Кері процентте соңғы мән белгілі болады, ал бастапқы мәнді табу керек. Бұл кезде соңғы мәнді проценттік өзгеріс коэффициентіне бөлеміз.
-    </p>
-    <p class="block lang ru">
-      В обратном проценте известен конечный результат, а нужно найти исходное значение. Тогда конечное значение делим на коэффициент процентного изменения.
-    </p>
-  </div>
-
-  <div class="example">
-    <div class="example-title">
-      <span class="lang kk">Мысал 4. Баға 20%-ға арзандағаннан кейін 64 000 тг болды. Бастапқы баға қанша?</span>
-      <span class="lang ru">Пример 4. После скидки 20% цена стала 64 000 тг. Какова была исходная цена?</span>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <span class="lang kk">20% арзандау дегеніміз — бастапқы бағаның 80%-ы қалды деген сөз.</span>
-        <span class="lang ru">Скидка 20% означает, что осталось 80% от исходной цены.</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">80% = 0,8. Демек соңғы баға = бастапқы баға · 0,8.</span>
-        <span class="lang ru">80% = 0,8. Значит конечная цена = исходная цена · 0,8.</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">Бастапқы бағаны табамыз: 64 000 ÷ 0,8 = 80 000.</span>
-        <span class="lang ru">Находим исходную цену: 64 000 ÷ 0,8 = 80 000.</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">Жауап: бастапқы баға 80 000 тг.</span>
-        <span class="lang ru">Ответ: исходная цена 80 000 тг.</span>
-      </div>
-    </div>
-  </div>
-
-  <h3>
-    <span class="lang kk">5. Бірнеше қадамды процент</span>
-    <span class="lang ru">5. Многошаговый процент</span>
-  </h3>
-
-  <div class="formula-box">
-    <div class="formula">Соңғы мән = N · k₁ · k₂ · k₃ ...</div>
-    <p class="block lang kk">
-      Егер бірнеше проценттік өзгеріс болса, оларды жай ғана қосуға болмайды. Әр өзгеріс өз коэффициентімен көбейтіледі. Мысалы, 20% азайту және 25% арттыру: 0,8 · 1,25 = 1. Бұл бастапқы мән өзгермейді дегенді білдіреді.
-    </p>
-    <p class="block lang ru">
-      Если есть несколько процентных изменений, их нельзя просто складывать. Каждое изменение учитывается своим коэффициентом. Например, уменьшение на 20% и увеличение на 25%: 0,8 · 1,25 = 1. Это означает, что итог равен исходному значению.
-    </p>
-  </div>
-
-  <div class="example">
-    <div class="example-title">
-      <span class="lang kk">Мысал 5. Баға алдымен 30%-ға артты, кейін 20%-ға төмендеді. Соңғы баға бастапқы бағамен салыстырғанда қалай өзгерді?</span>
-      <span class="lang ru">Пример 5. Цена сначала выросла на 30%, затем снизилась на 20%. Как изменилась итоговая цена относительно исходной?</span>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <span class="lang kk">30% арттыру коэффициенті: 1,30.</span>
-        <span class="lang ru">Коэффициент увеличения на 30%: 1,30.</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">20% төмендету коэффициенті: 0,80.</span>
-        <span class="lang ru">Коэффициент уменьшения на 20%: 0,80.</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">Жалпы коэффициент: 1,30 · 0,80 = 1,04.</span>
-        <span class="lang ru">Общий коэффициент: 1,30 · 0,80 = 1,04.</span>
-      </div>
-      <div class="step">
-        <span class="lang kk">1,04 дегеніміз — бастапқы мәннің 104%-ы. Демек баға 4%-ға артты.</span>
-        <span class="lang ru">1,04 означает 104% от исходного значения. Значит цена выросла на 4%.</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="test-block" id="percent-test">
-    <h3>
-      <span class="lang kk">Тест: Проценттер</span>
-      <span class="lang ru">Тест: Проценты</span>
-    </h3>
-
-    <article class="question" data-answer="C">
-      <div class="q-head">
-        <div class="q-num">1</div>
-        <div class="q-text">
-          <span class="lang kk">A = 480 санының 35%-ы, B = 170. Салыстырыңыз.</span>
-          <span class="lang ru">A = 35% от 480, B = 170. Сравните.</span>
-        </div>
-      </div>
-      <div class="options">
-        <label class="option"><input type="radio" name="pq1" value="A"><span>A > B</span></label>
-        <label class="option"><input type="radio" name="pq1" value="B"><span>A = B</span></label>
-        <label class="option"><input type="radio" name="pq1" value="C"><span>A < B</span></label>
-        <label class="option"><input type="radio" name="pq1" value="D"><span>A = B + 8</span></label>
-        <label class="option"><input type="radio" name="pq1" value="E"><span>Мәлімет жеткіліксіз / Данных недостаточно</span></label>
-      </div>
-      <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> C.</p>
-        <p class="lang kk">Шешуі: 35% = 0,35. A = 480 · 0,35 = 168. B = 170. 168 < 170, сондықтан A < B.</p>
-        <p class="lang ru">Решение: 35% = 0,35. A = 480 · 0,35 = 168. B = 170. 168 < 170, значит A < B.</p>
-      </div>
-    </article>
-
-    <article class="question" data-answer="D">
-      <div class="q-head">
-        <div class="q-num">2</div>
-        <div class="q-text">
-          <span class="lang kk">Баға 90 000 тг еді. Ол 18%-ға қымбаттады. Жаңа бағаны табыңыз.</span>
-          <span class="lang ru">Цена была 90 000 тг. Она выросла на 18%. Найдите новую цену.</span>
-        </div>
-      </div>
-      <div class="options">
-        <label class="option"><input type="radio" name="pq2" value="A"><span>98 200</span></label>
-        <label class="option"><input type="radio" name="pq2" value="B"><span>104 800</span></label>
-        <label class="option"><input type="radio" name="pq2" value="C"><span>105 200</span></label>
-        <label class="option"><input type="radio" name="pq2" value="D"><span>106 200</span></label>
-        <label class="option"><input type="radio" name="pq2" value="E"><span>108 000</span></label>
-      </div>
-      <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> D.</p>
-        <p class="lang kk">Шешуі: 18% арттыру коэффициенті 1,18. 90 000 · 1,18 = 106 200. Жауап: 106 200 тг.</p>
-        <p class="lang ru">Решение: коэффициент увеличения на 18% равен 1,18. 90 000 · 1,18 = 106 200. Ответ: 106 200 тг.</p>
-      </div>
-    </article>
-
-    <article class="question" data-answer="A">
-      <div class="q-head">
-        <div class="q-num">3</div>
-        <div class="q-text">
-          <span class="lang kk">Заттың бағасы 160 000 тг. Ол 12,5%-ға арзандады. Жаңа баға қанша?</span>
-          <span class="lang ru">Товар стоит 160 000 тг. Он подешевел на 12,5%. Какова новая цена?</span>
-        </div>
-      </div>
-      <div class="options">
-        <label class="option"><input type="radio" name="pq3" value="A"><span>140 000</span></label>
-        <label class="option"><input type="radio" name="pq3" value="B"><span>142 500</span></label>
-        <label class="option"><input type="radio" name="pq3" value="C"><span>145 000</span></label>
-        <label class="option"><input type="radio" name="pq3" value="D"><span>148 000</span></label>
-        <label class="option"><input type="radio" name="pq3" value="E"><span>150 000</span></label>
-      </div>
-      <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> A.</p>
-        <p class="lang kk">Шешуі: 12,5% = 1/8. Демек жеңілдік 160 000 ÷ 8 = 20 000. Жаңа баға: 160 000 − 20 000 = 140 000.</p>
-        <p class="lang ru">Решение: 12,5% = 1/8. Скидка равна 160 000 ÷ 8 = 20 000. Новая цена: 160 000 − 20 000 = 140 000.</p>
-      </div>
-    </article>
-
-    <article class="question" data-answer="E">
-      <div class="q-head">
-        <div class="q-num">4</div>
-        <div class="q-text">
-          <span class="lang kk">Баға 25%-ға арзандағаннан кейін 96 000 тг болды. Бастапқы бағаны табыңыз.</span>
-          <span class="lang ru">После скидки 25% цена стала 96 000 тг. Найдите исходную цену.</span>
-        </div>
-      </div>
-      <div class="options">
-        <label class="option"><input type="radio" name="pq4" value="A"><span>110 000</span></label>
-        <label class="option"><input type="radio" name="pq4" value="B"><span>115 000</span></label>
-        <label class="option"><input type="radio" name="pq4" value="C"><span>120 000</span></label>
-        <label class="option"><input type="radio" name="pq4" value="D"><span>124 000</span></label>
-        <label class="option"><input type="radio" name="pq4" value="E"><span>128 000</span></label>
-      </div>
-      <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> E.</p>
-        <p class="lang kk">Шешуі: 25% жеңілдік болса, соңғы баға бастапқы бағаның 75%-ы. 75% = 0,75. Бастапқы баға = 96 000 ÷ 0,75 = 128 000.</p>
-        <p class="lang ru">Решение: при скидке 25% конечная цена составляет 75% от исходной. 75% = 0,75. Исходная цена = 96 000 ÷ 0,75 = 128 000.</p>
-      </div>
-    </article>
-
-    <article class="question" data-answer="B">
-      <div class="q-head">
-        <div class="q-num">5</div>
-        <div class="q-text">
-          <span class="lang kk">Сан алдымен 20%-ға азайды, кейін 25%-ға артты. Соңғы мән бастапқы мәнмен салыстырғанда қалай өзгерді?</span>
-          <span class="lang ru">Число сначала уменьшилось на 20%, затем увеличилось на 25%. Как изменилось итоговое значение относительно исходного?</span>
-        </div>
-      </div>
-      <div class="options">
-        <label class="option"><input type="radio" name="pq5" value="A"><span>5%-ға артты / увеличилось на 5%</span></label>
-        <label class="option"><input type="radio" name="pq5" value="B"><span>Өзгермеді / не изменилось</span></label>
-        <label class="option"><input type="radio" name="pq5" value="C"><span>5%-ға азайды / уменьшилось на 5%</span></label>
-        <label class="option"><input type="radio" name="pq5" value="D"><span>10%-ға артты / увеличилось на 10%</span></label>
-        <label class="option"><input type="radio" name="pq5" value="E"><span>10%-ға азайды / уменьшилось на 10%</span></label>
-      </div>
-      <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> B.</p>
-        <p class="lang kk">Шешуі: 20% азайту коэффициенті 0,8. 25% арттыру коэффициенті 1,25. Жалпы коэффициент: 0,8 · 1,25 = 1. Демек соңғы мән бастапқы мәнге тең.</p>
-        <p class="lang ru">Решение: коэффициент уменьшения на 20% равен 0,8. Коэффициент увеличения на 25% равен 1,25. Общий коэффициент: 0,8 · 1,25 = 1. Значит итог равен исходному значению.</p>
-      </div>
-    </article>
-
-    <article class="question" data-answer="C">
-      <div class="q-head">
-        <div class="q-num">6</div>
-        <div class="q-text">
-          <span class="lang kk">Баға алдымен 40%-ға артты, кейін 25%-ға төмендеді. Соңғы баға бастапқы бағадан қанша процентке өзгеше?</span>
-          <span class="lang ru">Цена сначала выросла на 40%, затем снизилась на 25%. На сколько процентов итоговая цена отличается от исходной?</span>
-        </div>
-      </div>
-      <div class="options">
-        <label class="option"><input type="radio" name="pq6" value="A"><span>5%-ға азайды / уменьшилась на 5%</span></label>
-        <label class="option"><input type="radio" name="pq6" value="B"><span>5%-ға артты / увеличилась на 5%</span></label>
-        <label class="option"><input type="radio" name="pq6" value="C"><span>Өзгеріс 5% емес, 5% емес; нақты 5% артты емес / итог 5% емес</span></label>
-        <label class="option"><input type="radio" name="pq6" value="D"><span>10%-ға артты / увеличилась на 10%</span></label>
-        <label class="option"><input type="radio" name="pq6" value="E"><span>15%-ға артты / увеличилась на 15%</span></label>
-      </div>
-      <div class="answer-review">
-        <p><b>Дұрыс жауап / Правильный ответ:</b> D.</p>
-        <p class="lang kk">Мұнда дұрыс жауап D болуы керек: 1,40 · 0,75 = 1,05 емес, қайта есептейміз: 1,4 · 0,75 = 1,05. Демек 5%-ға артты. Бұл сұрақты келесі толық нұсқада ауыстыру керек.</p>
-        <p class="lang ru">Здесь правильный ответ должен быть B: 1,40 · 0,75 = 1,05, то есть увеличение на 5%. Этот вопрос нужно заменить в чистовой версии.</p>
-      </div>
-    </article>
