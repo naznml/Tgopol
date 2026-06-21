@@ -599,15 +599,15 @@ document.addEventListener('DOMContentLoaded', function(){
 
 <main>
 <div class="wrap">
-  <section class="section" id="quick-topics">
+ <section class="section" id="quick-topics">
   <div class="tags">
     <span class="tag">
       <span class="lang kk">Қысқаша шолу</span>
       <span class="lang ru">Краткий обзор</span>
     </span>
     <span class="tag orange">
-      <span class="lang kk">Негізгі бөлімдер</span>
-      <span class="lang ru">Основные разделы</span>
+      <span class="lang kk">Барлық негізгі бөлімдер</span>
+      <span class="lang ru">Все основные разделы</span>
     </span>
   </div>
 
@@ -617,53 +617,64 @@ document.addEventListener('DOMContentLoaded', function(){
   </h2>
 
   <div class="mini-topic-grid">
-    <a class="mini-topic-card" href="#fractions">
-      <span class="mini-topic-icon">⅔</span>
+
+    <a class="mini-topic-card" href="#numbers">
+      <span class="mini-topic-icon">#</span>
       <span>
-        <b class="lang kk">Бөлшек және пайыз</b>
-        <b class="lang ru">Дроби и проценты</b>
-        <small class="lang kk">Бөлшек, пайыз, жеңілдік</small>
-        <small class="lang ru">Дроби, проценты, скидки</small>
+        <b class="lang kk">Сандар және арифметика</b>
+        <b class="lang ru">Числа и арифметика</b>
+        <small class="lang kk">Амалдар, реттік есеп, сан мәні</small>
+        <small class="lang ru">Действия, порядок, значение числа</small>
       </span>
     </a>
 
-    <a class="mini-topic-card" href="#ratio-proportion">
-      <span class="mini-topic-icon">:</span>
+    <a class="mini-topic-card" href="#fractions">
+      <span class="mini-topic-icon">⅔</span>
       <span>
-        <b class="lang kk">Қатынас және пропорция</b>
-        <b class="lang ru">Отношения и пропорции</b>
-        <small class="lang kk">Қатынас, пропорция, үлес</small>
-        <small class="lang ru">Отношения, пропорции, доли</small>
+        <b class="lang kk">Бөлшек, пайыз, қатынас</b>
+        <b class="lang ru">Дроби, проценты, отношения</b>
+        <small class="lang kk">Бөлшек, пайыз, пропорция</small>
+        <small class="lang ru">Дроби, проценты, пропорции</small>
+      </span>
+    </a>
+
+    <a class="mini-topic-card" href="#averages">
+      <span class="mini-topic-icon">x̄</span>
+      <span>
+        <b class="lang kk">Орташа шамалар</b>
+        <b class="lang ru">Средние величины</b>
+        <small class="lang kk">Орташа мән, қосынды, белгісіз сан</small>
+        <small class="lang ru">Среднее, сумма, неизвестное число</small>
       </span>
     </a>
 
     <a class="mini-topic-card" href="#algebra">
       <span class="mini-topic-icon">x</span>
       <span>
-        <b class="lang kk">Алгебра</b>
-        <b class="lang ru">Алгебра</b>
-        <small class="lang kk">Теңдеу, теңсіздік, модуль</small>
-        <small class="lang ru">Уравнения, неравенства, модуль</small>
+        <b class="lang kk">Алгебра, функция, модуль</b>
+        <b class="lang ru">Алгебра, функции, модуль</b>
+        <small class="lang kk">Теңдеу, f(x), модуль</small>
+        <small class="lang ru">Уравнения, f(x), модуль</small>
       </span>
     </a>
 
-    <a class="mini-topic-card" href="#functions">
-      <span class="mini-topic-icon">f</span>
+    <a class="mini-topic-card" href="#inequalities">
+      <span class="mini-topic-icon">≤</span>
       <span>
-        <b class="lang kk">Функция</b>
-        <b class="lang ru">Функция</b>
-        <small class="lang kk">f(x), кесте, тәуелділік</small>
-        <small class="lang ru">f(x), таблица, зависимость</small>
+        <b class="lang kk">Теңсіздік және интервал</b>
+        <b class="lang ru">Неравенства и интервалы</b>
+        <small class="lang kk">Теңсіздік, сан түзуі, аралық</small>
+        <small class="lang ru">Неравенства, числовая прямая, интервалы</small>
       </span>
     </a>
 
-    <a class="mini-topic-card" href="#diagrams">
-      <span class="mini-topic-icon">▥</span>
+    <a class="mini-topic-card" href="#number-theory">
+      <span class="mini-topic-icon">N</span>
       <span>
-        <b class="lang kk">Диаграмма және кесте</b>
-        <b class="lang ru">Диаграммы и таблицы</b>
-        <small class="lang kk">Кесте, график, салыстыру</small>
-        <small class="lang ru">Таблица, график, сравнение</small>
+        <b class="lang kk">Сан теориясы</b>
+        <b class="lang ru">Теория чисел</b>
+        <small class="lang kk">Жай сан, ЕҮОБ, ЕКОЕ</small>
+        <small class="lang ru">Простые числа, НОД, НОК</small>
       </span>
     </a>
 
@@ -677,25 +688,56 @@ document.addEventListener('DOMContentLoaded', function(){
       </span>
     </a>
 
+    <a class="mini-topic-card" href="#diagrams">
+      <span class="mini-topic-icon">▥</span>
+      <span>
+        <b class="lang kk">Диаграмма және кесте</b>
+        <b class="lang ru">Диаграммы и таблицы</b>
+        <small class="lang kk">График, кесте, салыстыру</small>
+        <small class="lang ru">График, таблица, сравнение</small>
+      </span>
+    </a>
+
     <a class="mini-topic-card" href="#word-problems">
       <span class="mini-topic-icon">↔</span>
       <span>
         <b class="lang kk">Мәтінді есептер</b>
         <b class="lang ru">Текстовые задачи</b>
-        <small class="lang kk">Жұмыс, қозғалыс, жас</small>
-        <small class="lang ru">Работа, движение, возраст</small>
+        <small class="lang kk">Жұмыс, қозғалыс, жас, қоспа</small>
+        <small class="lang ru">Работа, движение, возраст, смеси</small>
       </span>
     </a>
 
     <a class="mini-topic-card" href="#critical-thinking">
       <span class="mini-topic-icon">?</span>
       <span>
-        <b class="lang kk">Сыни ойлау</b>
-        <b class="lang ru">Критическое мышление</b>
-        <small class="lang kk">Логика, қорытынды, шарт</small>
-        <small class="lang ru">Логика, вывод, условие</small>
+        <b class="lang kk">Логика және ақпарат талдау</b>
+        <b class="lang ru">Логика и анализ информации</b>
+        <small class="lang kk">Қорытынды, шарт, жеткіліктілік</small>
+        <small class="lang ru">Вывод, условие, достаточность</small>
       </span>
     </a>
+
+    <a class="mini-topic-card" href="#combinatorics">
+      <span class="mini-topic-icon">⋯</span>
+      <span>
+        <b class="lang kk">Комбинаторика</b>
+        <b class="lang ru">Комбинаторика</b>
+        <small class="lang kk">Таңдау, орналастыру, нұсқа саны</small>
+        <small class="lang ru">Выбор, размещение, число вариантов</small>
+      </span>
+    </a>
+
+    <a class="mini-topic-card" href="#variant-1">
+      <span class="mini-topic-icon">✓</span>
+      <span>
+        <b class="lang kk">Нұсқалар</b>
+        <b class="lang ru">Варианты</b>
+        <small class="lang kk">1–5 нұсқа, аралас тесттер</small>
+        <small class="lang ru">Варианты 1–5, смешанные тесты</small>
+      </span>
+    </a>
+
   </div>
 </section>
 
