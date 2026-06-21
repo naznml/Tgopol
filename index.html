@@ -730,7 +730,45 @@ document.addEventListener('DOMContentLoaded', function(){
         <small class="lang ru">Вывод, условие, логическая связь</small>
       </span>
     </a>
+<a class="mini-topic-card" href="#number-theory">
+  <span class="mini-topic-icon">N</span>
+  <span>
+    <b class="lang kk">Сан теориясы</b>
+    <b class="lang ru">Теория чисел</b>
+    <small class="lang kk">Жай сан, ЕҮОБ, ЕКОЕ</small>
+    <small class="lang ru">Простые числа, НОД, НОК</small>
+  </span>
+</a>
 
+<a class="mini-topic-card" href="#combinatorics">
+  <span class="mini-topic-icon">⋯</span>
+  <span>
+    <b class="lang kk">Комбинаторика</b>
+    <b class="lang ru">Комбинаторика</b>
+    <small class="lang kk">Таңдау, нұсқа саны</small>
+    <small class="lang ru">Выбор, число вариантов</small>
+  </span>
+</a>
+
+<a class="mini-topic-card" href="#interval-module">
+  <span class="mini-topic-icon">|x|</span>
+  <span>
+    <b class="lang kk">Интервал және модуль</b>
+    <b class="lang ru">Интервалы и модуль</b>
+    <small class="lang kk">Сан түзуі, |x|, аралық</small>
+    <small class="lang ru">Числовая прямая, |x|, промежутки</small>
+  </span>
+</a>
+
+<a class="mini-topic-card" href="#info-finance-trend">
+  <span class="mini-topic-icon">↗</span>
+  <span>
+    <b class="lang kk">Ақпарат, қаржы, тренд</b>
+    <b class="lang ru">Информация, финансы, тренд</b>
+    <small class="lang kk">Жеткіліктілік, шығын, өзгеріс</small>
+    <small class="lang ru">Достаточность, расходы, изменение</small>
+  </span>
+</a>
     <a class="mini-topic-card" href="#final-mixed-test">
       <span class="mini-topic-icon">★</span>
       <span>
@@ -16223,6 +16261,921 @@ document.addEventListener('DOMContentLoaded', function(){
     </div>
   </div>
 </section>
+    <section class="section" id="number-theory">
+  <div class="tags">
+    <span class="tag">Қосымша бөлім</span>
+    <span class="tag orange">
+      <span class="lang kk">Сан теориясы</span>
+      <span class="lang ru">Теория чисел</span>
+    </span>
+  </div>
+
+  <h2>
+    <span class="lang kk">Сан теориясы</span>
+    <span class="lang ru">Теория чисел</span>
+  </h2>
+
+  <p class="block lang kk">
+    Бұл бөлімде жай сан, құрама сан, бөлгіштер, жай көбейткіштерге жіктеу, ЕҮОБ және ЕКОЕ қарастырылады.
+  </p>
+  <p class="block lang ru">
+    В этом разделе рассматриваются простые и составные числа, делители, разложение на простые множители, НОД и НОК.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <b><span class="lang kk">Жай сан</span><span class="lang ru">Простое число</span></b>
+      <p><span class="lang kk">Екі ғана бөлгіші бар сан: 1 және өзі.</span><span class="lang ru">Число, имеющее ровно два делителя: 1 и само себя.</span></p>
+    </div>
+    <div class="card">
+      <b><span class="lang kk">Құрама сан</span><span class="lang ru">Составное число</span></b>
+      <p><span class="lang kk">Екіден көп бөлгіші бар натурал сан.</span><span class="lang ru">Натуральное число, имеющее больше двух делителей.</span></p>
+    </div>
+    <div class="card">
+      <b>ЕҮОБ / НОД</b>
+      <p><span class="lang kk">Берілген сандардың ең үлкен ортақ бөлгіші.</span><span class="lang ru">Наибольший общий делитель данных чисел.</span></p>
+    </div>
+    <div class="card">
+      <b>ЕКОЕ / НОК</b>
+      <p><span class="lang kk">Берілген сандардың ең кіші ортақ еселігі.</span><span class="lang ru">Наименьшее общее кратное данных чисел.</span></p>
+    </div>
+  </div>
+
+  <div class="test-block" id="number-theory-test">
+    <h3>
+      <span class="lang kk">Тест: Сан теориясы</span>
+      <span class="lang ru">Тест: Теория чисел</span>
+    </h3>
+
+    <article class="question" data-answer="C">
+      <div class="q-head">
+        <div class="q-num">1</div>
+        <div class="q-text">
+          <span class="lang kk">Қай сан жай сан болып табылады?</span>
+          <span class="lang ru">Какое число является простым?</span>
+        </div>
+      </div>
+      <div class="options">
+        <label class="option"><input type="radio" name="ntq1" value="A"><span>21</span></label>
+        <label class="option"><input type="radio" name="ntq1" value="B"><span>27</span></label>
+        <label class="option"><input type="radio" name="ntq1" value="C"><span>29</span></label>
+        <label class="option"><input type="radio" name="ntq1" value="D"><span>33</span></label>
+        <label class="option"><input type="radio" name="ntq1" value="E"><span>35</span></label>
+      </div>
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: C.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Жай сан 1-ге және өзіне ғана бөлінеді.</li>
+          <li>29 саны 2, 3, 5, 7 сандарына бөлінбейді.</li>
+          <li>Сондықтан 29 — жай сан.</li>
+        </ol>
+        <p class="lang ru"><b>Правильный ответ: C.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Простое число делится только на 1 и на само себя.</li>
+          <li>29 не делится на 2, 3, 5, 7.</li>
+          <li>Значит, 29 — простое число.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="D">
+      <div class="q-head">
+        <div class="q-num">2</div>
+        <div class="q-text">
+          <span class="lang kk">36 және 48 сандарының ЕҮОБ-ын табыңыз.</span>
+          <span class="lang ru">Найдите НОД чисел 36 и 48.</span>
+        </div>
+      </div>
+      <div class="options">
+        <label class="option"><input type="radio" name="ntq2" value="A"><span>6</span></label>
+        <label class="option"><input type="radio" name="ntq2" value="B"><span>8</span></label>
+        <label class="option"><input type="radio" name="ntq2" value="C"><span>10</span></label>
+        <label class="option"><input type="radio" name="ntq2" value="D"><span>12</span></label>
+        <label class="option"><input type="radio" name="ntq2" value="E"><span>16</span></label>
+      </div>
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: D.</b></p>
+        <ol class="solution-list lang kk">
+          <li>36 бөлгіштері ішінде: 1, 2, 3, 4, 6, 9, 12, 18, 36.</li>
+          <li>48 бөлгіштері ішінде: 1, 2, 3, 4, 6, 8, 12, 16, 24, 48.</li>
+          <li>Ең үлкен ортақ бөлгіш — 12.</li>
+        </ol>
+        <p class="lang ru"><b>Правильный ответ: D.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Среди делителей 36 есть 12.</li>
+          <li>Среди делителей 48 тоже есть 12.</li>
+          <li>Наибольший общий делитель равен 12.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="B">
+      <div class="q-head">
+        <div class="q-num">3</div>
+        <div class="q-text">
+          <span class="lang kk">12 және 18 сандарының ЕКОЕ-ын табыңыз.</span>
+          <span class="lang ru">Найдите НОК чисел 12 и 18.</span>
+        </div>
+      </div>
+      <div class="options">
+        <label class="option"><input type="radio" name="ntq3" value="A"><span>24</span></label>
+        <label class="option"><input type="radio" name="ntq3" value="B"><span>36</span></label>
+        <label class="option"><input type="radio" name="ntq3" value="C"><span>48</span></label>
+        <label class="option"><input type="radio" name="ntq3" value="D"><span>54</span></label>
+        <label class="option"><input type="radio" name="ntq3" value="E"><span>72</span></label>
+      </div>
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: B.</b></p>
+        <ol class="solution-list lang kk">
+          <li>12 еселіктері: 12, 24, 36, 48, ...</li>
+          <li>18 еселіктері: 18, 36, 54, ...</li>
+          <li>Ең кіші ортақ еселік — 36.</li>
+        </ol>
+        <p class="lang ru"><b>Правильный ответ: B.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Кратные 12: 12, 24, 36, 48, ...</li>
+          <li>Кратные 18: 18, 36, 54, ...</li>
+          <li>Наименьшее общее кратное — 36.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="E">
+      <div class="q-head">
+        <div class="q-num">4</div>
+        <div class="q-text">
+          <span class="lang kk">84 санын жай көбейткіштерге жіктеңіз.</span>
+          <span class="lang ru">Разложите число 84 на простые множители.</span>
+        </div>
+      </div>
+      <div class="options">
+        <label class="option"><input type="radio" name="ntq4" value="A"><span>2 · 3 · 7</span></label>
+        <label class="option"><input type="radio" name="ntq4" value="B"><span>2² · 3</span></label>
+        <label class="option"><input type="radio" name="ntq4" value="C"><span>2 · 3² · 7</span></label>
+        <label class="option"><input type="radio" name="ntq4" value="D"><span>2² · 5 · 7</span></label>
+        <label class="option"><input type="radio" name="ntq4" value="E"><span>2² · 3 · 7</span></label>
+      </div>
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: E.</b></p>
+        <ol class="solution-list lang kk">
+          <li>84 = 2 · 42.</li>
+          <li>42 = 2 · 21.</li>
+          <li>21 = 3 · 7.</li>
+          <li>Сондықтан 84 = 2² · 3 · 7.</li>
+        </ol>
+        <p class="lang ru"><b>Правильный ответ: E.</b></p>
+        <ol class="solution-list lang ru">
+          <li>84 = 2 · 42.</li>
+          <li>42 = 2 · 21.</li>
+          <li>21 = 3 · 7.</li>
+          <li>Значит, 84 = 2² · 3 · 7.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="A">
+      <div class="q-head">
+        <div class="q-num">5</div>
+        <div class="q-text">
+          <span class="lang kk">24 санының неше оң бөлгіші бар?</span>
+          <span class="lang ru">Сколько положительных делителей имеет число 24?</span>
+        </div>
+      </div>
+      <div class="options">
+        <label class="option"><input type="radio" name="ntq5" value="A"><span>8</span></label>
+        <label class="option"><input type="radio" name="ntq5" value="B"><span>7</span></label>
+        <label class="option"><input type="radio" name="ntq5" value="C"><span>6</span></label>
+        <label class="option"><input type="radio" name="ntq5" value="D"><span>9</span></label>
+        <label class="option"><input type="radio" name="ntq5" value="E"><span>10</span></label>
+      </div>
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: A.</b></p>
+        <ol class="solution-list lang kk">
+          <li>24 санының бөлгіштері: 1, 2, 3, 4, 6, 8, 12, 24.</li>
+          <li>Барлығы 8 оң бөлгіш бар.</li>
+        </ol>
+        <p class="lang ru"><b>Правильный ответ: A.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Делители 24: 1, 2, 3, 4, 6, 8, 12, 24.</li>
+          <li>Всего 8 положительных делителей.</li>
+        </ol>
+      </div>
+    </article>
+
+    <div class="section-actions">
+      <button class="check-btn" type="button" data-check="number-theory-test">
+        <span class="lang kk">Нәтижені көрсету</span>
+        <span class="lang ru">Показать результат</span>
+      </button>
+      <div class="result" data-result="number-theory-test"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="combinatorics">
+  <div class="tags">
+    <span class="tag">Қосымша бөлім</span>
+    <span class="tag orange">
+      <span class="lang kk">Комбинаторика</span>
+      <span class="lang ru">Комбинаторика</span>
+    </span>
+  </div>
+
+  <h2>
+    <span class="lang kk">Комбинаторика: нұсқалар санын табу</span>
+    <span class="lang ru">Комбинаторика: подсчёт вариантов</span>
+  </h2>
+
+  <p class="block lang kk">
+    Бұл бөлімде формулаға ауыр кірмей, таңдау саны, ретпен орналастыру және барлық мүмкін нұсқаларды санау қарастырылады.
+  </p>
+  <p class="block lang ru">
+    В этом разделе рассматривается подсчёт вариантов, выбор и размещение без сложных формул.
+  </p>
+
+  <div class="formula-box">
+    <div class="formula">m · n</div>
+    <p class="block lang kk">Егер бірінші әрекетті m тәсілмен, екінші әрекетті n тәсілмен орындауға болса, жалпы нұсқа саны m · n болады.</p>
+    <p class="block lang ru">Если первое действие можно выполнить m способами, а второе n способами, всего вариантов m · n.</p>
+  </div>
+
+  <div class="test-block" id="combinatorics-test">
+    <h3>
+      <span class="lang kk">Тест: Комбинаторика</span>
+      <span class="lang ru">Тест: Комбинаторика</span>
+    </h3>
+
+    <article class="question" data-answer="C">
+      <div class="q-head">
+        <div class="q-num">1</div>
+        <div class="q-text">
+          <span class="lang kk">Кафеде 4 түрлі шай және 3 түрлі десерт бар. Бір шай және бір десерт таңдаудың неше тәсілі бар?</span>
+          <span class="lang ru">В кафе есть 4 вида чая и 3 вида десерта. Сколькими способами можно выбрать один чай и один десерт?</span>
+        </div>
+      </div>
+      <div class="options">
+        <label class="option"><input type="radio" name="cq1" value="A"><span>7</span></label>
+        <label class="option"><input type="radio" name="cq1" value="B"><span>9</span></label>
+        <label class="option"><input type="radio" name="cq1" value="C"><span>12</span></label>
+        <label class="option"><input type="radio" name="cq1" value="D"><span>16</span></label>
+        <label class="option"><input type="radio" name="cq1" value="E"><span>24</span></label>
+      </div>
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: C.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Шайды 4 тәсілмен таңдауға болады.</li>
+          <li>Әр шайға 3 десерт сәйкес келеді.</li>
+          <li>Жалпы нұсқа саны: 4 · 3 = 12.</li>
+        </ol>
+        <p class="lang ru"><b>Правильный ответ: C.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Чай можно выбрать 4 способами.</li>
+          <li>К каждому выбору чая есть 3 варианта десерта.</li>
+          <li>Всего: 4 · 3 = 12.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="D">
+      <div class="q-head">
+        <div class="q-num">2</div>
+        <div class="q-text">
+          <span class="lang kk">3 оқушыны бір қатарға орналастырудың неше тәсілі бар?</span>
+          <span class="lang ru">Сколькими способами можно расположить 3 учеников в один ряд?</span>
+        </div>
+      </div>
+      <div class="options">
+        <label class="option"><input type="radio" name="cq2" value="A"><span>3</span></label>
+        <label class="option"><input type="radio" name="cq2" value="B"><span>4</span></label>
+        <label class="option"><input type="radio" name="cq2" value="C"><span>5</span></label>
+        <label class="option"><input type="radio" name="cq2" value="D"><span>6</span></label>
+        <label class="option"><input type="radio" name="cq2" value="E"><span>9</span></label>
+      </div>
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: D.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Бірінші орынға 3 оқушының бірі отырады.</li>
+          <li>Екінші орынға қалған 2 оқушының бірі отырады.</li>
+          <li>Үшінші орынға 1 оқушы қалады.</li>
+          <li>Жалпы: 3 · 2 · 1 = 6.</li>
+        </ol>
+        <p class="lang ru"><b>Правильный ответ: D.</b></p>
+        <ol class="solution-list lang ru">
+          <li>На первое место можно поставить 3 учеников.</li>
+          <li>На второе — 2 оставшихся.</li>
+          <li>На третье — 1 оставшегося.</li>
+          <li>Всего: 3 · 2 · 1 = 6.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="B">
+      <div class="q-head">
+        <div class="q-num">3</div>
+        <div class="q-text">
+          <span class="lang kk">Код екі таңбадан тұрады: бірінші таңба — 5 цифрдың бірі, екінші таңба — 4 әріптің бірі. Неше код құрастыруға болады?</span>
+          <span class="lang ru">Код состоит из двух символов: первый — одна из 5 цифр, второй — одна из 4 букв. Сколько кодов можно составить?</span>
+        </div>
+      </div>
+      <div class="options">
+        <label class="option"><input type="radio" name="cq3" value="A"><span>9</span></label>
+        <label class="option"><input type="radio" name="cq3" value="B"><span>20</span></label>
+        <label class="option"><input type="radio" name="cq3" value="C"><span>24</span></label>
+        <label class="option"><input type="radio" name="cq3" value="D"><span>25</span></label>
+        <label class="option"><input type="radio" name="cq3" value="E"><span>40</span></label>
+      </div>
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: B.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Бірінші таңбаға 5 нұсқа бар.</li>
+          <li>Екінші таңбаға 4 нұсқа бар.</li>
+          <li>Жалпы код саны: 5 · 4 = 20.</li>
+        </ol>
+        <p class="lang ru"><b>Правильный ответ: B.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Для первого символа есть 5 вариантов.</li>
+          <li>Для второго символа есть 4 варианта.</li>
+          <li>Всего кодов: 5 · 4 = 20.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="E">
+      <div class="q-head">
+        <div class="q-num">4</div>
+        <div class="q-text">
+          <span class="lang kk">5 адамның ішінен топ жетекшісі мен көмекшісін таңдау керек. Бір адам екі рөлді қатар ала алмайды. Неше тәсіл бар?</span>
+          <span class="lang ru">Из 5 человек нужно выбрать руководителя и помощника. Один человек не может занимать две роли. Сколько способов?</span>
+        </div>
+      </div>
+      <div class="options">
+        <label class="option"><input type="radio" name="cq4" value="A"><span>10</span></label>
+        <label class="option"><input type="radio" name="cq4" value="B"><span>12</span></label>
+        <label class="option"><input type="radio" name="cq4" value="C"><span>15</span></label>
+        <label class="option"><input type="radio" name="cq4" value="D"><span>18</span></label>
+        <label class="option"><input type="radio" name="cq4" value="E"><span>20</span></label>
+      </div>
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: E.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Жетекшіні 5 тәсілмен таңдауға болады.</li>
+          <li>Көмекшіге қалған 4 адамнан біреуі таңдалады.</li>
+          <li>Рөлдер әртүрлі болғандықтан: 5 · 4 = 20.</li>
+        </ol>
+        <p class="lang ru"><b>Правильный ответ: E.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Руководителя можно выбрать 5 способами.</li>
+          <li>Помощника выбирают из оставшихся 4 человек.</li>
+          <li>Так как роли разные: 5 · 4 = 20.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="A">
+      <div class="q-head">
+        <div class="q-num">5</div>
+        <div class="q-text">
+          <span class="lang kk">Мәзірде 2 сорпа, 3 негізгі тағам және 2 сусын бар. Бір сорпа, бір негізгі тағам және бір сусын таңдаудың неше тәсілі бар?</span>
+          <span class="lang ru">В меню есть 2 супа, 3 основных блюда и 2 напитка. Сколькими способами можно выбрать один суп, одно блюдо и один напиток?</span>
+        </div>
+      </div>
+      <div class="options">
+        <label class="option"><input type="radio" name="cq5" value="A"><span>12</span></label>
+        <label class="option"><input type="radio" name="cq5" value="B"><span>10</span></label>
+        <label class="option"><input type="radio" name="cq5" value="C"><span>9</span></label>
+        <label class="option"><input type="radio" name="cq5" value="D"><span>8</span></label>
+        <label class="option"><input type="radio" name="cq5" value="E"><span>7</span></label>
+      </div>
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: A.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Сорпа: 2 нұсқа.</li>
+          <li>Негізгі тағам: 3 нұсқа.</li>
+          <li>Сусын: 2 нұсқа.</li>
+          <li>Жалпы: 2 · 3 · 2 = 12.</li>
+        </ol>
+        <p class="lang ru"><b>Правильный ответ: A.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Суп: 2 варианта.</li>
+          <li>Основное блюдо: 3 варианта.</li>
+          <li>Напиток: 2 варианта.</li>
+          <li>Всего: 2 · 3 · 2 = 12.</li>
+        </ol>
+      </div>
+    </article>
+
+    <div class="section-actions">
+      <button class="check-btn" type="button" data-check="combinatorics-test">
+        <span class="lang kk">Нәтижені көрсету</span>
+        <span class="lang ru">Показать результат</span>
+      </button>
+      <div class="result" data-result="combinatorics-test"></div>
+    </div>
+  </div>
+</section>
+    <section class="section" id="interval-module">
+  <div class="tags">
+    <span class="tag">Қосымша бөлім</span>
+    <span class="tag orange">
+      <span class="lang kk">Интервал және модуль</span>
+      <span class="lang ru">Интервалы и модуль</span>
+    </span>
+  </div>
+
+  <h2>
+    <span class="lang kk">Интервалдар және модуль</span>
+    <span class="lang ru">Интервалы и модуль</span>
+  </h2>
+
+  <p class="block lang kk">
+    Бұл бөлімде сан түзуіндегі аралықтар, қосарлы теңсіздік, шешім интервалын табу және модульдің негізгі қасиеттері қарастырылады.
+  </p>
+
+  <p class="block lang ru">
+    В этом разделе рассматриваются промежутки на числовой прямой, двойные неравенства, нахождение интервала решения и основные свойства модуля.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <b><span class="lang kk">Интервал</span><span class="lang ru">Интервал</span></b>
+      <p>
+        <span class="lang kk">Ашық аралықта шеткі нүктелер кірмейді: (a; b).</span>
+        <span class="lang ru">В открытый интервал крайние точки не входят: (a; b).</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <b><span class="lang kk">Кесінді</span><span class="lang ru">Отрезок</span></b>
+      <p>
+        <span class="lang kk">Жабық аралықта шеткі нүктелер кіреді: [a; b].</span>
+        <span class="lang ru">В закрытый промежуток крайние точки входят: [a; b].</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <b><span class="lang kk">Модуль</span><span class="lang ru">Модуль</span></b>
+      <p>
+        <span class="lang kk">|x| саны 0-ден қашықтықты білдіреді, сондықтан әрқашан теріс емес.</span>
+        <span class="lang ru">|x| означает расстояние от 0, поэтому всегда неотрицателен.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <b><span class="lang kk">Негізгі түрі</span><span class="lang ru">Основной вид</span></b>
+      <p>
+        <span class="lang kk">|x − a| &lt; b болса, a − b &lt; x &lt; a + b.</span>
+        <span class="lang ru">Если |x − a| &lt; b, то a − b &lt; x &lt; a + b.</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="test-block" id="interval-module-test">
+    <h3>
+      <span class="lang kk">Тест: Интервал және модуль</span>
+      <span class="lang ru">Тест: Интервалы и модуль</span>
+    </h3>
+
+    <article class="question" data-answer="C">
+      <div class="q-head">
+        <div class="q-num">1</div>
+        <div class="q-text">
+          <span class="lang kk">Қай жазбада -2 және 5 сандары аралыққа кірмейді?</span>
+          <span class="lang ru">В какой записи числа -2 и 5 не входят в промежуток?</span>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="imq1" value="A"><span>[-2; 5]</span></label>
+        <label class="option"><input type="radio" name="imq1" value="B"><span>[-2; 5)</span></label>
+        <label class="option"><input type="radio" name="imq1" value="C"><span>(-2; 5)</span></label>
+        <label class="option"><input type="radio" name="imq1" value="D"><span>(-2; 5]</span></label>
+        <label class="option"><input type="radio" name="imq1" value="E"><span>[-5; 2]</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: C.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Жай жақша шеткі нүктенің кірмейтінін білдіреді.</li>
+          <li>(-2; 5) аралығында -2 де, 5 те кірмейді.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: C.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Круглая скобка означает, что крайняя точка не входит.</li>
+          <li>В интервал (-2; 5) не входят ни -2, ни 5.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="D">
+      <div class="q-head">
+        <div class="q-num">2</div>
+        <div class="q-text">
+          <span class="lang kk">Қосарлы теңсіздікті шешіңіз: -3 ≤ 2x + 1 ≤ 9.</span>
+          <span class="lang ru">Решите двойное неравенство: -3 ≤ 2x + 1 ≤ 9.</span>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="imq2" value="A"><span>[-3; 9]</span></label>
+        <label class="option"><input type="radio" name="imq2" value="B"><span>[-2; 4)</span></label>
+        <label class="option"><input type="radio" name="imq2" value="C"><span>(-2; 4]</span></label>
+        <label class="option"><input type="radio" name="imq2" value="D"><span>[-2; 4]</span></label>
+        <label class="option"><input type="radio" name="imq2" value="E"><span>[-1; 5]</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: D.</b></p>
+        <ol class="solution-list lang kk">
+          <li>-3 ≤ 2x + 1 ≤ 9.</li>
+          <li>Барлық бөліктен 1-ді азайтамыз: -4 ≤ 2x ≤ 8.</li>
+          <li>2-ге бөлеміз: -2 ≤ x ≤ 4.</li>
+          <li>Жауабы: [-2; 4].</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: D.</b></p>
+        <ol class="solution-list lang ru">
+          <li>-3 ≤ 2x + 1 ≤ 9.</li>
+          <li>Вычитаем 1 из всех частей: -4 ≤ 2x ≤ 8.</li>
+          <li>Делим на 2: -2 ≤ x ≤ 4.</li>
+          <li>Ответ: [-2; 4].</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="B">
+      <div class="q-head">
+        <div class="q-num">3</div>
+        <div class="q-text">
+          <span class="lang kk">|x − 4| = 6 теңдеуінің шешімдерін табыңыз.</span>
+          <span class="lang ru">Найдите решения уравнения |x − 4| = 6.</span>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="imq3" value="A"><span>-6 және 6 / -6 и 6</span></label>
+        <label class="option"><input type="radio" name="imq3" value="B"><span>-2 және 10 / -2 и 10</span></label>
+        <label class="option"><input type="radio" name="imq3" value="C"><span>2 және 10 / 2 и 10</span></label>
+        <label class="option"><input type="radio" name="imq3" value="D"><span>-10 және 2 / -10 и 2</span></label>
+        <label class="option"><input type="radio" name="imq3" value="E"><span>4 және 6 / 4 и 6</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: B.</b></p>
+        <ol class="solution-list lang kk">
+          <li>|x − 4| = 6 болса, екі жағдай қаралады.</li>
+          <li>x − 4 = 6, сонда x = 10.</li>
+          <li>x − 4 = -6, сонда x = -2.</li>
+          <li>Шешімдері: -2 және 10.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: B.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Если |x − 4| = 6, рассматриваем два случая.</li>
+          <li>x − 4 = 6, значит x = 10.</li>
+          <li>x − 4 = -6, значит x = -2.</li>
+          <li>Решения: -2 и 10.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="E">
+      <div class="q-head">
+        <div class="q-num">4</div>
+        <div class="q-text">
+          <span class="lang kk">|x + 3| &lt; 5 теңсіздігінің шешім аралығын табыңыз.</span>
+          <span class="lang ru">Найдите промежуток решений неравенства |x + 3| &lt; 5.</span>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="imq4" value="A"><span>(-5; 5)</span></label>
+        <label class="option"><input type="radio" name="imq4" value="B"><span>(-8; 2]</span></label>
+        <label class="option"><input type="radio" name="imq4" value="C"><span>[-8; 2]</span></label>
+        <label class="option"><input type="radio" name="imq4" value="D"><span>(-2; 8)</span></label>
+        <label class="option"><input type="radio" name="imq4" value="E"><span>(-8; 2)</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: E.</b></p>
+        <ol class="solution-list lang kk">
+          <li>|x + 3| &lt; 5.</li>
+          <li>-5 &lt; x + 3 &lt; 5.</li>
+          <li>Барлық бөліктен 3-ті азайтамыз: -8 &lt; x &lt; 2.</li>
+          <li>Жауабы: (-8; 2).</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: E.</b></p>
+        <ol class="solution-list lang ru">
+          <li>|x + 3| &lt; 5.</li>
+          <li>-5 &lt; x + 3 &lt; 5.</li>
+          <li>Вычитаем 3: -8 &lt; x &lt; 2.</li>
+          <li>Ответ: (-8; 2).</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="A">
+      <div class="q-head">
+        <div class="q-num">5</div>
+        <div class="q-text">
+          <span class="lang kk">[-1; 6) аралығындағы бүтін сандар санын табыңыз.</span>
+          <span class="lang ru">Найдите количество целых чисел в промежутке [-1; 6).</span>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="imq5" value="A"><span>7</span></label>
+        <label class="option"><input type="radio" name="imq5" value="B"><span>6</span></label>
+        <label class="option"><input type="radio" name="imq5" value="C"><span>5</span></label>
+        <label class="option"><input type="radio" name="imq5" value="D"><span>8</span></label>
+        <label class="option"><input type="radio" name="imq5" value="E"><span>9</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: A.</b></p>
+        <ol class="solution-list lang kk">
+          <li>[-1; 6) аралығында -1 кіреді, 6 кірмейді.</li>
+          <li>Бүтін сандар: -1, 0, 1, 2, 3, 4, 5.</li>
+          <li>Барлығы 7 сан.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: A.</b></p>
+        <ol class="solution-list lang ru">
+          <li>В промежуток [-1; 6) входит -1, но не входит 6.</li>
+          <li>Целые числа: -1, 0, 1, 2, 3, 4, 5.</li>
+          <li>Всего 7 чисел.</li>
+        </ol>
+      </div>
+    </article>
+
+    <div class="section-actions">
+      <button class="check-btn" type="button" data-check="interval-module-test">
+        <span class="lang kk">Нәтижені көрсету</span>
+        <span class="lang ru">Показать результат</span>
+      </button>
+      <div class="result" data-result="interval-module-test"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="info-finance-trend">
+  <div class="tags">
+    <span class="tag">Қосымша бөлім</span>
+    <span class="tag orange">
+      <span class="lang kk">Ақпарат, қаржы, тренд</span>
+      <span class="lang ru">Информация, финансы, тренд</span>
+    </span>
+  </div>
+
+  <h2>
+    <span class="lang kk">Ақпаратты талдау, қаржы және тренд</span>
+    <span class="lang ru">Анализ информации, финансы и тренд</span>
+  </h2>
+
+  <p class="block lang kk">
+    Бұл бөлімде мәлімет жеткіліктілігі, артық немесе жетіспейтін ақпарат, қаржыға байланысты қарапайым есептер және график/кестедегі өзгеріс бағытын анықтау қарастырылады.
+  </p>
+
+  <p class="block lang ru">
+    В этом разделе рассматриваются достаточность информации, лишние или недостающие данные, простые финансовые задачи и определение направления изменения по таблице или графику.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <b><span class="lang kk">Ақпарат жеткілікті ме?</span><span class="lang ru">Достаточно ли информации?</span></b>
+      <p>
+        <span class="lang kk">Есепті шешуге берілген мәлімет толық па, әлде қосымша дерек керек пе — соны анықтау.</span>
+        <span class="lang ru">Нужно определить, хватает ли данных для решения задачи.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <b><span class="lang kk">Қаржылық логика</span><span class="lang ru">Финансовая логика</span></b>
+      <p>
+        <span class="lang kk">Табыс, шығын, үнем, баға өзгерісі сияқты практикалық есептер.</span>
+        <span class="lang ru">Задачи на доход, расход, экономию и изменение цены.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <b><span class="lang kk">Тренд</span><span class="lang ru">Тренд</span></b>
+      <p>
+        <span class="lang kk">Кесте немесе график бойынша өсу, кему, ең үлкен өзгерісті табу.</span>
+        <span class="lang ru">Определение роста, снижения и наибольшего изменения по данным.</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="test-block" id="info-finance-trend-test">
+    <h3>
+      <span class="lang kk">Тест: Ақпарат, қаржы, тренд</span>
+      <span class="lang ru">Тест: Информация, финансы, тренд</span>
+    </h3>
+
+    <article class="question" data-answer="D">
+      <div class="q-head">
+        <div class="q-num">1</div>
+        <div class="q-text">
+          <span class="lang kk">Дүкендегі тауардың бастапқы бағасы 20 000 тг. Жеңілдіктен кейін баға 17 000 тг болды. Жеңілдік мөлшерін пайызбен табыңыз.</span>
+          <span class="lang ru">Начальная цена товара 20 000 тг. После скидки цена стала 17 000 тг. Найдите размер скидки в процентах.</span>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="iftq1" value="A"><span>10%</span></label>
+        <label class="option"><input type="radio" name="iftq1" value="B"><span>12%</span></label>
+        <label class="option"><input type="radio" name="iftq1" value="C"><span>14%</span></label>
+        <label class="option"><input type="radio" name="iftq1" value="D"><span>15%</span></label>
+        <label class="option"><input type="radio" name="iftq1" value="E"><span>18%</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: D.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Жеңілдік сомасы: 20 000 − 17 000 = 3 000 тг.</li>
+          <li>Пайызбен: 3 000 ÷ 20 000 = 0,15.</li>
+          <li>0,15 = 15%.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: D.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Сумма скидки: 20 000 − 17 000 = 3 000 тг.</li>
+          <li>В процентах: 3 000 ÷ 20 000 = 0,15.</li>
+          <li>0,15 = 15%.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="B">
+      <div class="q-head">
+        <div class="q-num">2</div>
+        <div class="q-text">
+          <span class="lang kk">Ай сайынғы табыс 180 000 тг, шығын 135 000 тг. Бір айдағы үнемделген ақшаны табыңыз.</span>
+          <span class="lang ru">Ежемесячный доход равен 180 000 тг, расходы — 135 000 тг. Найдите сумму сбережений за месяц.</span>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="iftq2" value="A"><span>35 000 тг</span></label>
+        <label class="option"><input type="radio" name="iftq2" value="B"><span>45 000 тг</span></label>
+        <label class="option"><input type="radio" name="iftq2" value="C"><span>50 000 тг</span></label>
+        <label class="option"><input type="radio" name="iftq2" value="D"><span>55 000 тг</span></label>
+        <label class="option"><input type="radio" name="iftq2" value="E"><span>60 000 тг</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: B.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Үнем = табыс − шығын.</li>
+          <li>180 000 − 135 000 = 45 000 тг.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: B.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Сбережения = доход − расходы.</li>
+          <li>180 000 − 135 000 = 45 000 тг.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="C">
+      <div class="q-head">
+        <div class="q-num">3</div>
+        <div class="q-text">
+          <span class="lang kk">Кестеде дүкеннің 4 айдағы табысы берілген. Қай айлар арасында табыс ең көп артты?</span>
+          <span class="lang ru">В таблице дана выручка магазина за 4 месяца. Между какими месяцами выручка выросла больше всего?</span>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th><span class="lang kk">Ай</span><span class="lang ru">Месяц</span></th>
+            <td><span class="lang kk">Қаңтар</span><span class="lang ru">Январь</span></td>
+            <td><span class="lang kk">Ақпан</span><span class="lang ru">Февраль</span></td>
+            <td><span class="lang kk">Наурыз</span><span class="lang ru">Март</span></td>
+            <td><span class="lang kk">Сәуір</span><span class="lang ru">Апрель</span></td>
+          </tr>
+          <tr>
+            <th><span class="lang kk">Табыс</span><span class="lang ru">Выручка</span></th>
+            <td>120</td>
+            <td>135</td>
+            <td>170</td>
+            <td>185</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="iftq3" value="A"><span class="lang kk">Қаңтар–Ақпан</span><span class="lang ru">Январь–Февраль</span></label>
+        <label class="option"><input type="radio" name="iftq3" value="B"><span class="lang kk">Ақпан–Сәуір</span><span class="lang ru">Февраль–Апрель</span></label>
+        <label class="option"><input type="radio" name="iftq3" value="C"><span class="lang kk">Ақпан–Наурыз</span><span class="lang ru">Февраль–Март</span></label>
+        <label class="option"><input type="radio" name="iftq3" value="D"><span class="lang kk">Наурыз–Сәуір</span><span class="lang ru">Март–Апрель</span></label>
+        <label class="option"><input type="radio" name="iftq3" value="E"><span class="lang kk">Қаңтар–Сәуір</span><span class="lang ru">Январь–Апрель</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: C.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Қаңтар–Ақпан: 135 − 120 = 15.</li>
+          <li>Ақпан–Наурыз: 170 − 135 = 35.</li>
+          <li>Наурыз–Сәуір: 185 − 170 = 15.</li>
+          <li>Ең үлкен өсім — 35, яғни Ақпан–Наурыз.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: C.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Январь–Февраль: 135 − 120 = 15.</li>
+          <li>Февраль–Март: 170 − 135 = 35.</li>
+          <li>Март–Апрель: 185 − 170 = 15.</li>
+          <li>Наибольший рост — 35, значит Февраль–Март.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="A">
+      <div class="q-head">
+        <div class="q-num">4</div>
+        <div class="q-text">
+          <span class="lang kk">Мараттың жасы 18-де. Оның ағасы Мараттан 5 жас үлкен. Осы ақпарат арқылы ағасының жасын табуға бола ма?</span>
+          <span class="lang ru">Марату 18 лет. Его брат старше Марата на 5 лет. Можно ли по этой информации найти возраст брата?</span>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="iftq4" value="A"><span class="lang kk">Иә, ақпарат жеткілікті</span><span class="lang ru">Да, информации достаточно</span></label>
+        <label class="option"><input type="radio" name="iftq4" value="B"><span class="lang kk">Жоқ, Мараттың туған күні керек</span><span class="lang ru">Нет, нужен день рождения Марата</span></label>
+        <label class="option"><input type="radio" name="iftq4" value="C"><span class="lang kk">Жоқ, ағасының аты керек</span><span class="lang ru">Нет, нужно имя брата</span></label>
+        <label class="option"><input type="radio" name="iftq4" value="D"><span class="lang kk">Жоқ, отбасы мүшелерінің саны керек</span><span class="lang ru">Нет, нужно число членов семьи</span></label>
+        <label class="option"><input type="radio" name="iftq4" value="E"><span class="lang kk">Жоқ, мектеп сыныбы керек</span><span class="lang ru">Нет, нужен класс в школе</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: A.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Марат 18 жаста.</li>
+          <li>Ағасы 5 жас үлкен.</li>
+          <li>Ағасының жасы: 18 + 5 = 23.</li>
+          <li>Сондықтан ақпарат жеткілікті.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: A.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Марату 18 лет.</li>
+          <li>Брат старше на 5 лет.</li>
+          <li>Возраст брата: 18 + 5 = 23.</li>
+          <li>Информации достаточно.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="E">
+      <div class="q-head">
+        <div class="q-num">5</div>
+        <div class="q-text">
+          <span class="lang kk">Айгүл 3 дәптер және 2 қалам сатып алды. Дәптердің бағасы 300 тг екені белгілі. Жалпы төлемді табу үшін қандай ақпарат жетіспейді?</span>
+          <span class="lang ru">Айгуль купила 3 тетради и 2 ручки. Известно, что цена одной тетради 300 тг. Какая информация нужна, чтобы найти общую стоимость покупки?</span>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="iftq5" value="A"><span class="lang kk">Дәптердің саны</span><span class="lang ru">Количество тетрадей</span></label>
+        <label class="option"><input type="radio" name="iftq5" value="B"><span class="lang kk">Қалам саны</span><span class="lang ru">Количество ручек</span></label>
+        <label class="option"><input type="radio" name="iftq5" value="C"><span class="lang kk">Дәптердің бағасы</span><span class="lang ru">Цена тетради</span></label>
+        <label class="option"><input type="radio" name="iftq5" value="D"><span class="lang kk">Сатып алған күн</span><span class="lang ru">День покупки</span></label>
+        <label class="option"><input type="radio" name="iftq5" value="E"><span class="lang kk">Бір қаламның бағасы</span><span class="lang ru">Цена одной ручки</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: E.</b></p>
+        <ol class="solution-list lang kk">
+          <li>3 дәптердің саны да, бағасы да белгілі.</li>
+          <li>2 қалам саны белгілі.</li>
+          <li>Бірақ бір қаламның бағасы берілмеген.</li>
+          <li>Жалпы төлемді табу үшін қалам бағасы керек.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: E.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Количество и цена тетрадей известны.</li>
+          <li>Количество ручек известно.</li>
+          <li>Но цена одной ручки не дана.</li>
+          <li>Для общей стоимости нужна цена ручки.</li>
+        </ol>
+      </div>
+    </article>
+
+    <div class="section-actions">
+      <button class="check-btn" type="button" data-check="info-finance-trend-test">
+        <span class="lang kk">Нәтижені көрсету</span>
+        <span class="lang ru">Показать результат</span>
+      </button>
+      <div class="result" data-result="info-finance-trend-test"></div>
+    </div>
+  </div>
+</section>
+    
     <section class="section" id="final-mixed-test">
   <div class="tags">
     <span class="tag">10-бөлім</span>
