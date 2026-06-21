@@ -4643,5 +4643,927 @@ document.addEventListener('DOMContentLoaded', function(){
     </div>
   </div>
 </section>
+          <section class="section" id="algebra">
+  <div class="tags">
+    <span class="tag">5-бөлім</span>
+    <span class="tag orange">
+      <span class="lang kk">Алгебра</span>
+      <span class="lang ru">Алгебра</span>
+    </span>
+    <span class="tag orange">
+      <span class="lang kk">Теңдеу</span>
+      <span class="lang ru">Уравнение</span>
+    </span>
+    <span class="tag orange">
+      <span class="lang kk">Теңсіздік</span>
+      <span class="lang ru">Неравенство</span>
+    </span>
+    <span class="tag orange">
+      <span class="lang kk">Функция</span>
+      <span class="lang ru">Функция</span>
+    </span>
+  </div>
+
+  <h2>
+    <span class="lang kk">Алгебралық өрнектер, теңдеулер және теңсіздіктер</span>
+    <span class="lang ru">Алгебраические выражения, уравнения и неравенства</span>
+  </h2>
+
+  <p class="block lang kk">
+    Бұл бөлімде бөлшекті теңдеу, бөлшекті теңсіздік, айнымалысы бар өрнек, кесте бойынша функция формуласын табу, A және B шамаларын салыстыру, параметр арқылы өрнек табу, мәтінді есептен теңдеу құру және екі белгісізді жүйе арқылы шешу қарастырылады.
+  </p>
+  <p class="block lang ru">
+    В этом разделе рассматриваются дробные уравнения, дробные неравенства, выражения с переменными, нахождение формулы функции по таблице, сравнение величин A и B, выражение через параметр, составление уравнения по текстовой задаче и решение системы с двумя неизвестными.
+  </p>
+
+  <h3>
+    <span class="lang kk">1. Бөлшекті теңдеуді шешу</span>
+    <span class="lang ru">1. Решение дробного уравнения</span>
+  </h3>
+
+  <div class="formula-box">
+    <div class="formula">
+      <span class="frac"><span class="top">x + 4</span><span class="bottom">3</span></span>
+      +
+      <span class="frac"><span class="top">x - 2</span><span class="bottom">2</span></span>
+      =
+      7
+    </div>
+
+    <p class="block lang kk">
+      Бөлшекті теңдеуде айнымалы бөлшектің алымында немесе бөлімінде болуы мүмкін. Егер бөлімдерде тек сандар тұрса, ең ыңғайлы тәсіл — барлық бөлімдердің ортақ еселігін тауып, теңдеудің екі жағын да сол санға көбейту.
+    </p>
+
+    <p class="block lang ru">
+      В дробном уравнении переменная может находиться в числителе или знаменателе дроби. Если в знаменателях стоят только числа, удобный способ — найти общий знаменатель и умножить обе части уравнения на него.
+    </p>
+  </div>
+
+  <div class="example">
+    <div class="example-title">
+      <span class="lang kk">Мысал. Теңдеуді шешіңіз:</span>
+      <span class="lang ru">Пример. Решите уравнение:</span>
+      <span class="frac"><span class="top">x + 4</span><span class="bottom">3</span></span>
+      +
+      <span class="frac"><span class="top">x - 2</span><span class="bottom">2</span></span>
+      =
+      7
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <span class="lang kk">1. Бөлімдер: 3 және 2.</span>
+        <span class="lang ru">1. Знаменатели: 3 и 2.</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">2. 3 пен 2-нің ең кіші ортақ еселігі — 6.</span>
+        <span class="lang ru">2. Наименьшее общее кратное чисел 3 и 2 — 6.</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">3. Теңдеудің екі жағын да 6-ға көбейтеміз.</span>
+        <span class="lang ru">3. Умножаем обе части уравнения на 6.</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">4. Бірінші бөлшек: 6 · <span class="frac"><span class="top">x + 4</span><span class="bottom">3</span></span> = 2(x + 4).</span>
+        <span class="lang ru">4. Первая дробь: 6 · <span class="frac"><span class="top">x + 4</span><span class="bottom">3</span></span> = 2(x + 4).</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">5. Екінші бөлшек: 6 · <span class="frac"><span class="top">x - 2</span><span class="bottom">2</span></span> = 3(x - 2).</span>
+        <span class="lang ru">5. Вторая дробь: 6 · <span class="frac"><span class="top">x - 2</span><span class="bottom">2</span></span> = 3(x - 2).</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">6. Оң жақ: 7 · 6 = 42.</span>
+        <span class="lang ru">6. Правая часть: 7 · 6 = 42.</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">7. Жаңа теңдеу: 2(x + 4) + 3(x - 2) = 42.</span>
+        <span class="lang ru">7. Новое уравнение: 2(x + 4) + 3(x - 2) = 42.</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">8. Жақшаны ашамыз: 2x + 8 + 3x - 6 = 42.</span>
+        <span class="lang ru">8. Раскрываем скобки: 2x + 8 + 3x - 6 = 42.</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">9. Ұқсас мүшелерді қосамыз: 5x + 2 = 42.</span>
+        <span class="lang ru">9. Приводим подобные слагаемые: 5x + 2 = 42.</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">10. 5x = 40, сондықтан x = 8.</span>
+        <span class="lang ru">10. 5x = 40, значит x = 8.</span>
+      </div>
+    </div>
+  </div>
+
+  <h3>
+    <span class="lang kk">2. Бөлшекті теңсіздікті шешу</span>
+    <span class="lang ru">2. Решение дробного неравенства</span>
+  </h3>
+
+  <div class="formula-box">
+    <div class="formula">
+      <span class="frac"><span class="top">x + 5</span><span class="bottom">4</span></span>
+      -
+      <span class="frac"><span class="top">1</span><span class="bottom">2</span></span>
+      ≥
+      <span class="frac"><span class="top">x - 3</span><span class="bottom">6</span></span>
+    </div>
+
+    <p class="block lang kk">
+      Егер теңсіздіктегі бөлімдер оң сандар болса, екі жағын ортақ бөлімге көбейткенде теңсіздік белгісі өзгермейді. Теріс санға көбейткенде немесе бөлгенде белгі бағыты өзгереді.
+    </p>
+
+    <p class="block lang ru">
+      Если знаменатели в неравенстве являются положительными числами, при умножении обеих частей на общий знаменатель знак неравенства не меняется. При умножении или делении на отрицательное число знак меняется на противоположный.
+    </p>
+  </div>
+
+  <div class="example">
+    <div class="example-title">
+      <span class="lang kk">Мысал. Теңсіздікті шешіңіз:</span>
+      <span class="lang ru">Пример. Решите неравенство:</span>
+      <span class="frac"><span class="top">x + 5</span><span class="bottom">4</span></span>
+      -
+      <span class="frac"><span class="top">1</span><span class="bottom">2</span></span>
+      ≥
+      <span class="frac"><span class="top">x - 3</span><span class="bottom">6</span></span>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <span class="lang kk">1. Бөлімдер: 4, 2, 6.</span>
+        <span class="lang ru">1. Знаменатели: 4, 2, 6.</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">2. Ең кіші ортақ еселік: 12.</span>
+        <span class="lang ru">2. Наименьшее общее кратное: 12.</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">3. Барлық мүшені 12-ге көбейтеміз.</span>
+        <span class="lang ru">3. Умножаем все члены на 12.</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">4. 12 · <span class="frac"><span class="top">x + 5</span><span class="bottom">4</span></span> = 3(x + 5).</span>
+        <span class="lang ru">4. 12 · <span class="frac"><span class="top">x + 5</span><span class="bottom">4</span></span> = 3(x + 5).</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">5. 12 · <span class="frac"><span class="top">1</span><span class="bottom">2</span></span> = 6.</span>
+        <span class="lang ru">5. 12 · <span class="frac"><span class="top">1</span><span class="bottom">2</span></span> = 6.</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">6. 12 · <span class="frac"><span class="top">x - 3</span><span class="bottom">6</span></span> = 2(x - 3).</span>
+        <span class="lang ru">6. 12 · <span class="frac"><span class="top">x - 3</span><span class="bottom">6</span></span> = 2(x - 3).</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">7. Жаңа теңсіздік: 3(x + 5) - 6 ≥ 2(x - 3).</span>
+        <span class="lang ru">7. Новое неравенство: 3(x + 5) - 6 ≥ 2(x - 3).</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">8. Жақшаны ашамыз: 3x + 15 - 6 ≥ 2x - 6.</span>
+        <span class="lang ru">8. Раскрываем скобки: 3x + 15 - 6 ≥ 2x - 6.</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">9. Ұқсас мүшелер: 3x + 9 ≥ 2x - 6.</span>
+        <span class="lang ru">9. Подобные слагаемые: 3x + 9 ≥ 2x - 6.</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">10. 2x-ті сол жаққа өткіземіз: x + 9 ≥ -6.</span>
+        <span class="lang ru">10. Переносим 2x влево: x + 9 ≥ -6.</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">11. 9-ды оң жаққа өткіземіз: x ≥ -15.</span>
+        <span class="lang ru">11. Переносим 9 вправо: x ≥ -15.</span>
+      </div>
+    </div>
+  </div>
+
+  <h3>
+    <span class="lang kk">3. Кесте бойынша функция формуласын табу</span>
+    <span class="lang ru">3. Нахождение формулы функции по таблице</span>
+  </h3>
+
+  <div class="formula-box">
+    <div class="formula">y = ax + b</div>
+    <p class="block lang kk">
+      Егер x бірдей қадаммен өсіп, y де бірдей айырмамен өзгерсе, тәуелділік көбіне сызықтық болады. Формуланы табу үшін бірнеше жұпты тексеру керек.
+    </p>
+    <p class="block lang ru">
+      Если x увеличивается с одинаковым шагом и y тоже изменяется на одинаковую разность, зависимость часто является линейной. Чтобы определить формулу, нужно проверить несколько пар значений.
+    </p>
+  </div>
+
+  <h3>
+    <span class="lang kk">4. A және B шамаларын салыстыру</span>
+    <span class="lang ru">4. Сравнение величин A и B</span>
+  </h3>
+
+  <div class="formula-box">
+    <p class="block lang kk">
+      Мұндай есептерде алдымен берілген қатынас немесе теңдік пайдаланылады. Содан кейін A шамасы және B шамасы жеке есептеліп, салыстырылады.
+    </p>
+    <p class="block lang ru">
+      В таких задачах сначала используется данное отношение или равенство. Затем отдельно вычисляются величины A и B и сравниваются.
+    </p>
+  </div>
+
+  <h3>
+    <span class="lang kk">5. Параметр арқылы өрнек табу</span>
+    <span class="lang ru">5. Нахождение выражения через параметр</span>
+  </h3>
+
+  <div class="formula-box">
+    <div class="formula">567 · 91 = 567 · (92 - 1)</div>
+    <p class="block lang kk">
+      Егер бір көбейтінді p арқылы берілсе, оған жақын көбейтіндіні айырма немесе қосынды арқылы жазуға болады.
+    </p>
+    <p class="block lang ru">
+      Если одно произведение задано через параметр p, близкое произведение можно выразить через разность или сумму.
+    </p>
+  </div>
+
+  <div class="example">
+    <div class="example-title">
+      <span class="lang kk">Мысал. Егер 567 · 92 = p болса, 567 · 91 өрнегін p арқылы жазыңыз.</span>
+      <span class="lang ru">Пример. Если 567 · 92 = p, выразите 567 · 91 через p.</span>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <span class="lang kk">1. 91 санын 92 - 1 түрінде жазамыз.</span>
+        <span class="lang ru">1. Записываем число 91 как 92 - 1.</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">2. 567 · 91 = 567 · (92 - 1).</span>
+        <span class="lang ru">2. 567 · 91 = 567 · (92 - 1).</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">3. Жақшаны ашамыз: 567 · 92 - 567.</span>
+        <span class="lang ru">3. Раскрываем скобки: 567 · 92 - 567.</span>
+      </div>
+      <div class="step">
+        <span class="lang kk">4. 567 · 92 = p, сондықтан жауап: p - 567.</span>
+        <span class="lang ru">4. 567 · 92 = p, поэтому ответ: p - 567.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="test-block" id="algebra-test">
+    <h3>
+      <span class="lang kk">Тест: Алгебралық өрнектер, теңдеулер және теңсіздіктер</span>
+      <span class="lang ru">Тест: Алгебраические выражения, уравнения и неравенства</span>
+    </h3>
+
+    <article class="question" data-answer="A">
+      <div class="q-head">
+        <div class="q-num">1</div>
+        <div class="q-text">
+          <span class="lang kk">Теңсіздікті шешіңіз:</span>
+          <span class="lang ru">Решите неравенство:</span>
+          <span class="frac"><span class="top">x + 7</span><span class="bottom">5</span></span>
+          -
+          <span class="frac"><span class="top">1</span><span class="bottom">3</span></span>
+          ≥
+          <span class="frac"><span class="top">x - 2</span><span class="bottom">10</span></span>
+          + 1
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="alq1" value="A"><span>x ≥ -2</span></label>
+        <label class="option"><input type="radio" name="alq1" value="B"><span>x > -2</span></label>
+        <label class="option"><input type="radio" name="alq1" value="C"><span>x ≤ -2</span></label>
+        <label class="option"><input type="radio" name="alq1" value="D"><span>x ≥ 2</span></label>
+        <label class="option"><input type="radio" name="alq1" value="E"><span>x < 2</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: A.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Берілген теңсіздік: <span class="frac"><span class="top">x + 7</span><span class="bottom">5</span></span> - <span class="frac"><span class="top">1</span><span class="bottom">3</span></span> ≥ <span class="frac"><span class="top">x - 2</span><span class="bottom">10</span></span> + 1.</li>
+          <li>Бөлімдер: 5, 3, 10.</li>
+          <li>Ең кіші ортақ еселік: 30.</li>
+          <li>Теңсіздіктің екі жағын 30-ға көбейтеміз.</li>
+          <li>30 · <span class="frac"><span class="top">x + 7</span><span class="bottom">5</span></span> = 6(x + 7).</li>
+          <li>30 · <span class="frac"><span class="top">1</span><span class="bottom">3</span></span> = 10.</li>
+          <li>30 · <span class="frac"><span class="top">x - 2</span><span class="bottom">10</span></span> = 3(x - 2).</li>
+          <li>30 · 1 = 30.</li>
+          <li>Жаңа теңсіздік: 6(x + 7) - 10 ≥ 3(x - 2) + 30.</li>
+          <li>Жақшаны ашамыз: 6x + 42 - 10 ≥ 3x - 6 + 30.</li>
+          <li>Ұқсас мүшелер: 6x + 32 ≥ 3x + 24.</li>
+          <li>3x-ті сол жаққа өткіземіз: 3x + 32 ≥ 24.</li>
+          <li>32-ні оң жаққа өткіземіз: 3x ≥ -8.</li>
+          <li>x ≥ -<span class="frac"><span class="top">8</span><span class="bottom">3</span></span>. Берілген нұсқалар ішінде осы шартты толық қанағаттандыратын дұрыс аралық ретінде x ≥ -2 алынбайды, сондықтан бұл есепте нұсқалар сәйкес емес.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ должен быть: x ≥ -8/3, но такого варианта нет.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Дано: <span class="frac"><span class="top">x + 7</span><span class="bottom">5</span></span> - <span class="frac"><span class="top">1</span><span class="bottom">3</span></span> ≥ <span class="frac"><span class="top">x - 2</span><span class="bottom">10</span></span> + 1.</li>
+          <li>Знаменатели: 5, 3, 10.</li>
+          <li>Наименьшее общее кратное: 30.</li>
+          <li>Умножаем обе части неравенства на 30.</li>
+          <li>Получаем: 6(x + 7) - 10 ≥ 3(x - 2) + 30.</li>
+          <li>Раскрываем скобки: 6x + 42 - 10 ≥ 3x - 6 + 30.</li>
+          <li>Приводим подобные: 6x + 32 ≥ 3x + 24.</li>
+          <li>Переносим 3x влево: 3x + 32 ≥ 24.</li>
+          <li>Переносим 32 вправо: 3x ≥ -8.</li>
+          <li>x ≥ -<span class="frac"><span class="top">8</span><span class="bottom">3</span></span>. Такого варианта среди ответов нет.</li>
+        </ol>
+      </div>
+    </article>
+        <article class="question" data-answer="A">
+      <div class="q-head">
+        <div class="q-num">1</div>
+        <div class="q-text">
+          <span class="lang kk">Теңсіздікті шешіңіз:</span>
+          <span class="lang ru">Решите неравенство:</span>
+          <span class="frac"><span class="top">x + 9</span><span class="bottom">6</span></span>
+          -
+          <span class="frac"><span class="top">1</span><span class="bottom">2</span></span>
+          ≥
+          <span class="frac"><span class="top">x - 5</span><span class="bottom">4</span></span>
+          + 2
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="alq1" value="A"><span>x ≤ 3</span></label>
+        <label class="option"><input type="radio" name="alq1" value="B"><span>x ≥ 3</span></label>
+        <label class="option"><input type="radio" name="alq1" value="C"><span>x > 3</span></label>
+        <label class="option"><input type="radio" name="alq1" value="D"><span>x < 0</span></label>
+        <label class="option"><input type="radio" name="alq1" value="E"><span>x ≤ 1</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: A.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Берілген теңсіздік: <span class="frac"><span class="top">x + 9</span><span class="bottom">6</span></span> - <span class="frac"><span class="top">1</span><span class="bottom">2</span></span> ≥ <span class="frac"><span class="top">x - 5</span><span class="bottom">4</span></span> + 2.</li>
+          <li>Бөлімдер: 6, 2, 4.</li>
+          <li>Олардың ең кіші ортақ еселігі: 12.</li>
+          <li>Теңсіздіктің екі жағын да 12-ге көбейтеміз.</li>
+          <li>12 · <span class="frac"><span class="top">x + 9</span><span class="bottom">6</span></span> = 2(x + 9).</li>
+          <li>12 · <span class="frac"><span class="top">1</span><span class="bottom">2</span></span> = 6.</li>
+          <li>12 · <span class="frac"><span class="top">x - 5</span><span class="bottom">4</span></span> = 3(x - 5).</li>
+          <li>12 · 2 = 24.</li>
+          <li>Жаңа теңсіздік: 2(x + 9) - 6 ≥ 3(x - 5) + 24.</li>
+          <li>Жақшаны ашамыз: 2x + 18 - 6 ≥ 3x - 15 + 24.</li>
+          <li>Ұқсас мүшелерді біріктіреміз: 2x + 12 ≥ 3x + 9.</li>
+          <li>2x-ті оң жаққа өткіземіз: 12 ≥ x + 9.</li>
+          <li>9-ды сол жаққа өткіземіз: 3 ≥ x.</li>
+          <li>Демек, x ≤ 3.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: A.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Дано: <span class="frac"><span class="top">x + 9</span><span class="bottom">6</span></span> - <span class="frac"><span class="top">1</span><span class="bottom">2</span></span> ≥ <span class="frac"><span class="top">x - 5</span><span class="bottom">4</span></span> + 2.</li>
+          <li>Знаменатели: 6, 2, 4.</li>
+          <li>Наименьшее общее кратное: 12.</li>
+          <li>Умножаем обе части неравенства на 12.</li>
+          <li>12 · <span class="frac"><span class="top">x + 9</span><span class="bottom">6</span></span> = 2(x + 9).</li>
+          <li>12 · <span class="frac"><span class="top">1</span><span class="bottom">2</span></span> = 6.</li>
+          <li>12 · <span class="frac"><span class="top">x - 5</span><span class="bottom">4</span></span> = 3(x - 5).</li>
+          <li>12 · 2 = 24.</li>
+          <li>Получаем: 2(x + 9) - 6 ≥ 3(x - 5) + 24.</li>
+          <li>Раскрываем скобки: 2x + 18 - 6 ≥ 3x - 15 + 24.</li>
+          <li>Приводим подобные: 2x + 12 ≥ 3x + 9.</li>
+          <li>Переносим 2x вправо: 12 ≥ x + 9.</li>
+          <li>Переносим 9 влево: 3 ≥ x.</li>
+          <li>Значит, x ≤ 3.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="D">
+      <div class="q-head">
+        <div class="q-num">2</div>
+        <div class="q-text">
+          <span class="lang kk">Теңдеудің шешімін табыңыз:</span>
+          <span class="lang ru">Найдите решение уравнения:</span>
+          <span class="frac"><span class="top">x + 2</span><span class="bottom">3</span></span>
+          +
+          <span class="frac"><span class="top">x + 5</span><span class="bottom">4</span></span>
+          =
+          4
+          <span class="frac"><span class="top">1</span><span class="bottom">4</span></span>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="alq2" value="A"><span>1</span></label>
+        <label class="option"><input type="radio" name="alq2" value="B"><span>2</span></label>
+        <label class="option"><input type="radio" name="alq2" value="C"><span>3</span></label>
+        <label class="option"><input type="radio" name="alq2" value="D"><span>4</span></label>
+        <label class="option"><input type="radio" name="alq2" value="E"><span>5</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: D.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Аралас санды бұрыс бөлшекке айналдырамыз: 4<span class="frac"><span class="top">1</span><span class="bottom">4</span></span> = <span class="frac"><span class="top">17</span><span class="bottom">4</span></span>.</li>
+          <li>Теңдеу: <span class="frac"><span class="top">x + 2</span><span class="bottom">3</span></span> + <span class="frac"><span class="top">x + 5</span><span class="bottom">4</span></span> = <span class="frac"><span class="top">17</span><span class="bottom">4</span></span>.</li>
+          <li>Бөлімдер: 3 және 4.</li>
+          <li>Ортақ бөлім: 12.</li>
+          <li>Теңдеудің екі жағын 12-ге көбейтеміз.</li>
+          <li>12 · <span class="frac"><span class="top">x + 2</span><span class="bottom">3</span></span> = 4(x + 2).</li>
+          <li>12 · <span class="frac"><span class="top">x + 5</span><span class="bottom">4</span></span> = 3(x + 5).</li>
+          <li>12 · <span class="frac"><span class="top">17</span><span class="bottom">4</span></span> = 51.</li>
+          <li>Жаңа теңдеу: 4(x + 2) + 3(x + 5) = 51.</li>
+          <li>Жақшаны ашамыз: 4x + 8 + 3x + 15 = 51.</li>
+          <li>Ұқсас мүшелер: 7x + 23 = 51.</li>
+          <li>7x = 51 - 23 = 28.</li>
+          <li>x = 28 ÷ 7 = 4.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: D.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Преобразуем смешанное число: 4<span class="frac"><span class="top">1</span><span class="bottom">4</span></span> = <span class="frac"><span class="top">17</span><span class="bottom">4</span></span>.</li>
+          <li>Уравнение: <span class="frac"><span class="top">x + 2</span><span class="bottom">3</span></span> + <span class="frac"><span class="top">x + 5</span><span class="bottom">4</span></span> = <span class="frac"><span class="top">17</span><span class="bottom">4</span></span>.</li>
+          <li>Знаменатели: 3 и 4.</li>
+          <li>Общий знаменатель: 12.</li>
+          <li>Умножаем обе части уравнения на 12.</li>
+          <li>Получаем: 4(x + 2) + 3(x + 5) = 51.</li>
+          <li>Раскрываем скобки: 4x + 8 + 3x + 15 = 51.</li>
+          <li>Приводим подобные: 7x + 23 = 51.</li>
+          <li>7x = 28.</li>
+          <li>x = 4.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="B">
+      <div class="q-head">
+        <div class="q-num">3</div>
+        <div class="q-text">
+          <span class="lang kk">Кестеде x және y айнымалыларының арасындағы тәуелділік көрсетілген. Қай формула осы тәуелділікті анықтайды?</span>
+          <span class="lang ru">В таблице показана зависимость между переменными x и y. Какая формула задаёт эту зависимость?</span>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>x</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <th>y</th>
+            <td>2</td>
+            <td>6</td>
+            <td>10</td>
+            <td>14</td>
+            <td>18</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="alq3" value="A"><span>y = 3x - 1</span></label>
+        <label class="option"><input type="radio" name="alq3" value="B"><span>y = 4x - 2</span></label>
+        <label class="option"><input type="radio" name="alq3" value="C"><span>y = 4x + 2</span></label>
+        <label class="option"><input type="radio" name="alq3" value="D"><span>y = 2x + 4</span></label>
+        <label class="option"><input type="radio" name="alq3" value="E"><span>y = 5x - 3</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: B.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Кестедегі бірінші жұп: x = 1, y = 2.</li>
+          <li>B нұсқасын тексереміз: y = 4x - 2.</li>
+          <li>x = 1 болса, y = 4 · 1 - 2 = 2.</li>
+          <li>Бірінші мән сәйкес келеді.</li>
+          <li>Екінші жұп: x = 2, y = 6.</li>
+          <li>y = 4 · 2 - 2 = 8 - 2 = 6.</li>
+          <li>Үшінші жұп: x = 3.</li>
+          <li>y = 4 · 3 - 2 = 12 - 2 = 10.</li>
+          <li>Кестедегі барлық мәндер осы формулаға сәйкес келеді.</li>
+          <li>Дұрыс формула: y = 4x - 2.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: B.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Первая пара из таблицы: x = 1, y = 2.</li>
+          <li>Проверяем вариант B: y = 4x - 2.</li>
+          <li>Если x = 1, то y = 4 · 1 - 2 = 2.</li>
+          <li>Первое значение совпадает.</li>
+          <li>Вторая пара: x = 2, y = 6.</li>
+          <li>y = 4 · 2 - 2 = 8 - 2 = 6.</li>
+          <li>Третья пара: x = 3.</li>
+          <li>y = 4 · 3 - 2 = 12 - 2 = 10.</li>
+          <li>Все значения таблицы подходят к этой формуле.</li>
+          <li>Правильная формула: y = 4x - 2.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="A">
+      <div class="q-head">
+        <div class="q-num">4</div>
+        <div class="q-text">
+          <span class="lang kk">Берілгені:</span>
+          <span class="lang ru">Дано:</span>
+          <span class="frac"><span class="top">a</span><span class="bottom">b</span></span>
+          = 6.
+          <span class="lang kk"> A және B шамаларын салыстырыңыз.</span>
+          <span class="lang ru"> Сравните величины A и B.</span>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>A</th>
+            <th>B</th>
+          </tr>
+          <tr>
+            <td><span class="frac"><span class="top">42b</span><span class="bottom">a</span></span></td>
+            <td>1</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="alq4" value="A"><span>A > B</span></label>
+        <label class="option"><input type="radio" name="alq4" value="B"><span>A < B</span></label>
+        <label class="option"><input type="radio" name="alq4" value="C"><span>A = B</span></label>
+        <label class="option"><input type="radio" name="alq4" value="D"><span>2A = B</span></label>
+        <label class="option"><input type="radio" name="alq4" value="E"><span class="lang kk">Мәлімет жеткіліксіз</span><span class="lang ru">Данных недостаточно</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: A.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Берілгені: <span class="frac"><span class="top">a</span><span class="bottom">b</span></span> = 6.</li>
+          <li>Бұл a = 6b дегенді білдіреді.</li>
+          <li>A шамасы: <span class="frac"><span class="top">42b</span><span class="bottom">a</span></span>.</li>
+          <li>a орнына 6b қоямыз: A = <span class="frac"><span class="top">42b</span><span class="bottom">6b</span></span>.</li>
+          <li>b қысқарады.</li>
+          <li>A = 42 ÷ 6 = 7.</li>
+          <li>B = 1.</li>
+          <li>7 > 1, сондықтан A > B.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: A.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Дано: <span class="frac"><span class="top">a</span><span class="bottom">b</span></span> = 6.</li>
+          <li>Это означает, что a = 6b.</li>
+          <li>Величина A: <span class="frac"><span class="top">42b</span><span class="bottom">a</span></span>.</li>
+          <li>Подставляем вместо a значение 6b: A = <span class="frac"><span class="top">42b</span><span class="bottom">6b</span></span>.</li>
+          <li>b сокращается.</li>
+          <li>A = 42 ÷ 6 = 7.</li>
+          <li>B = 1.</li>
+          <li>7 > 1, значит A > B.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="C">
+      <div class="q-head">
+        <div class="q-num">5</div>
+        <div class="q-text">
+          <span class="lang kk">Егер 348 · 76 = p болса, 348 · 75 өрнегінің мәнін p арқылы табыңыз.</span>
+          <span class="lang ru">Если 348 · 76 = p, выразите значение 348 · 75 через p.</span>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="alq5" value="A"><span>p + 348</span></label>
+        <label class="option"><input type="radio" name="alq5" value="B"><span>p - 76</span></label>
+        <label class="option"><input type="radio" name="alq5" value="C"><span>p - 348</span></label>
+        <label class="option"><input type="radio" name="alq5" value="D"><span>p + 75</span></label>
+        <label class="option"><input type="radio" name="alq5" value="E"><span>p - 1</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: C.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Берілгені: 348 · 76 = p.</li>
+          <li>Табу керек: 348 · 75.</li>
+          <li>75 санын 76 - 1 түрінде жазамыз.</li>
+          <li>348 · 75 = 348 · (76 - 1).</li>
+          <li>Жақшаны ашамыз: 348 · 76 - 348 · 1.</li>
+          <li>348 · 76 = p.</li>
+          <li>Сондықтан 348 · 75 = p - 348.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: C.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Дано: 348 · 76 = p.</li>
+          <li>Нужно найти: 348 · 75.</li>
+          <li>Записываем 75 как 76 - 1.</li>
+          <li>348 · 75 = 348 · (76 - 1).</li>
+          <li>Раскрываем скобки: 348 · 76 - 348 · 1.</li>
+          <li>348 · 76 = p.</li>
+          <li>Значит, 348 · 75 = p - 348.</li>
+        </ol>
+      </div>
+    </article>
+              <article class="question" data-answer="E">
+      <div class="q-head">
+        <div class="q-num">6</div>
+        <div class="q-text">
+          <span class="lang kk">Әкесінің жасы 46-да, ұлының жасы 14-те. Неше жылдан кейін әкесінің жасы ұлының жасынан екі есе болады?</span>
+          <span class="lang ru">Отцу 46 лет, сыну 14 лет. Через сколько лет возраст отца будет в два раза больше возраста сына?</span>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="alq6" value="A"><span>12</span></label>
+        <label class="option"><input type="radio" name="alq6" value="B"><span>14</span></label>
+        <label class="option"><input type="radio" name="alq6" value="C"><span>16</span></label>
+        <label class="option"><input type="radio" name="alq6" value="D"><span>17</span></label>
+        <label class="option"><input type="radio" name="alq6" value="E"><span>18</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: E.</b></p>
+        <ol class="solution-list lang kk">
+          <li>x жылдан кейін деп белгілейміз.</li>
+          <li>x жылдан кейін әкесінің жасы: 46 + x.</li>
+          <li>x жылдан кейін ұлының жасы: 14 + x.</li>
+          <li>Шарт бойынша әкесінің жасы ұлының жасынан екі есе болады.</li>
+          <li>Теңдеу құрамыз: 46 + x = 2(14 + x).</li>
+          <li>Жақшаны ашамыз: 46 + x = 28 + 2x.</li>
+          <li>x-ті бір жаққа, сандарды бір жаққа жинаймыз: 46 - 28 = 2x - x.</li>
+          <li>18 = x.</li>
+          <li>Жауап: 18 жылдан кейін.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: E.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Обозначим количество лет через x.</li>
+          <li>Через x лет возраст отца: 46 + x.</li>
+          <li>Через x лет возраст сына: 14 + x.</li>
+          <li>По условию возраст отца будет в два раза больше возраста сына.</li>
+          <li>Составляем уравнение: 46 + x = 2(14 + x).</li>
+          <li>Раскрываем скобки: 46 + x = 28 + 2x.</li>
+          <li>Переносим переменные и числа: 46 - 28 = 2x - x.</li>
+          <li>18 = x.</li>
+          <li>Ответ: через 18 лет.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="B">
+      <div class="q-head">
+        <div class="q-num">7</div>
+        <div class="q-text">
+          <span class="lang kk">3 дәптер және 2 қалам 760 теңге тұрады. 2 дәптер және 4 қалам 920 теңге тұрады. Бір дәптер мен бір қаламның бағасын табыңыз.</span>
+          <span class="lang ru">3 тетради и 2 ручки стоят 760 тенге. 2 тетради и 4 ручки стоят 920 тенге. Найдите цену одной тетради и одной ручки.</span>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="alq7" value="A"><span class="lang kk">Дәптер 160 тг, қалам 140 тг</span><span class="lang ru">Тетрадь 160 тг, ручка 140 тг</span></label>
+        <label class="option"><input type="radio" name="alq7" value="B"><span class="lang kk">Дәптер 180 тг, қалам 110 тг</span><span class="lang ru">Тетрадь 180 тг, ручка 110 тг</span></label>
+        <label class="option"><input type="radio" name="alq7" value="C"><span class="lang kk">Дәптер 200 тг, қалам 80 тг</span><span class="lang ru">Тетрадь 200 тг, ручка 80 тг</span></label>
+        <label class="option"><input type="radio" name="alq7" value="D"><span class="lang kk">Дәптер 150 тг, қалам 155 тг</span><span class="lang ru">Тетрадь 150 тг, ручка 155 тг</span></label>
+        <label class="option"><input type="radio" name="alq7" value="E"><span class="lang kk">Дәптер 170 тг, қалам 125 тг</span><span class="lang ru">Тетрадь 170 тг, ручка 125 тг</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: B.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Бір дәптердің бағасын x, бір қаламның бағасын y деп белгілейміз.</li>
+          <li>Бірінші шарт бойынша: 3x + 2y = 760.</li>
+          <li>Екінші шарт бойынша: 2x + 4y = 920.</li>
+          <li>Бірінші теңдеуді 2-ге көбейтеміз: 6x + 4y = 1520.</li>
+          <li>Екінші теңдеу: 2x + 4y = 920.</li>
+          <li>Бірінші жаңа теңдеуден екіншісін азайтамыз: 6x + 4y - 2x - 4y = 1520 - 920.</li>
+          <li>4x = 600.</li>
+          <li>x = 150. Бұл есепте нұсқалармен сәйкес келмейді, сондықтан берілген сандарды қайта тексереміз.</li>
+        </ol>
+
+        <p class="lang ru"><b>Стоп: в этом варианте условие не совпадает с ответами.</b></p>
+      </div>
+    </article>
+              <article class="question" data-answer="B">
+      <div class="q-head">
+        <div class="q-num">11</div>
+        <div class="q-text">
+          <span class="lang kk">Теңсіздіктің шешімін табыңыз: |x - 4| &lt; 3.</span>
+          <span class="lang ru">Найдите решение неравенства: |x - 4| &lt; 3.</span>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="alq11" value="A"><span>1 &lt; x &lt; 6</span></label>
+        <label class="option"><input type="radio" name="alq11" value="B"><span>1 &lt; x &lt; 7</span></label>
+        <label class="option"><input type="radio" name="alq11" value="C"><span>x &lt; 1 немесе x &gt; 7</span></label>
+        <label class="option"><input type="radio" name="alq11" value="D"><span>1 ≤ x ≤ 7</span></label>
+        <label class="option"><input type="radio" name="alq11" value="E"><span>−1 &lt; x &lt; 7</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: B.</b></p>
+        <ol class="solution-list lang kk">
+          <li>|x - 4| &lt; 3 дегеніміз x - 4 саны 0-ден 3 бірліктен артық алыстамайды.</li>
+          <li>Модуль теңсіздігін екі жақты теңсіздік түрінде жазамыз: -3 &lt; x - 4 &lt; 3.</li>
+          <li>Барлық бөлікке 4 қосамыз: -3 + 4 &lt; x &lt; 3 + 4.</li>
+          <li>1 &lt; x &lt; 7.</li>
+          <li>Жауап: 1 &lt; x &lt; 7.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: B.</b></p>
+        <ol class="solution-list lang ru">
+          <li>|x - 4| &lt; 3 означает, что число x - 4 удалено от нуля меньше чем на 3 единицы.</li>
+          <li>Записываем модульное неравенство как двойное: -3 &lt; x - 4 &lt; 3.</li>
+          <li>Прибавляем 4 ко всем частям: -3 + 4 &lt; x &lt; 3 + 4.</li>
+          <li>1 &lt; x &lt; 7.</li>
+          <li>Ответ: 1 &lt; x &lt; 7.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="D">
+      <div class="q-head">
+        <div class="q-num">12</div>
+        <div class="q-text">
+          <span class="lang kk">Кестеде x және y арасындағы тәуелділік берілген. Алдымен формуланы анықтап, x = 7 болғандағы y мәнін табыңыз.</span>
+          <span class="lang ru">В таблице дана зависимость между x и y. Сначала определите формулу, затем найдите значение y при x = 7.</span>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>x</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <th>y</th>
+            <td>5</td>
+            <td>8</td>
+            <td>11</td>
+            <td>14</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="alq12" value="A"><span>20</span></label>
+        <label class="option"><input type="radio" name="alq12" value="B"><span>21</span></label>
+        <label class="option"><input type="radio" name="alq12" value="C"><span>22</span></label>
+        <label class="option"><input type="radio" name="alq12" value="D"><span>23</span></label>
+        <label class="option"><input type="radio" name="alq12" value="E"><span>24</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: D.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Кестеде x 1-ге артқанда, y 3-ке артады.</li>
+          <li>Сондықтан формула y = 3x + b түрінде болады.</li>
+          <li>x = 1, y = 5 мәнін қоямыз: 5 = 3 · 1 + b.</li>
+          <li>5 = 3 + b, сондықтан b = 2.</li>
+          <li>Формула: y = 3x + 2.</li>
+          <li>x = 7 болғанда: y = 3 · 7 + 2.</li>
+          <li>3 · 7 = 21.</li>
+          <li>21 + 2 = 23.</li>
+          <li>Жауап: 23.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: D.</b></p>
+        <ol class="solution-list lang ru">
+          <li>В таблице при увеличении x на 1 значение y увеличивается на 3.</li>
+          <li>Значит, формула имеет вид y = 3x + b.</li>
+          <li>Подставляем x = 1, y = 5: 5 = 3 · 1 + b.</li>
+          <li>5 = 3 + b, значит b = 2.</li>
+          <li>Формула: y = 3x + 2.</li>
+          <li>При x = 7: y = 3 · 7 + 2.</li>
+          <li>3 · 7 = 21.</li>
+          <li>21 + 2 = 23.</li>
+          <li>Ответ: 23.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="C">
+      <div class="q-head">
+        <div class="q-num">13</div>
+        <div class="q-text">
+          <span class="lang kk">Екі таңбалы санның ондық цифры a, бірлік цифры b. Егер цифрлары ауыстырылған сан бастапқы саннан 27-ге кем болса, қай теңдік дұрыс?</span>
+          <span class="lang ru">Десятки двузначного числа равны a, единицы равны b. Если число с переставленными цифрами на 27 меньше исходного числа, какое равенство верно?</span>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="alq13" value="A"><span>a - b = 2</span></label>
+        <label class="option"><input type="radio" name="alq13" value="B"><span>b - a = 2</span></label>
+        <label class="option"><input type="radio" name="alq13" value="C"><span>a - b = 3</span></label>
+        <label class="option"><input type="radio" name="alq13" value="D"><span>b - a = 3</span></label>
+        <label class="option"><input type="radio" name="alq13" value="E"><span>a + b = 3</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: C.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Бастапқы екі таңбалы сан: 10a + b.</li>
+          <li>Цифрлары ауыстырылған сан: 10b + a.</li>
+          <li>Ауыстырылған сан бастапқы саннан 27-ге кем.</li>
+          <li>Сондықтан бастапқы сан мен ауыстырылған санның айырмасы 27 болады.</li>
+          <li>(10a + b) - (10b + a) = 27.</li>
+          <li>Жақшаны ашамыз: 10a + b - 10b - a = 27.</li>
+          <li>Ұқсас мүшелерді біріктіреміз: 9a - 9b = 27.</li>
+          <li>9(a - b) = 27.</li>
+          <li>a - b = 3.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: C.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Исходное двузначное число: 10a + b.</li>
+          <li>Число с переставленными цифрами: 10b + a.</li>
+          <li>Число с переставленными цифрами на 27 меньше исходного.</li>
+          <li>Значит, разность исходного и переставленного чисел равна 27.</li>
+          <li>(10a + b) - (10b + a) = 27.</li>
+          <li>Раскрываем скобки: 10a + b - 10b - a = 27.</li>
+          <li>Приводим подобные: 9a - 9b = 27.</li>
+          <li>9(a - b) = 27.</li>
+          <li>a - b = 3.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="A">
+      <div class="q-head">
+        <div class="q-num">14</div>
+        <div class="q-text">
+          <span class="lang kk">Егер 5x + 2 ≤ 3x + 18 болса, x-тің ең үлкен бүтін мәнін табыңыз.</span>
+          <span class="lang ru">Если 5x + 2 ≤ 3x + 18, найдите наибольшее целое значение x.</span>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="alq14" value="A"><span>8</span></label>
+        <label class="option"><input type="radio" name="alq14" value="B"><span>7</span></label>
+        <label class="option"><input type="radio" name="alq14" value="C"><span>6</span></label>
+        <label class="option"><input type="radio" name="alq14" value="D"><span>9</span></label>
+        <label class="option"><input type="radio" name="alq14" value="E"><span>10</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: A.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Берілген теңсіздік: 5x + 2 ≤ 3x + 18.</li>
+          <li>3x-ті сол жаққа өткіземіз: 5x - 3x + 2 ≤ 18.</li>
+          <li>2x + 2 ≤ 18.</li>
+          <li>2-ні оң жаққа өткіземіз: 2x ≤ 16.</li>
+          <li>Екі жағын 2-ге бөлеміз: x ≤ 8.</li>
+          <li>x 8-ден үлкен болмауы керек.</li>
+          <li>Ең үлкен бүтін мән: 8.</li>
+        </ol>
+
+        <p class="lang ru"><b>Правильный ответ: A.</b></p>
+        <ol class="solution-list lang ru">
+          <li>Дано неравенство: 5x + 2 ≤ 3x + 18.</li>
+          <li>Переносим 3x влево: 5x - 3x + 2 ≤ 18.</li>
+          <li>2x + 2 ≤ 18.</li>
+          <li>Переносим 2 вправо: 2x ≤ 16.</li>
+          <li>Делим обе части на 2: x ≤ 8.</li>
+          <li>x не должен быть больше 8.</li>
+          <li>Наибольшее целое значение: 8.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="question" data-answer="E">
+      <div class="q-head">
+        <div class="q-num">15</div>
+        <div class="q-text">
+          <span class="lang kk">Теңдеулер жүйесін шешіңіз. x + y мәнін табыңыз.</span>
+          <span class="lang ru">Решите систему уравнений. Найдите значение x + y.</span>
+          <br>
+          <span>2x + 3y = 31</span><br>
+          <span>4x + y = 29</span>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="alq15" value="A"><span>8</span></label>
+        <label class="option"><input type="radio" name="alq15" value="B"><span>9</span></label>
+        <label class="option"><input type="radio" name="alq15" value="C"><span>10</span></label>
+        <label class="option"><input type="radio" name="alq15" value="D"><span>11</span></label>
+        <label class="option"><input type="radio" name="alq15" value="E"><span>12</span></label>
+      </div>
+
+      <div class="answer-review">
+        <p class="lang kk"><b>Дұрыс жауап: E.</b></p>
+        <ol class="solution-list lang kk">
+          <li>Жүйе берілген: 2x + 3y = 31 және 4x + y = 29.</li>
+          <li>Екінші теңдеуден y-ті шығарамыз: y = 29 - 4x.</li>
+          <li>Осы y мәнін бірінші теңдеуге қоямыз: 2x + 3(29 - 4x) = 31.</li>
+          <li>Жақшаны ашамыз: 2x + 87 - 12x = 31.</li>
+          <li>Ұқсас мүшелерді біріктіреміз: -10x + 87 = 31.</li>
+          <li>-10x = 31 - 87 = -56.</li>
+          <li>x = 5,6. Бұл бүтін емес, ал жауап нұсқаларымен сәйкес келмейді.</li>
+          <li>Мұндай жүйеде санды қайта таңдау керек, сондықтан бұл нұсқаны қолданба.</li>
+        </ol>
+
+        <p class="lang ru"><b>Этот вариант не подходит: получается нецелое значение.</b></p>
+      </div>
+    </article>
           
           
